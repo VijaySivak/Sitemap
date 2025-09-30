@@ -1,0 +1,7 @@
+javalang
+GitPython
+langchain
+langchain-google-vertexai
+pydantic
+python-dotenv
+google-cloud-aiplatform
