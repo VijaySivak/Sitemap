@@ -1,0 +1,35 @@
+stages:
+  - deploy
+
+deploy_to_gcs:
+  stage: deploy
+  image: google/cloud-sdk:slim
+  rules:
+    # Run only when pushing to main branch
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  before_script:
+    # Decode credentials from Base64 into a JSON file
+    - echo "$GOOGLE_APPLICATION_CREDENTIALS_B64" | base64 -d > adc.json
+
+    # Point gcloud to use these credentials
+    - export GOOGLE_APPLICATION_CREDENTIALS=$PWD/adc.json
+
+    # Set project from variable
+    - gcloud config set project "$GCP_PROJECT_ID"
+
+  script:
+    # Ensure Hartford folder exists in repo
+    - test -d Hartford || { echo "Hartford/ folder not found"; exit 1; }
+
+    # Build the GCS destination path
+    - DEST="gs://${GCS_BUCKET}/${GCS_PREFIX}"
+
+    - echo "Syncing Hartford/ → $DEST"
+
+    # Sync directory structure, overwrite if files already exist
+    - gcloud storage rsync -r Hartford "$DEST"
+
+  artifacts:
+    # If pipeline fails, keep logs briefly
+    when: on_failure
+    expire_in: 1 hour
