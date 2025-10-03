@@ -33,3 +33,9 @@ This project demonstrates a **multi-agent system** designed to enhance Java appl
   - Jira / ServiceNow (ticketing)
   - Slackbot (notifications)
   - CI/CD hooks
+
+
+--
+
+## Setup
+

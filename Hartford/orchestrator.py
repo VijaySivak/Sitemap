@@ -1,9 +1,9 @@
 import asyncio
-from agents.understand_code_agent import clone_repo, cleanup_repo, find_java_files, run_code_understanding
-from agents.instrumentation_advisor_agent import run_instrumentation_advisor
-from agents.observability_inspector_agent import inspect_observability
-from agents.validation_agent import validate_observability
-from agents.docbuilder_agent import generate_report
+from agents.code_understanding.understand_code_agent import clone_repo, cleanup_repo, find_java_files, run_code_understanding
+from agents.instrumentation.instrumentation_advisor_agent import run_instrumentation_advisor
+from agents.observability.observability_inspector_agent import inspect_observability
+from agents.validation.validation_agent import validate_observability
+from agents.docbuilder.docbuilder_agent import generate_report
 
 async def main(repo_url, branch="main", output_path="trace_report.md"):
     tmp_dir = clone_repo(repo_url, branch)
