@@ -38,7 +38,7 @@ This project demonstrates a **multi-agent system** designed to enhance Java appl
 ---
 
 ## Directory Structure
-
+```
 your-project/
 ├─ README.md
 ├─ requirements.txt
@@ -84,6 +84,7 @@ your-project/
       └─ gcp/
          ├─ __init__.py
          └─ vertex.py
+```
 
 ---
 
