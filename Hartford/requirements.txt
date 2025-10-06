@@ -1,7 +1,17 @@
-javalang
-GitPython
-langchain
-langchain-google-vertexai
+# Core
 pydantic
 python-dotenv
+
+# Repo / code parsing
+javalang
+GitPython
+
+# LangChain / Vertex
+langchain
+langchain-google-vertexai
 google-cloud-aiplatform
+
+# Optional DB drivers (install when needed)
+# google-cloud-firestore
+# redis
+# neo4j
