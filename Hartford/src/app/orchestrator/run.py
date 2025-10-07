@@ -25,9 +25,15 @@ import os
 import sys
 import asyncio
 
-from app.common.config import settings
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)       #app
+grandparent_dir = os.path.dirname(parent_dir)   #src
+sys.path.append(grandparent_dir)
+
+
+from common.config import settings
 from app.orchestrator.router import get_agent
-from app.common.types import AgentInput
+from common.types import AgentInput
 
 def dispatch(agent_name: str, task: str, context: dict | None = None):
     agent = get_agent(agent_name)
@@ -45,32 +51,32 @@ async def main():
     methods = uc_out.result.get("methods", [])
     code_summary = uc_out.result.get("llm_summary")
 
-    # 2) Instrumentation advice (async)
-    # The instrumentation agent here expects a list of parsed methods
-    ia_out = dispatch("instrumentation_advisor", "advise_methods", {"methods": methods})
-    advisor_results = ia_out.result  # list of InstrumentationSuggestion models as dicts
+    # # 2) Instrumentation advice (async)
+    # # The instrumentation agent here expects a list of parsed methods
+    # ia_out = dispatch("instrumentation_advisor", "advise_methods", {"methods": methods})
+    # advisor_results = ia_out.result  # list of InstrumentationSuggestion models as dicts
 
-    # 3) Build results shaped for report
-    # understand_code already returns file paths inside methods; group by file
-    file_map = {}
-    for m in methods:
-        file_map.setdefault(m.get("file", "UNKNOWN_FILE.java"), []).append(m)
+    # # 3) Build results shaped for report
+    # # understand_code already returns file paths inside methods; group by file
+    # file_map = {}
+    # for m in methods:
+    #     file_map.setdefault(m.get("file", "UNKNOWN_FILE.java"), []).append(m)
 
-    consolidated = []
-    for fpath, meths in file_map.items():
-        consolidated.append({"file": fpath, "methods": advisor_results})
+    # consolidated = []
+    # for fpath, meths in file_map.items():
+    #     consolidated.append({"file": fpath, "methods": advisor_results})
 
-    # 4) Generate report
-    db_out = dispatch("docbuilder", "generate_report", {
-        "results": consolidated,
-        "code_summary": code_summary,
-        "output_path": "trace_report.md"
-    })
+    # # 4) Generate report
+    # db_out = dispatch("docbuilder", "generate_report", {
+    #     "results": consolidated,
+    #     "code_summary": code_summary,
+    #     "output_path": "trace_report.md"
+    # })
 
-    print(json.dumps({
-        "status": "ok",
-        "report": db_out.result.get("output_path", "trace_report.md")
-    }, indent=2))
+    # print(json.dumps({
+    #     "status": "ok",
+    #     "report": db_out.result.get("output_path", "trace_report.md")
+    # }, indent=2))
 
 if __name__ == "__main__":
     asyncio.run(main())

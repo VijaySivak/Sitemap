@@ -44,18 +44,39 @@ def parse_java_methods(java_code):
         })
     return methods
 
+
 def parse_ast_structure(java_code):
-    # minimal AST notes — extend later if needed
-    try:
-        tree = javalang.parse.parse(java_code)
-        return [{"type": type(tree).__name__}]
-    except Exception:
-        return []
+    tree = javalang.parse.parse(java_code)
+    structure = []
+
+    for path, node in tree:
+        if isinstance(node, javalang.tree.ClassDeclaration):
+            class_info = {
+                "type": "class",
+                "name": node.name,
+                "methods": []
+            }
+            for child in node.body:
+                if isinstance(child, javalang.tree.MethodDeclaration):
+                    class_info["methods"].append(child.name)
+            structure.append(class_info)
+    return structure
+
 
 # ==== 6. Call Graph ====
 def build_call_graph(methods):
     # placeholder; extend as needed
-    return {"nodes": [m["name"] for m in methods], "edges": []}
+    graph = {}
+    method_names = [m["name"] for m in methods]
+    for method in methods:
+        calls = []
+        for target in method_names:
+            if target != method["name"]:
+                if re.search(rf'\b{target}\s*\(', method["content"]):
+                    calls.append(target)
+        graph[method["name"]] = calls
+    return graph
+
 
 # ==== 7. Optional LLM summary ====
 def generate_code_summary_with_llm(methods):
