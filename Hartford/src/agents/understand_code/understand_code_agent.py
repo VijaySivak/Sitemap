@@ -6,11 +6,11 @@ import shutil
 import tempfile
 import javalang
 from git import Repo
-from app.common.types import Agent, AgentInput, AgentOutput
-from app.gcp.vertex import get_llm
+from common.types import Agent, AgentInput, AgentOutput
+from gcp.models import gemini_flash
 
 # ==== 1. Init optional LLM ====
-llm = get_llm()
+llm = gemini_flash()  # uses Vertex+ADC first, API-key fallback otherwise
 
 # ==== 2. Repo operations ====
 def clone_repo(repo_url, branch="main"):

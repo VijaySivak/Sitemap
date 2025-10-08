@@ -1,5 +1,5 @@
 from datetime import datetime
-from app.common.types import Agent, AgentInput, AgentOutput
+from common.types import Agent, AgentInput, AgentOutput
 
 def generate_report(results, code_summary, output_path):
     with open(output_path, "w", encoding="utf-8") as f:

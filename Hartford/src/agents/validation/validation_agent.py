@@ -1,6 +1,6 @@
 from typing import List
 from pydantic import BaseModel
-from app.common.types import Agent, AgentInput, AgentOutput
+from common.types import Agent, AgentInput, AgentOutput
 
 class ValidationResult(BaseModel):
     score: int

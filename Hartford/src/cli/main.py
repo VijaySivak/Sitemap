@@ -1,6 +1,6 @@
 from __future__ import annotations
 import argparse, json
-from app.orchestrator.run import dispatch
+from orchestrator.run import dispatch
 
 def main():
     p = argparse.ArgumentParser(description="Run an agent task")

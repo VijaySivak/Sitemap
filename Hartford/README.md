@@ -48,42 +48,41 @@ your-project/
 │  ├─ setup_venv.sh
 │  └─ run_local.sh
 └─ src/
-   └─ app/
-      ├─ __init__.py
-      ├─ orchestrator/
-      │  ├─ __init__.py
-      │  ├─ router.py
-      │  └─ run.py
-      ├─ agents/
-      │  ├─ __init__.py
-      │  ├─ understand_code/
-      │  │  ├─ __init__.py
-      │  │  └─ understand_code.py
-      │  ├─ docbuilder/
-      │  │  ├─ __init__.py
-      │  │  └─ docbuilder.py
-      │  ├─ instrumentation_advisor/
-      │  │  ├─ __init__.py
-      │  │  └─ instrumentation_advisor.py
-      │  ├─ observability_inspector/
-      │  │  ├─ __init__.py
-      │  │  └─ observability_inspector.py
-      │  └─ validation/
-      │     ├─ __init__.py
-      │     └─ validation.py
-      ├─ common/
-      │  ├─ __init__.py
-      │  ├─ config.py
-      │  ├─ types.py
-      │  └─ db/
-      │     ├─ __init__.py
-      │     ├─ firestore.py
-      │     ├─ redis_kv.py
-      │     ├─ neo4j_db.py
-      │     └─ template_db.py
-      └─ gcp/
-         ├─ __init__.py
-         └─ vertex.py
+    ├─ __init__.py
+    ├─ orchestrator/
+    │  ├─ __init__.py
+    │  ├─ router.py
+    │  └─ run.py
+    ├─ agents/
+    │  ├─ __init__.py
+    │  ├─ understand_code/
+    │  │  ├─ __init__.py
+    │  │  └─ understand_code.py
+    │  ├─ docbuilder/
+    │  │  ├─ __init__.py
+    │  │  └─ docbuilder.py
+    │  ├─ instrumentation_advisor/
+    │  │  ├─ __init__.py
+    │  │  └─ instrumentation_advisor.py
+    │  ├─ observability_inspector/
+    │  │  ├─ __init__.py
+    │  │  └─ observability_inspector.py
+    │  └─ validation/
+    │     ├─ __init__.py
+    │     └─ validation.py
+    ├─ common/
+    │  ├─ __init__.py
+    │  ├─ config.py
+    │  ├─ types.py
+    │  └─ db/
+    │     ├─ __init__.py
+    │     ├─ firestore.py
+    │     ├─ redis_kv.py
+    │     ├─ neo4j_db.py
+    │     └─ template_db.py
+    └─ gcp/
+       ├─ __init__.py
+       └─ vertex.py
 ```
 
 ---
