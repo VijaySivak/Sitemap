@@ -1,13 +1,15 @@
 # Your original code, wrapped with a class that exposes .name and .run()
 
 import os
-import re
 import shutil
 import tempfile
 import javalang
 from git import Repo
 from common.types import Agent, AgentInput, AgentOutput
 from gcp.models import gemini_flash
+
+from agents.understand_code.ast.ast import parse_ast_structure
+from agents.understand_code.call_graph.call_graph import build_call_graph
 
 # ==== 1. Init optional LLM ====
 llm = gemini_flash()  # uses Vertex+ADC first, API-key fallback otherwise
@@ -43,40 +45,6 @@ def parse_java_methods(java_code):
             "content": java_code[node.position.line - 1:] if node.position else "",
         })
     return methods
-
-
-def parse_ast_structure(java_code):
-    tree = javalang.parse.parse(java_code)
-    structure = []
-
-    for path, node in tree:
-        if isinstance(node, javalang.tree.ClassDeclaration):
-            class_info = {
-                "type": "class",
-                "name": node.name,
-                "methods": []
-            }
-            for child in node.body:
-                if isinstance(child, javalang.tree.MethodDeclaration):
-                    class_info["methods"].append(child.name)
-            structure.append(class_info)
-    return structure
-
-
-# ==== 6. Call Graph ====
-def build_call_graph(methods):
-    # placeholder; extend as needed
-    graph = {}
-    method_names = [m["name"] for m in methods]
-    for method in methods:
-        calls = []
-        for target in method_names:
-            if target != method["name"]:
-                if re.search(rf'\b{target}\s*\(', method["content"]):
-                    calls.append(target)
-        graph[method["name"]] = calls
-    return graph
-
 
 # ==== 7. Optional LLM summary ====
 def generate_code_summary_with_llm(methods):
