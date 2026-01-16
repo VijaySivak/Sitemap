@@ -1,0 +1,55 @@
+seed_urls:
+  - https://www.toyotafinancial.com/us/en/sitemap.html
+
+allowed_domains:
+  - toyotafinancial.com
+  - www.toyotafinancial.com
+
+max_depth_faq: 6
+max_depth_general: 3
+
+robots_enabled: true
+user_agent: "TFS_Crawler_Bot/2.0 (+https://www.toyotafinancial.com)"
+
+rate_limit:
+  delay: 1.0 # seconds between requests
+
+timeouts:
+  connect: 10
+  read: 30
+
+retries:
+  total: 3
+  backoff_factor: 1
+
+output_directories:
+  html: artifacts/html
+  md: artifacts/md
+  pdf: artifacts/pdf
+  pdf_text: artifacts/pdf_text
+  video: artifacts/video
+  transcripts: artifacts/transcripts
+  db: output
+  json: output/json
+
+excluded_sitemap_sections:
+  - "Investor Relations"
+  - "Accounts"
+  - "Payments"
+
+content_type_allowlist:
+  - text/html
+  - application/pdf
+  - video/mp4
+  - audio/mpeg
+
+# Selectors for extracting main content, used to avoid nav/footer noise
+main_content_selectors:
+  - "main"
+  - "#main-content"
+  - ".main-content"
+  - "article"
+  - ".content-body"
+
+# Database path
+db_path: output/tfs_crawl.sqlite

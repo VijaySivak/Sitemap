@@ -1,0 +1,8 @@
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==5.1.0
+PyYAML==6.0.1
+markdownify==0.11.6
+pytest==8.0.0
+# For potential PDF text extraction if needed, though pure text might be extracted via other means or pypdf
+pypdf==4.0.1
