@@ -1,11 +1,11 @@
-# TFS Crawler
+# Sitemap Crawler
 
-A specialized web crawler for Toyota Financial Services (TFS) that extracts content, FAQs, and assets from the sitemap.
+A specialized web crawler that extracts content, FAQs, and assets from a sitemap.
 
 ## Features
 
-- **Focused Crawling**: Starts exclusively from the TFS sitemap.
-- **Strict Compliance**: Respects `robots.txt`, domain boundaries, and policy exclusions (Accounts, Payments, Investor Relations).
+- **Focused Crawling**: Starts exclusively from the sitemap.
+- **Strict Compliance**: Respects `robots.txt`, domain boundaries, and policy exclusions.
 - **Smart Traversal**:
   - **FAQ Pages**: Deep traversal (up to depth 6) to capture all Q&A.
   - **General Pages**: Shallow traversal (up to depth 3) for main content.
@@ -38,19 +38,19 @@ A specialized web crawler for Toyota Financial Services (TFS) that extracts cont
 To start the crawl using the default configuration:
 
 ```bash
-python -m tfs_crawler crawl --config config.yaml
+python -m sitemap_crawler crawl --config config.yaml
 ```
 
 To export the data to JSONL after crawling:
 
 ```bash
-python -m tfs_crawler export --config config.yaml
+python -m sitemap_crawler export --config config.yaml
 ```
 
 To validate the configuration:
 
 ```bash
-python -m tfs_crawler validate --config config.yaml
+python -m sitemap_crawler validate --config config.yaml
 ```
 
 ## Configuration
@@ -87,7 +87,7 @@ artifacts/
   └── transcripts/   # Video transcripts (if available)
 
 output/
-  ├── tfs_crawler.sqlite  # Authoritative SQLite Registry
+  ├── crawl.sqlite        # Authoritative SQLite Registry
   └── json/               # JSONL Exports
       ├── documents.jsonl
       ├── faq_items.jsonl
@@ -102,7 +102,7 @@ output/
 The crawler automatically saves its state (queue and visited set) to the SQLite database. 
 - If the process is interrupted (Ctrl+C or crash), simply run the `crawl` command again.
 - It will pick up exactly where it left off, skipping already visited URLs.
-- To restart from scratch, delete the `output/tfs_crawl.sqlite` file and the `artifacts/` directory.
+- To restart from scratch, delete the `output/crawl.sqlite` file and the `artifacts/` directory.
 
 ## Tests
 

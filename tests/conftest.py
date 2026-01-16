@@ -1,7 +1,7 @@
 import pytest
 import os
 import tempfile
-from tfs_crawler.storage.sqlite_store import SqliteStore
+from sitemap_crawler.storage.sqlite_store import SqliteStore
 
 @pytest.fixture
 def temp_db_path():
@@ -19,8 +19,8 @@ def store(temp_db_path):
 @pytest.fixture
 def config(temp_db_path):
     return {
-        'seed_urls': ['https://www.toyotafinancial.com/us/en/sitemap.html'],
-        'allowed_domains': ['toyotafinancial.com'],
+        'seed_urls': ['https://www.example.com/sitemap.html'],
+        'allowed_domains': ['example.com'],
         'max_depth_faq': 6,
         'max_depth_general': 3,
         'robots_enabled': False, # Disable for logic tests usually, or mock

@@ -7,14 +7,14 @@ from typing import List, Dict, Optional
 from urllib.parse import urlparse
 import mimetypes
 
-from tfs_crawler.storage.sqlite_store import SqliteStore
-from tfs_crawler.crawler.fetcher import Fetcher
-from tfs_crawler.crawler.robots import RobotsParser
-from tfs_crawler.crawler.canonicalization import canonicalize_url, get_domain
-from tfs_crawler.extractors.faq_extractor import FAQExtractor
-from tfs_crawler.extractors.document_extractor import DocumentExtractor
-from tfs_crawler.extractors.html_processor import get_soup, extract_links
-from tfs_crawler.utils import generate_deterministic_filename, ensure_directory
+from sitemap_crawler.storage.sqlite_store import SqliteStore
+from sitemap_crawler.crawler.fetcher import Fetcher
+from sitemap_crawler.crawler.robots import RobotsParser
+from sitemap_crawler.crawler.canonicalization import canonicalize_url, get_domain
+from sitemap_crawler.extractors.faq_extractor import FAQExtractor
+from sitemap_crawler.extractors.document_extractor import DocumentExtractor
+from sitemap_crawler.extractors.html_processor import get_soup, extract_links
+from sitemap_crawler.utils import generate_deterministic_filename, ensure_directory
 
 logger = logging.getLogger(__name__)
 

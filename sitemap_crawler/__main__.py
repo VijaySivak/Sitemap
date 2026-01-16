@@ -3,8 +3,8 @@ import yaml
 import logging
 import sys
 import os
-from tfs_crawler.crawler.engine import Crawler
-from tfs_crawler.export.json_exporter import JsonExporter
+from sitemap_crawler.crawler.engine import Crawler
+from sitemap_crawler.export.json_exporter import JsonExporter
 
 def setup_logging():
     logging.basicConfig(
@@ -38,7 +38,7 @@ def validate_command(args):
 def main():
     setup_logging()
     
-    parser = argparse.ArgumentParser(description="TFS Crawler CLI")
+    parser = argparse.ArgumentParser(description="Sitemap Crawler CLI")
     parser.add_argument('--config', default='config.yaml', help='Path to config file')
     
     subparsers = parser.add_subparsers(dest='command', required=True)

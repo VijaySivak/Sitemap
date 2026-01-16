@@ -7,7 +7,7 @@ from urllib3.util.retry import Retry
 
 class Fetcher:
     def __init__(self, config: Dict):
-        self.user_agent = config.get('user_agent', 'TFS_Crawler_Bot/1.0')
+        self.user_agent = config.get('user_agent', 'Sitemap_Crawler_Bot/1.0')
         self.timeouts = config.get('timeouts', {'connect': 10, 'read': 30})
         self.delay = config.get('rate_limit', {}).get('delay', 1.0)
         

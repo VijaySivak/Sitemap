@@ -16,9 +16,9 @@ def canonicalize_url(url: str) -> str:
     scheme = parsed.scheme.lower()
     netloc = parsed.netloc.lower()
 
-    # Force www.toyotafinancial.com
-    if netloc == 'toyotafinancial.com':
-        netloc = 'www.toyotafinancial.com'
+    # Force www.example.com (Custom Domain Logic)
+    if netloc == 'example.com':
+        netloc = 'www.example.com'
     
     # 2. Path: remove trailing slash
     path = parsed.path

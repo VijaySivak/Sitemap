@@ -5,9 +5,9 @@ import plotly.express as px
 import os
 import re
 
-st.set_page_config(page_title="TFS Crawler Analytics", layout="wide")
+st.set_page_config(page_title="Sitemap Crawler Analytics", layout="wide")
 
-st.title("TFS Crawler Business Metrics")
+st.title("Sitemap Crawler Business Metrics")
 
 # --- Data Loading ---
 @st.cache_data
@@ -65,8 +65,8 @@ def count_external_links_in_html(html_content):
         return 0
     # Simple regex to find hrefs
     links = re.findall(r'href=[\'"](http[s]?://.*?)[\'"]', html_content)
-    # Filter out internal domains (toyotafinancial.com)
-    external = [l for l in links if 'toyotafinancial.com' not in l]
+    # Filter out internal domains (example.com)
+    external = [l for l in links if 'example.com' not in l]
     return len(external)
 
 faq_external_links_count = 0

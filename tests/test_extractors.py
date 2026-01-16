@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
-from tfs_crawler.extractors.faq_extractor import FAQExtractor
-from tfs_crawler.extractors.document_extractor import DocumentExtractor
+from sitemap_crawler.extractors.faq_extractor import FAQExtractor
+from sitemap_crawler.extractors.document_extractor import DocumentExtractor
 
 def test_faq_extraction_simple():
     html = """
@@ -8,8 +8,8 @@ def test_faq_extraction_simple():
         <body>
             <div class="faq-container">
                 <details>
-                    <summary>What is TFS?</summary>
-                    <p>Toyota Financial Services.</p>
+                    <summary>What is Example?</summary>
+                    <p>Example Financial Services.</p>
                 </details>
             </div>
         </body>
@@ -20,8 +20,8 @@ def test_faq_extraction_simple():
     faqs = extractor.extract(soup, "http://test.com")
     
     assert len(faqs) == 1
-    assert faqs[0]['question_text'] == "What is TFS?"
-    assert "Toyota Financial Services" in faqs[0]['answer_text']
+    assert faqs[0]['question_text'] == "What is Example?"
+    assert "Example Financial Services" in faqs[0]['answer_text']
     assert faqs[0]['answer_mode'] == "DIRECT_TEXT"
 
 def test_faq_extraction_with_link():
@@ -59,14 +59,14 @@ def test_faq_extraction_portal_mode():
     faqs = extractor.extract(soup, "http://test.com")
     assert faqs[0]['answer_mode'] == "PORTAL_REDIRECT"
 
-def test_faq_extraction_tfs_structure():
+def test_faq_extraction_custom_structure():
     html = """
     <html>
         <body>
             <div class="col-sm-12">
                 <p class="faq_ques_text bold">How do I obtain a username?</p>
                 <div class="col-sm-12 faq-ans">
-                    <p>You must be a registered TFS account holder.</p>
+                    <p>You must be a registered account holder.</p>
                 </div>
             </div>
         </body>
@@ -78,7 +78,7 @@ def test_faq_extraction_tfs_structure():
     
     assert len(faqs) == 1
     assert faqs[0]['question_text'] == "How do I obtain a username?"
-    assert "registered TFS account holder" in faqs[0]['answer_text']
+    assert "registered account holder" in faqs[0]['answer_text']
 
 def test_document_extraction_markdown(config):
     html = """

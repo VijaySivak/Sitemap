@@ -17,7 +17,7 @@ class FAQExtractor:
         faqs = []
         
         # Strategy 1: Look for specific FAQ accordions (common in modern sites)
-        # Often div with class "accordion" or similar, or specific Toyota structures if known.
+        # Often div with class "accordion" or similar, or specific custom structures if known.
         # Since I don't have the HTML, I'll look for generic structures that usually denote FAQs.
         # But the spec mentions "For known FAQ pages". 
         # I'll try to find pairs of Question/Answer.
@@ -107,7 +107,7 @@ class FAQExtractor:
                         'answer_html': str(card_body.encode_contents().decode('utf-8')).strip()
                     })
 
-        # Strategy 4: Specific TFS Structure
+        # Strategy 4: Specific Custom Structure
         # <p class="faq_ques_text bold">Question</p>
         # <div class="col-sm-12 faq-ans">Answer</div>
         if not candidates:

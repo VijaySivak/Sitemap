@@ -3,7 +3,7 @@ import logging
 import os
 from pathlib import Path
 from typing import Dict, List, Any
-from tfs_crawler.storage.sqlite_store import SqliteStore
+from sitemap_crawler.storage.sqlite_store import SqliteStore
 
 logger = logging.getLogger(__name__)
 

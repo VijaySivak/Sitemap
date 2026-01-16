@@ -1,15 +1,15 @@
 seed_urls:
-  - https://www.toyotafinancial.com/us/en/sitemap.html
+  - https://www.example.com/sitemap.html
 
 allowed_domains:
-  - toyotafinancial.com
-  - www.toyotafinancial.com
+  - example.com
+  - www.example.com
 
 max_depth_faq: 6
 max_depth_general: 3
 
 robots_enabled: true
-user_agent: "TFS_Crawler_Bot/2.0 (+https://www.toyotafinancial.com)"
+user_agent: "Sitemap_Crawler_Bot/2.0 (+https://www.example.com)"
 
 rate_limit:
   delay: 1.0 # seconds between requests
@@ -52,4 +52,4 @@ main_content_selectors:
   - ".content-body"
 
 # Database path
-db_path: output/tfs_crawl.sqlite
+db_path: output/crawl.sqlite
