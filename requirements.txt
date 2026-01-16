@@ -6,3 +6,6 @@ markdownify==0.11.6
 pytest==8.0.0
 # For potential PDF text extraction if needed, though pure text might be extracted via other means or pypdf
 pypdf==4.0.1
+streamlit==1.31.0
+pandas==2.2.0
+plotly==5.18.0
