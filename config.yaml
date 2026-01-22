@@ -52,4 +52,4 @@ main_content_selectors:
   - ".content-body"
 
 # Database path
-db_path: output/crawl.sqlite
+db_path: output/tfs_crawl.sqlite
