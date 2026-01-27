@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FileText, Globe, MessageCircle, Shield, Download, ExternalLink, Copy, TrendingUp } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Activity, FileText, Globe, MessageCircle, Shield, Download, ExternalLink } from 'lucide-react';
 import { StatsCard } from './components/StatsCard';
 import { DashboardChart } from './components/DashboardChart';
-import { fetchStats, fetchFaqs, fetchExternalStats, fetchRedundantContent, getFaqsExportUrl } from './services/api';
-import type { Stats, FAQ, ExternalStats, RedundantContentStats } from './services/api';
+import { fetchStats, fetchFaqs, fetchExternalStats, getFaqsExportUrl } from './services/api';
+import type { Stats, FAQ, ExternalStats } from './services/api';
 
 function App() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [externalStats, setExternalStats] = useState<ExternalStats | null>(null);
-  const [redundantContent, setRedundantContent] = useState<RedundantContentStats | null>(null);
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -18,16 +16,14 @@ function App() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [statsData, faqsData, extData, redundantData] = await Promise.all([
+        const [statsData, faqsData, extData] = await Promise.all([
           fetchStats(),
           fetchFaqs(),
-          fetchExternalStats(),
-          fetchRedundantContent()
+          fetchExternalStats()
         ]);
         setStats(statsData);
         setFaqs(faqsData);
         setExternalStats(extData);
-        setRedundantContent(redundantData);
       } catch (err) {
         setError('Failed to load dashboard data. Is the backend running?');
         console.error(err);
@@ -76,13 +72,6 @@ function App() {
             <p className="text-slate-500 mt-1">Real-time crawl insights and content metrics</p>
           </div>
           <div className="flex items-center space-x-4">
-             <Link 
-               to="/business-metrics" 
-               className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-             >
-               <TrendingUp className="w-4 h-4" />
-               Business Metrics
-             </Link>
              <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                System Online
              </span>
@@ -137,13 +126,13 @@ function App() {
                 </div>
              </div>
 
-             {/* Sensitive Domains + Redundant Content - Same height as Top Domains */}
+             {/* Sensitive Domains */}
              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col h-[400px]">
                 <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
                   <Shield className="w-5 h-5 text-red-500" />
                   Sensitive Domains Detected
                 </h3>
-                <div className="overflow-y-auto max-h-[80px] flex-shrink-0">
+                <div className="overflow-y-auto flex-1">
                   {externalStats.sensitive_domains.length > 0 ? (
                     <ul className="space-y-2">
                       {externalStats.sensitive_domains.map((domain, idx) => (
@@ -154,48 +143,12 @@ function App() {
                       ))}
                     </ul>
                   ) : (
-                    <div className="py-4 flex flex-col items-center justify-center text-slate-400">
-                      <Shield className="w-8 h-8 mb-2 opacity-20" />
-                      <p className="text-sm">No sensitive domains detected</p>
+                    <div className="h-full flex flex-col items-center justify-center text-slate-400">
+                      <Shield className="w-12 h-12 mb-2 opacity-20" />
+                      <p>No sensitive domains detected</p>
                     </div>
                   )}
                 </div>
-
-                {/* Redundant Content Stats - Below Sensitive Domains */}
-                {redundantContent && (
-                  <div className="mt-4 pt-4 border-t border-slate-100 flex-1 flex flex-col min-h-0">
-                    <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                      <Copy className="w-5 h-5 text-amber-500" />
-                      Redundant Content Stats
-                      <span className="ml-auto text-sm font-normal text-slate-500">
-                        {redundantContent.total_redundant_blocks} duplicate blocks found
-                      </span>
-                    </h3>
-                    <div className="overflow-y-auto flex-1">
-                      {redundantContent.items.length > 0 ? (
-                        <ul className="space-y-3">
-                          {redundantContent.items.slice(0, 15).map((item, idx) => (
-                            <li key={idx} className="p-3 bg-amber-50 border border-amber-100 rounded-lg">
-                              <div className="flex justify-between items-start gap-3">
-                                <p className="text-sm text-slate-700 flex-1 line-clamp-2" title={item.full_content}>
-                                  {item.content_snippet}
-                                </p>
-                                <span className="flex-shrink-0 bg-amber-200 text-amber-800 px-2 py-1 rounded text-xs font-bold whitespace-nowrap">
-                                  {item.occurrences} times
-                                </span>
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <div className="py-4 flex flex-col items-center justify-center text-slate-400">
-                          <Copy className="w-8 h-8 mb-2 opacity-20" />
-                          <p className="text-sm">No redundant content detected</p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
              </div>
           </div>
         )}

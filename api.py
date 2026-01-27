@@ -216,6 +216,219 @@ async def get_pages(limit: int = 100, offset: int = 0):
     finally:
         conn.close()
 
+@app.get("/api/business-metrics")
+async def get_business_metrics():
+    """
+    Comprehensive business metrics for website health analysis.
+    """
+    conn = get_db_connection()
+    try:
+        logger.info("Calculating business metrics...")
+        
+        # 1. Content Health Metrics
+        cursor = conn.execute("SELECT COUNT(*) as count FROM documents")
+        total_pages = cursor.fetchone()['count']
+        
+        cursor = conn.execute("SELECT COUNT(*) as count FROM documents WHERE status LIKE 'HTTP_4%' OR status LIKE 'HTTP_5%'")
+        broken_pages = cursor.fetchone()['count']
+        
+        cursor = conn.execute("SELECT COUNT(*) as count FROM documents WHERE status = 'FETCH_ERROR'")
+        fetch_errors = cursor.fetchone()['count']
+        
+        cursor = conn.execute("SELECT COUNT(*) as count FROM documents WHERE status = 'BLOCKED_BY_ROBOTS'")
+        blocked_by_robots = cursor.fetchone()['count']
+        
+        cursor = conn.execute("SELECT COUNT(*) as count FROM documents WHERE status = 'CRAWLED'")
+        successful_crawls = cursor.fetchone()['count']
+        
+        content_health_score = round((successful_crawls / total_pages * 100), 1) if total_pages > 0 else 0
+        
+        # 2. Crawl Depth Distribution
+        cursor = conn.execute("SELECT depth_from_seed, COUNT(*) as count FROM documents WHERE depth_from_seed IS NOT NULL GROUP BY depth_from_seed ORDER BY depth_from_seed")
+        depth_distribution = [{"depth": row['depth_from_seed'], "count": row['count']} for row in cursor.fetchall()]
+        
+        # Deep pages (depth > 3)
+        cursor = conn.execute("SELECT COUNT(*) as count FROM documents WHERE depth_from_seed > 3")
+        deep_pages_count = cursor.fetchone()['count']
+        
+        # 3. FAQ Quality Metrics
+        cursor = conn.execute("SELECT COUNT(*) as count FROM faq_items")
+        total_faqs = cursor.fetchone()['count']
+        
+        cursor = conn.execute("SELECT answer_mode, COUNT(*) as count FROM faq_items GROUP BY answer_mode")
+        faq_modes = {row['answer_mode']: row['count'] for row in cursor.fetchall()}
+        
+        direct_text_faqs = faq_modes.get('DIRECT_TEXT', 0)
+        self_service_rate = round((direct_text_faqs / total_faqs * 100), 1) if total_faqs > 0 else 0
+        
+        escalation_faqs = faq_modes.get('PHONE_ESCALATION', 0) + faq_modes.get('PORTAL_REDIRECT', 0)
+        
+        # Short answers (less than 100 chars)
+        cursor = conn.execute("SELECT COUNT(*) as count FROM faq_items WHERE LENGTH(answer_text) < 100")
+        short_answers = cursor.fetchone()['count']
+        
+        # 4. Pages without FAQs
+        cursor = conn.execute("""
+            SELECT COUNT(*) as count FROM documents d 
+            WHERE d.status = 'CRAWLED' 
+            AND d.content_type LIKE '%text/html%'
+            AND d.url NOT IN (SELECT DISTINCT document_url FROM faq_items)
+        """)
+        pages_without_faqs = cursor.fetchone()['count']
+        
+        # 5. PDF Dependency
+        cursor = conn.execute("SELECT COUNT(*) as count FROM assets WHERE asset_type = 'pdf'")
+        pdf_count = cursor.fetchone()['count']
+        
+        cursor = conn.execute("SELECT COUNT(*) as count FROM documents WHERE content_type LIKE '%pdf%'")
+        pdf_pages = cursor.fetchone()['count']
+        
+        # 6. Orphan Pages (pages with no inbound internal links)
+        cursor = conn.execute("""
+            SELECT COUNT(*) as count FROM documents d
+            WHERE d.status = 'CRAWLED'
+            AND d.url NOT IN (
+                SELECT DISTINCT child_url FROM link_edges WHERE is_external = 0
+            )
+            AND d.depth_from_seed > 0
+        """)
+        orphan_pages = cursor.fetchone()['count']
+        
+        # 7. External Link Heavy Pages (pages with >10 external links)
+        cursor = conn.execute("""
+            SELECT parent_url, COUNT(*) as ext_count 
+            FROM link_edges 
+            WHERE is_external = 1 
+            GROUP BY parent_url 
+            HAVING ext_count > 10
+            ORDER BY ext_count DESC
+            LIMIT 10
+        """)
+        external_heavy_pages = [{"url": row['parent_url'], "external_links": row['ext_count']} for row in cursor.fetchall()]
+        
+        # 8. Broken Links Detail
+        cursor = conn.execute("""
+            SELECT url, status, depth_from_seed 
+            FROM documents 
+            WHERE status LIKE 'HTTP_4%' OR status LIKE 'HTTP_5%' OR status = 'FETCH_ERROR'
+            LIMIT 20
+        """)
+        broken_links_detail = [{"url": row['url'], "status": row['status'], "depth": row['depth_from_seed']} for row in cursor.fetchall()]
+        
+        return {
+            "content_health": {
+                "total_pages": total_pages,
+                "successful_crawls": successful_crawls,
+                "broken_pages": broken_pages,
+                "fetch_errors": fetch_errors,
+                "blocked_by_robots": blocked_by_robots,
+                "health_score": content_health_score
+            },
+            "navigation": {
+                "depth_distribution": depth_distribution,
+                "deep_pages_count": deep_pages_count,
+                "orphan_pages": orphan_pages
+            },
+            "faq_quality": {
+                "total_faqs": total_faqs,
+                "self_service_rate": self_service_rate,
+                "direct_text_count": direct_text_faqs,
+                "escalation_count": escalation_faqs,
+                "short_answers": short_answers,
+                "pages_without_faqs": pages_without_faqs,
+                "answer_modes": faq_modes
+            },
+            "dependencies": {
+                "pdf_count": pdf_count,
+                "pdf_pages": pdf_pages,
+                "external_heavy_pages": external_heavy_pages
+            },
+            "issues": {
+                "broken_links": broken_links_detail
+            }
+        }
+    except Exception as e:
+        logger.error(f"Error in get_business_metrics: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
+@app.get("/api/redundant-content")
+async def get_redundant_content(min_occurrences: int = 2, min_length: int = 50, limit: int = 50):
+    """
+    Analyze scraped content for redundant paragraphs/strings.
+    Returns content snippets that appear multiple times across pages.
+    """
+    conn = get_db_connection()
+    try:
+        logger.info("Analyzing content for redundancies...")
+        
+        # Get all extracted text content from documents_fts
+        cursor = conn.execute("SELECT url, content FROM documents_fts WHERE content IS NOT NULL AND content != ''")
+        rows = cursor.fetchall()
+        
+        # Track paragraph occurrences: paragraph -> list of source URLs
+        paragraph_sources: Dict[str, List[str]] = {}
+        
+        for row in rows:
+            url = row['url']
+            content = row['content'] or ''
+            
+            # Split content into paragraphs (by double newlines or single newlines with length check)
+            paragraphs = []
+            for block in content.split('\n\n'):
+                block = block.strip()
+                if len(block) >= min_length:
+                    paragraphs.append(block)
+            
+            # Also check for repeated sentences/phrases within single-newline splits
+            for block in content.split('\n'):
+                block = block.strip()
+                if len(block) >= min_length and block not in paragraphs:
+                    paragraphs.append(block)
+            
+            for para in paragraphs:
+                # Normalize whitespace for comparison
+                normalized = ' '.join(para.split())
+                if len(normalized) >= min_length:
+                    if normalized not in paragraph_sources:
+                        paragraph_sources[normalized] = []
+                    if url not in paragraph_sources[normalized]:
+                        paragraph_sources[normalized].append(url)
+        
+        # Filter to only redundant content (appears in multiple pages)
+        redundant_items = []
+        for content_str, sources in paragraph_sources.items():
+            if len(sources) >= min_occurrences:
+                # Truncate display snippet if too long
+                snippet = content_str[:200] + "..." if len(content_str) > 200 else content_str
+                redundant_items.append({
+                    "content_snippet": snippet,
+                    "full_content": content_str,
+                    "occurrences": len(sources),
+                    "source_urls": sources[:5]  # Limit to first 5 URLs for display
+                })
+        
+        # Sort by occurrences descending
+        redundant_items.sort(key=lambda x: x['occurrences'], reverse=True)
+        
+        # Limit results
+        redundant_items = redundant_items[:limit]
+        
+        total_redundant_blocks = len([p for p, s in paragraph_sources.items() if len(s) >= min_occurrences])
+        
+        logger.info(f"Found {total_redundant_blocks} redundant content blocks")
+        
+        return {
+            "total_redundant_blocks": total_redundant_blocks,
+            "items": redundant_items
+        }
+    except Exception as e:
+        logger.error(f"Error in get_redundant_content: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -1,15 +1,15 @@
 seed_urls:
-  - https://www.example.com/sitemap.html
+  - https://www.toyotafinancial.com/us/en/sitemap.html
 
 allowed_domains:
-  - example.com
-  - www.example.com
+  - toyotafinancial.com
+  - www.toyotafinancial.com
 
 max_depth_faq: 6
 max_depth_general: 3
 
 robots_enabled: true
-user_agent: "Sitemap_Crawler_Bot/2.0 (+https://www.example.com)"
+user_agent: "Sitemap_Crawler_Bot/2.0 (+https://www.toyotafinancial.com)"
 
 rate_limit:
   delay: 1.0 # seconds between requests
