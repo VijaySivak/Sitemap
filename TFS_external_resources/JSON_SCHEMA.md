@@ -1,91 +1,134 @@
-# Review JSON Schema
+# Review JSON Schema v2.0
 
-This document defines the unified JSON structure for extracted reviews, including field
-types and meaning. All fields listed are always present; missing data is `null` or empty
-collections as noted.
+This document defines the optimized unified JSON structure for review data. The schema
+prioritizes canonical fields, minimizes null pollution, and namespaces source-specific data.
 
 ## Top-Level Object
 
-- `source` (string): Source code for the file (e.g., `CA`, `WH`, `CK`, `AS`).
-- `source_name` (string): Human-readable source name.
-- `title` (string): Title for this dataset.
-- `overall_brand_rating` (number or null): Source-level rating for the brand.
+- `schema_version` (string): Schema version, always `2.0`.
+- `source` (string or null): Source code for single-source files (e.g., `CA`, `WH`, `CK`, `AS`, `GP`).
+- `source_name` (string or null): Human-readable source name.
+- `title` (string or null): Dataset title.
+- `overall_brand_rating` (number or null): Source-level rating.
 - `total_review_count` (number or null): Source-level total review count.
-- `company_info` (object): Source-level company metadata (string keys/values).
-- `statistics` (object): Source-specific rating stats (often CK only).
-- `review_page_attributes` (object): Source-specific page attributes (often CK only).
-- `helpful_reviews` (object): Source-specific helpful review payloads (often CK only).
-- `metadata` (object): Source-specific metadata (e.g., App Store feed data).
-- `reviews` (array of objects): Review entries.
+- `company_info` (object or null): Normalized company metadata (snake_case keys).
+- `page_metadata` (object or null): Consolidated page-level metadata:
+  - `statistics` (object or null)
+  - `review_page_attributes` (object or null)
+  - `helpful_reviews` (object or null)
+- `metadata` (object or null): Dataset-level metadata with `source_data` namespace (see below).
+- `extraction_meta` (object): Extraction provenance:
+  - `extracted_at` (string, ISO 8601)
+  - `extractor_version` (string)
+  - `raw_source_preserved` (boolean)
+- `sources` (array or null): For combined outputs, list of source descriptors:
+  - `source` (string)
+  - `source_name` (string)
+  - `title` (string or null)
+- `reviews` (array): List of review objects.
 
-## Review Object
+## Review Object (Canonical Fields)
 
-- `review_id` (string): Unique ID within the source.
-- `author` (string): Reviewer display name; if missing, `nickname` is folded here.
-- `location` (string or null): Reviewer location string.
-- `review_date` (string or null): Raw timestamp or date string.
-- `rating` (number or null): Numeric rating out of 5.
-- `tags` (array of strings): Review tags/categories.
-- `review_text` (string or null): Review body text.
-- `review_alias` (string or null): Source-specific alias (e.g., CA).
-- `media` (array of objects): Each item may include `src`, `thumbnail`, `title`.
-- `product` (string or null): Product label, if provided by source.
-- `verified` (boolean or null): Verification status.
-- `upvotes` (number or null): Upvote count.
-- `downvotes` (number or null): Downvote count.
+Only canonical, cross-source fields live at the top of each review. Fields with no value
+are omitted to minimize size.
+
+- `review_id` (string): Unique review ID within its source.
+- `author` (string or null): Display name.
+- `location` (string or null): Location text if present.
+- `review_date` (string or null): Raw date or timestamp.
+- `rating` (number or null): Numeric rating, 1–5.
 - `review_title` (string or null): Review title.
-- `author_uri` (string or null): Reviewer profile URL.
+- `review_text` (string or null): Review body.
 - `review_url` (string or null): Review URL.
-- `app_version` (string or null): App version string (App Store).
-- `vote_sum` (number or null): Source-specific vote score (App Store).
-- `vote_count` (number or null): Total votes (App Store).
-- `content_type` (string or null): Content type (App Store).
-- `locale` (string or null): Locale or storefront (App Store).
-- `sort_modes` (array of strings): Sort modes used (App Store).
-- `metadata` (object): Source-specific review metadata.
-- `comments_count` (number or null): Number of comments.
-- `comments` (array of objects): Comment entries (see Comment Object).
-- `badges` (array): Source-specific badges.
-- `flags` (array/object/null): Source-specific flags.
-- `review_source` (string or null): Per-review source code (copied from top-level).
-- `review_source_name` (string or null): Per-review source name (copied from top-level).
-
-Google Play raw fields (preserved):
-- `title` (string or null): Raw title.
-- `content` (string or null): Raw content.
-- `stars` (string or null): Raw rating string (e.g., `5 out of 5 stars`).
-- `date` (string or null): Raw date.
-- `resource` (string or null): Raw source name (e.g., `Google Play`).
-- `source` (string or null): Raw source URL.
-- `topic` (string or null)
-- `subtopic` (string or null)
-- `sentiment` (string or null)
-- `action_suggested` (string or null)
-- `is_follow_up` (boolean or null)
-- `follow_up_type` (string or null)
-- `is_company_response` (boolean or null)
-- `mentions_company_response` (boolean or null)
-- `company_reply_content` (string or null)
-- `company_reply_date` (string or null)
+- `tags` (array of strings): Categories/tags.
+- `votes` (object or null): Vote metrics:
+  - `helpful` (number or null): Generic helpful count.
+  - `up` (number or null): Upvotes.
+  - `down` (number or null): Downvotes.
+  - `sum` (number or null): App Store vote sum.
+  - `count` (number or null): App Store vote count.
+- `interactions` (object or null): Comment-related data:
+  - `comments_count` (number or null)
+  - `comments` (array of Comment objects)
+  - `reactions` (object or null): Reserved for emoji reactions.
+  - `shares` (object or null): Reserved for share counts.
+- `metadata` (object or null): Review-level metadata with `source_data` namespace.
 
 ## Comment Object
 
-- `comment_id` (string or null): Comment ID.
-- `author` (string or null): Comment author.
-- `comment_date` (string or null): Comment timestamp.
-- `comment_text` (string or null): Comment body.
-- `upvotes` (number or null): Upvote count.
-- `downvotes` (number or null): Downvote count.
-- `reply_to` (string or null): Parent comment ID for threading.
-- `replies` (array): Nested comment objects (can be empty).
+- `comment_id` (string or null)
+- `author` (string or null)
+- `comment_date` (string or null)
+- `comment_text` (string or null)
+- `upvotes` (number or null)
+- `downvotes` (number or null)
+- `reply_to` (string or null)
+- `replies` (array of Comment objects)
+
+## Source-Specific Data (`metadata.source_data`)
+
+All source-specific fields live under a namespaced object to avoid collisions.
+
+Example:
+```json
+{
+  "metadata": {
+    "source_data": {
+      "app_store": {
+        "app_version": "11.5",
+        "locale": "us",
+        "content_type": "Application",
+        "sort_modes": ["mostrecent"]
+      }
+    }
+  }
+}
+```
+
+Known namespaces:
+- `consumer_affairs`
+- `wallethub`
+- `credit_karma`
+- `app_store`
+- `google_play`
+- `other` (fallback)
 
 ## Normalization Rules
 
-- Missing scalar values become `null`.
-- Missing list values become `[]`.
-- Missing object values become `{}`.
+- Omit null, empty objects, and empty lists to reduce payload size.
 - `nickname` folds into `author` when `author` is missing.
-- `helpful_count` folds into `upvotes` with `downvotes = 0` when `upvotes`/`downvotes` are missing.
-- `review_source` and `review_source_name` are copied from the top-level fields.
-- `rating` is normalized to a numeric 1-5 value; string ratings are parsed.
-- `comments` may be nested via `replies` or flat via `reply_to`.
+- `rating` is normalized to a numeric 1–5 value; string ratings like `5 out of 5 stars` are parsed.
+- Google Play `title`, `content`, `stars`, `date`, `resource`, `source` are mapped to canonical fields and not preserved separately.
+- All non-canonical fields are preserved under `metadata.source_data.<namespace>` to avoid data loss.
+- `page_metadata` consolidates `statistics`, `review_page_attributes`, and `helpful_reviews`.
+- `company_info` keys are normalized to `snake_case`.
+
+## Mapping (v1 → v2)
+
+Canonical fields:
+- `review_title` ← `review_title` or Google Play `title`
+- `review_text` ← `review_text` or Google Play `content`
+- `rating` ← `rating` or Google Play `stars`
+- `review_date` ← `review_date` or Google Play `date`
+- `review_url` ← `review_url` or Google Play `source`
+- `author` ← `author` or `nickname`
+- `votes.helpful` ← `helpful_count`
+- `votes.up` ← `upvotes`
+- `votes.down` ← `downvotes`
+- `votes.sum` ← `vote_sum`
+- `votes.count` ← `vote_count`
+- `interactions.comments_count` ← `comments_count`
+- `interactions.comments` ← `comments`
+
+Source-specific fields move to `metadata.source_data`:
+- App Store: `author_uri`, `app_version`, `content_type`, `locale`, `sort_modes`, `metadata`
+- Credit Karma: `badges`, `flags`
+- ConsumerAffairs: `review_alias`, `media`
+- WalletHub: `product`, `verified`, `nickname`
+- Google Play: `topic`, `subtopic`, `sentiment`, `action_suggested`,
+  `is_follow_up`, `follow_up_type`, `is_company_response`, `mentions_company_response`,
+  `company_reply_content`, `company_reply_date`
+
+Removed:
+- Per-review `review_source` and `review_source_name` (replaced by top-level `source` and `sources` array).
+- Duplicate Google Play fields (`title`, `content`, `stars`, `date`, `resource`, `source`).

@@ -2,10 +2,12 @@ import requests
 import json
 import time
 import re
+import os
 from bs4 import BeautifulSoup
 
 DOMAIN = "toyotafinancial.com"
 OUTPUT_FILE = "toyota_trustpilot_reviews.json"
+RAW_HTML_DIR = "trustpilot_raw_html"
 
 def format_review(title, content, stars, author, date, source_url=None):
     """Format review data to standard format"""
@@ -69,7 +71,7 @@ def is_valid_review(content, author, date):
     
     return True
 
-def scrape_trustpilot_reviews(single_page_only=False):
+def scrape_trustpilot_reviews(single_page_only=False, save_raw_html=True):
     """
     Scrape reviews from Trustpilot website
     
@@ -83,6 +85,10 @@ def scrape_trustpilot_reviews(single_page_only=False):
     seen_ids = set()  # Track review IDs to avoid duplicates
     seen_content_hashes = set()  # Track content hashes to avoid duplicates
     consecutive_empty_pages = 0  # Track consecutive pages with no new reviews
+    
+    # Ensure raw HTML directory exists if we want to save pages
+    if save_raw_html:
+        os.makedirs(RAW_HTML_DIR, exist_ok=True)
     
     if single_page_only:
         print(f"🚀 Starting to scrape Trustpilot reviews (first page only)...\n")
@@ -106,6 +112,16 @@ def scrape_trustpilot_reviews(single_page_only=False):
             if resp.status_code != 200:
                 print(f"❌ Error: {resp.status_code}")
                 break
+            
+            # Optionally save the raw HTML for this page before parsing
+            if save_raw_html:
+                html_path = os.path.join(RAW_HTML_DIR, f"trustpilot_page_{page}.html")
+                try:
+                    with open(html_path, "w", encoding="utf-8") as f:
+                        f.write(resp.text)
+                    print(f"   💾 Saved raw HTML to {html_path}")
+                except Exception as e:
+                    print(f"   ⚠️  Failed to save raw HTML for page {page}: {e}")
             
             soup = BeautifulSoup(resp.text, 'html.parser')
             
