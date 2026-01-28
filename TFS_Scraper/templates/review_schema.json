@@ -1,0 +1,64 @@
+{
+  "schema_version": "2.0",
+  "source": null,
+  "source_name": null,
+  "title": null,
+  "overall_brand_rating": null,
+  "total_review_count": null,
+  "company_info": null,
+  "page_metadata": null,
+  "metadata": null,
+  "extraction_meta": {
+    "extracted_at": null,
+    "extractor_version": "2.0",
+    "raw_source_preserved": false
+  },
+  "sources": null,
+  "reviews": [
+    {
+      "review_id": null,
+      "author": null,
+      "location": null,
+      "review_date": null,
+      "rating": null,
+      "review_title": null,
+      "review_text": null,
+      "review_url": null,
+      "tags": [],
+      "votes": {
+        "helpful": null,
+        "up": null,
+        "down": null,
+        "sum": null,
+        "count": null
+      },
+      "interactions": {
+        "comments_count": null,
+        "comments": [
+          {
+            "comment_id": null,
+            "author": null,
+            "comment_date": null,
+            "comment_text": null,
+            "upvotes": null,
+            "downvotes": null,
+            "reply_to": null,
+            "replies": []
+          }
+        ],
+        "reactions": null,
+        "shares": null
+      },
+      "metadata": {
+        "source_data": {
+          "app_store": {
+            "app_version": null,
+            "locale": null,
+            "content_type": null,
+            "sort_modes": []
+          }
+        }
+      }
+    }
+  ]
+}
