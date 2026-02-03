@@ -1,0 +1,24 @@
+Have Cards that show details about each feature:
+    1. Average duration to resolve issue
+    2. Cost Index
+    3. etc
+
+At the Center, we will have an average sentiment feeling (Positive, Negative, Neutral)
+
+Based on the task that a customer has, provide average time to resolve the issue and steps that are required
+
+Friction points based on the conditions on the KG
+
+Have a Graph to showcase a general product by product connection detail
+
+Top External Domains
+
+FAQ Types that show all of the different answer types such as direct text, Link out, PDF Attachment, Phone Escalation, Portal Redirect, Video (All gathered via the Knowledge graph)
+
+Showing Deep pages that tells how many clicks it will take to navigate to a specific question
+
+Ensure all charts have some deep dive display of the data to show specific features. 
+
+Master Story board will have a section for the FAQs
+The Storyboard content will have a bunch of information with the FAQ as one part with all of the details from the knowledge graph. 
+There wil need to be a meta data table to display in teh FAQ section. 
