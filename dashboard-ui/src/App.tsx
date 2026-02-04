@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { FileText, Globe, MessageCircle, Shield, Download, ExternalLink, Copy, TrendingUp } from 'lucide-react';
 import { StatsCard } from './components/StatsCard';
 import { DashboardChart } from './components/DashboardChart';
-import { fetchStats, fetchFaqs, fetchExternalStats, fetchRedundantContent, getFaqsExportUrl } from './services/api';
-import type { Stats, FAQ, ExternalStats, RedundantContentStats } from './services/api';
+import { UrlListModal } from './components/UrlListModal';
+import { fetchStats, fetchFaqs, fetchExternalStats, fetchRedundantContent, getFaqsExportUrl, fetchExternalDomainUrls } from './services/api';
+import type { Stats, FAQ, ExternalStats, RedundantContentStats, MetricUrlItem } from './services/api';
 
 function App() {
   const [stats, setStats] = useState<Stats | null>(null);
@@ -14,6 +15,35 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  
+  // Modal state for external domain URLs
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState('');
+  const [modalDescription, setModalDescription] = useState('');
+  const [modalUrls, setModalUrls] = useState<MetricUrlItem[]>([]);
+  const [modalLoading, setModalLoading] = useState(false);
+
+  const openDomainModal = async (domain: string, count: number) => {
+    setModalTitle(`External Links to ${domain}`);
+    setModalDescription(`${count} distinct URLs found (excluding header/footer links)`);
+    setModalOpen(true);
+    setModalLoading(true);
+    setModalUrls([]);
+    
+    try {
+      const response = await fetchExternalDomainUrls(domain);
+      setModalUrls(response.urls);
+    } catch (err) {
+      console.error('Failed to load domain URLs:', err);
+    } finally {
+      setModalLoading(false);
+    }
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalUrls([]);
+  };
 
   useEffect(() => {
     const loadData = async () => {
@@ -125,12 +155,18 @@ function App() {
              {/* Top Domains */}
              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col h-[400px]">
                 <h3 className="text-lg font-semibold text-slate-800 mb-4">Top 10 External Domains</h3>
+                <p className="text-xs text-slate-400 -mt-2 mb-2">Click on a domain to view URLs (each unique URL counts as 1)</p>
                 <div className="overflow-y-auto flex-1">
                   <ul className="space-y-3">
                     {externalStats.top_domains.map((item, idx) => (
-                      <li key={idx} className="flex justify-between items-center p-2 hover:bg-slate-50 rounded">
-                        <span className="text-slate-700 font-medium truncate flex-1" title={item.domain}>{item.domain}</span>
-                        <span className="bg-slate-100 text-slate-600 px-2 py-1 rounded text-sm font-semibold">{item.count}</span>
+                      <li key={idx}>
+                        <button 
+                          onClick={() => openDomainModal(item.domain, item.count)}
+                          className="w-full flex justify-between items-center p-2 hover:bg-blue-50 rounded cursor-pointer transition-colors text-left"
+                        >
+                          <span className="text-blue-600 font-medium truncate flex-1 hover:underline" title={item.domain}>{item.domain}</span>
+                          <span className="bg-slate-100 text-slate-600 px-2 py-1 rounded text-sm font-semibold">{item.count}</span>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -269,8 +305,13 @@ function App() {
                         {faq.answer_mode}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-sm text-blue-600 max-w-xs truncate">
-                      <a href={faq.document_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    <td className="px-6 py-4 text-sm max-w-xs truncate" title={faq.document_url}>
+                      <a 
+                        href={faq.document_url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-blue-600 hover:text-blue-800 hover:underline"
+                      >
                         {faq.document_url}
                       </a>
                     </td>
@@ -288,6 +329,16 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* URL List Modal for External Domains */}
+      <UrlListModal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        title={modalTitle}
+        description={modalDescription}
+        urls={modalUrls}
+        loading={modalLoading}
+      />
     </div>
   );
 }

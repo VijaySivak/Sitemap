@@ -110,3 +110,44 @@ export const fetchBusinessMetrics = async (): Promise<BusinessMetrics> => {
   const response = await axios.get(`${API_BASE_URL}/business-metrics`);
   return response.data;
 };
+
+export interface MetricUrlItem {
+  url: string;
+  extra?: string;
+}
+
+export interface MetricUrlsResponse {
+  urls: MetricUrlItem[];
+  count: number;
+}
+
+export const fetchMetricUrls = async (metricType: string, filterValue?: string): Promise<MetricUrlsResponse> => {
+  const params: Record<string, string> = {};
+  if (filterValue) params.filter_value = filterValue;
+  const response = await axios.get(`${API_BASE_URL}/metric-urls/${metricType}`, { params });
+  return response.data;
+};
+
+export interface PdfAnalysis {
+  total_pdfs: number;
+  form_filling: {
+    count: number;
+    percentage: number;
+    urls: { url: string; keyword_matches: number }[];
+  };
+  informational: {
+    count: number;
+    percentage: number;
+    urls: { url: string; keyword_matches: number }[];
+  };
+}
+
+export const fetchPdfAnalysis = async (): Promise<PdfAnalysis> => {
+  const response = await axios.get(`${API_BASE_URL}/pdf-analysis`);
+  return response.data;
+};
+
+export const fetchExternalDomainUrls = async (domain: string): Promise<MetricUrlsResponse> => {
+  const response = await axios.get(`${API_BASE_URL}/external-domain-urls/${encodeURIComponent(domain)}`);
+  return response.data;
+};

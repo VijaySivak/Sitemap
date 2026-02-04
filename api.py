@@ -137,11 +137,48 @@ async def get_external_stats():
              unique_domains_faq = len(set(faq_domains))
              logger.info(f"Unique domains in FAQ pages: {unique_domains_faq}")
              
-        # 3. Top 10 Domains
-        top_domains = []
-        if all_domains:
-            domain_counts = pd.Series(all_domains).value_counts().head(10).to_dict()
-            top_domains = [{"domain": k, "count": int(v)} for k, v in domain_counts.items()]
+        # 3. Top 10 Domains (count distinct external URLs, header/footer links count as 1)
+        # Get total number of pages to determine threshold
+        total_pages = conn.execute("SELECT COUNT(*) FROM documents WHERE status='SUCCESS'").fetchone()[0]
+        # Links appearing on >30% of pages are likely header/footer links
+        footer_threshold = max(10, int(total_pages * 0.3))
+        
+        # First pass: count how many pages each specific external URL appears on
+        cursor = conn.execute("SELECT child_url, COUNT(DISTINCT parent_url) as page_count FROM link_edges WHERE is_external=1 GROUP BY child_url")
+        url_page_counts = {row['child_url']: row['page_count'] for row in cursor.fetchall()}
+        
+        # Identify footer/header URLs (appear on many pages)
+        footer_header_urls = {url for url, count in url_page_counts.items() if count >= footer_threshold}
+        logger.info(f"Identified {len(footer_header_urls)} footer/header URLs (threshold: {footer_threshold} pages)")
+        
+        # Second pass: count distinct external URLs per domain
+        # Header/footer URLs are included but only count as 1 each (not multiplied by pages)
+        cursor = conn.execute("SELECT DISTINCT child_url, parent_url FROM link_edges WHERE is_external=1")
+        domain_to_urls: Dict[str, set] = {}
+        domain_to_source_pages: Dict[str, Dict[str, str]] = {}  # domain -> {external_url: source_page}
+        
+        for row in cursor.fetchall():
+            try:
+                child_url = row['child_url']
+                parent_url = row['parent_url']
+                if child_url:
+                    domain = urlparse(child_url).netloc
+                    if domain:
+                        if domain not in domain_to_urls:
+                            domain_to_urls[domain] = set()
+                            domain_to_source_pages[domain] = {}
+                        # Each unique URL counts as 1, regardless of how many pages it appears on
+                        domain_to_urls[domain].add(child_url)
+                        # Store source page for this URL (keep first occurrence)
+                        if child_url not in domain_to_source_pages[domain]:
+                            domain_to_source_pages[domain][child_url] = parent_url
+            except:
+                pass
+        
+        # Count distinct URLs per domain and get top 10
+        domain_url_counts = {domain: len(urls) for domain, urls in domain_to_urls.items()}
+        sorted_domains = sorted(domain_url_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+        top_domains = [{"domain": k, "count": v} for k, v in sorted_domains]
         
         # 4. Confidential Domains
         sensitive_keywords = ['irs.gov', 'ssn', 'socialsecurity', 'login', 'account']
@@ -160,6 +197,49 @@ async def get_external_stats():
         }
     except Exception as e:
         logger.error(f"Error in get_external_stats: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
+@app.get("/api/external-domain-urls/{domain}")
+async def get_external_domain_urls(domain: str, limit: int = 100):
+    """
+    Get all external URLs for a specific domain.
+    Returns the external URL and the source page that links to it.
+    Each unique URL is listed once regardless of how many pages it appears on.
+    """
+    conn = get_db_connection()
+    try:
+        # Get all distinct external URLs for this domain
+        cursor = conn.execute("""
+            SELECT DISTINCT child_url, parent_url 
+            FROM link_edges 
+            WHERE is_external=1
+        """)
+        
+        urls = []
+        seen_urls = set()
+        for row in cursor.fetchall():
+            child_url = row['child_url']
+            parent_url = row['parent_url']
+            if child_url and child_url not in seen_urls:
+                try:
+                    url_domain = urlparse(child_url).netloc
+                    if url_domain and url_domain.lower() == domain.lower():
+                        urls.append({
+                            "url": child_url,
+                            "extra": f"From: {parent_url}"
+                        })
+                        seen_urls.add(child_url)
+                        if len(urls) >= limit:
+                            break
+                except:
+                    pass
+        
+        return {"urls": urls, "count": len(urls), "domain": domain}
+        
+    except Exception as e:
+        logger.error(f"Error in get_external_domain_urls: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
     finally:
         conn.close()
@@ -352,6 +432,231 @@ async def get_business_metrics():
         raise HTTPException(status_code=500, detail=str(e))
     finally:
         conn.close()
+
+@app.get("/api/metric-urls/{metric_type}")
+async def get_metric_urls(metric_type: str, filter_value: str = None, limit: int = 100):
+    """
+    Get URLs for a specific metric category.
+    metric_type: broken_pages, fetch_errors, blocked_by_robots, deep_pages, orphan_pages,
+                 faq_answer_mode, short_answers, pages_without_faqs, pdf_pages, depth_level
+    filter_value: Optional filter (e.g., answer_mode value, depth level)
+    """
+    conn = get_db_connection()
+    try:
+        urls = []
+        
+        if metric_type == "broken_pages":
+            cursor = conn.execute("""
+                SELECT url, status FROM documents 
+                WHERE status LIKE 'HTTP_4%' OR status LIKE 'HTTP_5%'
+                LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['url'], "extra": f"Status: {row['status']}"} for row in cursor.fetchall()]
+            
+        elif metric_type == "fetch_errors":
+            cursor = conn.execute("""
+                SELECT url FROM documents WHERE status = 'FETCH_ERROR' LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['url']} for row in cursor.fetchall()]
+            
+        elif metric_type == "blocked_by_robots":
+            cursor = conn.execute("""
+                SELECT url FROM documents WHERE status = 'BLOCKED_BY_ROBOTS' LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['url']} for row in cursor.fetchall()]
+            
+        elif metric_type == "deep_pages":
+            cursor = conn.execute("""
+                SELECT url, depth_from_seed FROM documents 
+                WHERE depth_from_seed > 3 AND status = 'CRAWLED'
+                ORDER BY depth_from_seed DESC
+                LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['url'], "extra": f"Depth: {row['depth_from_seed']}"} for row in cursor.fetchall()]
+            
+        elif metric_type == "orphan_pages":
+            cursor = conn.execute("""
+                SELECT url FROM documents d
+                WHERE d.status = 'CRAWLED'
+                AND d.url NOT IN (SELECT DISTINCT child_url FROM link_edges WHERE is_external = 0)
+                AND d.depth_from_seed > 0
+                LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['url']} for row in cursor.fetchall()]
+            
+        elif metric_type == "faq_answer_mode" and filter_value:
+            cursor = conn.execute("""
+                SELECT DISTINCT document_url, question_text FROM faq_items 
+                WHERE answer_mode = ?
+                LIMIT ?
+            """, (filter_value, limit))
+            urls = [{"url": row['document_url'], "extra": row['question_text'][:100]} for row in cursor.fetchall()]
+            
+        elif metric_type == "short_answers":
+            cursor = conn.execute("""
+                SELECT DISTINCT document_url, question_text FROM faq_items 
+                WHERE LENGTH(answer_text) < 100
+                LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['document_url'], "extra": row['question_text'][:100]} for row in cursor.fetchall()]
+            
+        elif metric_type == "pages_without_faqs":
+            cursor = conn.execute("""
+                SELECT url FROM documents d 
+                WHERE d.status = 'CRAWLED' 
+                AND d.content_type LIKE '%text/html%'
+                AND d.url NOT IN (SELECT DISTINCT document_url FROM faq_items)
+                LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['url']} for row in cursor.fetchall()]
+            
+        elif metric_type == "pdf_pages":
+            cursor = conn.execute("""
+                SELECT url FROM documents WHERE content_type LIKE '%pdf%' LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['url']} for row in cursor.fetchall()]
+            
+        elif metric_type == "depth_level" and filter_value:
+            depth = int(filter_value)
+            cursor = conn.execute("""
+                SELECT url FROM documents 
+                WHERE depth_from_seed = ? AND status = 'CRAWLED'
+                LIMIT ?
+            """, (depth, limit))
+            urls = [{"url": row['url']} for row in cursor.fetchall()]
+            
+        elif metric_type == "external_heavy_pages":
+            cursor = conn.execute("""
+                SELECT parent_url, COUNT(*) as ext_count 
+                FROM link_edges 
+                WHERE is_external = 1 
+                GROUP BY parent_url 
+                HAVING ext_count > 10
+                ORDER BY ext_count DESC
+                LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['parent_url'], "extra": f"{row['ext_count']} external links"} for row in cursor.fetchall()]
+            
+        elif metric_type == "successful_crawls":
+            cursor = conn.execute("""
+                SELECT url FROM documents WHERE status = 'CRAWLED' LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['url']} for row in cursor.fetchall()]
+            
+        elif metric_type == "escalation_faqs":
+            cursor = conn.execute("""
+                SELECT DISTINCT document_url, question_text, answer_mode FROM faq_items 
+                WHERE answer_mode IN ('PHONE_ESCALATION', 'PORTAL_REDIRECT')
+                LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['document_url'], "extra": f"[{row['answer_mode']}] {row['question_text'][:80]}"} for row in cursor.fetchall()]
+        
+        return {"urls": urls, "count": len(urls)}
+        
+    except Exception as e:
+        logger.error(f"Error in get_metric_urls: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
+@app.get("/api/pdf-analysis")
+async def get_pdf_analysis():
+    """
+    Analyze PDFs to categorize them as form-filling or informational.
+    Form-filling PDFs contain fields for user input (signatures, dates, names).
+    Informational PDFs are brochures, guides, etc.
+    """
+    import re
+    
+    pdf_text_dir = os.path.join(os.path.dirname(__file__), "artifacts", "pdf_text")
+    
+    # Keywords that indicate a form-filling PDF
+    form_keywords = [
+        r'\bsignature\b', r'\bsign here\b', r'\bdate:\s*_', r'\bname:\s*_',
+        r'\bprint name\b', r'\bapplicant\b', r'\bauthorization\b', r'\bform\b',
+        r'\bfill in\b', r'\bfill out\b', r'\bcomplete this\b', r'\bcheck box\b',
+        r'\b__+\b', r'\bssn\b', r'\bsocial security\b', r'\baccount number\b',
+        r'\baddress:\s*_', r'\bphone:\s*_', r'\bemail:\s*_', r'\binitial\b',
+        r'\bnotary\b', r'\bwitness\b', r'\baffidavit\b', r'\bdeclaration\b'
+    ]
+    form_pattern = re.compile('|'.join(form_keywords), re.IGNORECASE)
+    
+    form_pdfs = []
+    info_pdfs = []
+    
+    try:
+        if not os.path.exists(pdf_text_dir):
+            return {
+                "total_pdfs": 0,
+                "form_filling": {"count": 0, "percentage": 0, "urls": []},
+                "informational": {"count": 0, "percentage": 0, "urls": []}
+            }
+        
+        # Get PDF URLs from database
+        conn = get_db_connection()
+        cursor = conn.execute("SELECT url FROM documents WHERE content_type LIKE '%pdf%'")
+        pdf_urls = {os.path.basename(row['url']).replace('.pdf', ''): row['url'] for row in cursor.fetchall()}
+        conn.close()
+        
+        # Analyze each PDF text file
+        for filename in os.listdir(pdf_text_dir):
+            if not filename.endswith('.txt'):
+                continue
+                
+            filepath = os.path.join(pdf_text_dir, filename)
+            try:
+                with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                    content = f.read().lower()
+                
+                # Count form keyword matches
+                matches = len(form_pattern.findall(content))
+                
+                # Find corresponding URL (hash-based filename)
+                # Try to match by checking if any PDF URL's hash matches
+                pdf_url = None
+                file_hash = filename.replace('.txt', '')
+                for url_key, url in pdf_urls.items():
+                    import hashlib
+                    url_hash = hashlib.sha256(url.encode()).hexdigest()
+                    if url_hash == file_hash:
+                        pdf_url = url
+                        break
+                
+                if not pdf_url:
+                    # Fallback: use filename as identifier
+                    pdf_url = filename.replace('.txt', '.pdf')
+                
+                # Threshold: 5+ form keywords = form-filling PDF
+                if matches >= 5:
+                    form_pdfs.append({"url": pdf_url, "keyword_matches": matches})
+                else:
+                    info_pdfs.append({"url": pdf_url, "keyword_matches": matches})
+                    
+            except Exception as e:
+                logger.warning(f"Error reading PDF text {filename}: {e}")
+                continue
+        
+        total = len(form_pdfs) + len(info_pdfs)
+        if total == 0:
+            total = 1  # Avoid division by zero
+            
+        return {
+            "total_pdfs": len(form_pdfs) + len(info_pdfs),
+            "form_filling": {
+                "count": len(form_pdfs),
+                "percentage": round(len(form_pdfs) / total * 100, 1),
+                "urls": form_pdfs[:20]  # Limit to 20
+            },
+            "informational": {
+                "count": len(info_pdfs),
+                "percentage": round(len(info_pdfs) / total * 100, 1),
+                "urls": info_pdfs[:20]  # Limit to 20
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"Error in get_pdf_analysis: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/api/redundant-content")
 async def get_redundant_content(min_occurrences: int = 2, min_length: int = 50, limit: int = 50):

@@ -8,26 +8,48 @@ import {
   FileText, 
   MessageCircle,
   Layers,
-  Link2Off,
   FileWarning,
   TrendingUp,
   Phone,
   ExternalLink
 } from 'lucide-react';
-import { fetchBusinessMetrics } from '../services/api';
-import type { BusinessMetrics as BusinessMetricsType } from '../services/api';
+import { fetchBusinessMetrics, fetchMetricUrls, fetchPdfAnalysis } from '../services/api';
+import type { BusinessMetrics as BusinessMetricsType, MetricUrlItem, PdfAnalysis } from '../services/api';
 import { DashboardChart } from '../components/DashboardChart';
+import { UrlListModal } from '../components/UrlListModal';
+
+interface ModalState {
+  isOpen: boolean;
+  title: string;
+  description?: string;
+  metricType: string;
+  filterValue?: string;
+}
 
 function BusinessMetrics() {
   const [metrics, setMetrics] = useState<BusinessMetricsType | null>(null);
+  const [pdfAnalysis, setPdfAnalysis] = useState<PdfAnalysis | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  // Modal state
+  const [modalState, setModalState] = useState<ModalState>({
+    isOpen: false,
+    title: '',
+    metricType: ''
+  });
+  const [modalUrls, setModalUrls] = useState<MetricUrlItem[]>([]);
+  const [modalLoading, setModalLoading] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await fetchBusinessMetrics();
-        setMetrics(data);
+        const [metricsData, pdfData] = await Promise.all([
+          fetchBusinessMetrics(),
+          fetchPdfAnalysis()
+        ]);
+        setMetrics(metricsData);
+        setPdfAnalysis(pdfData);
       } catch (err) {
         setError('Failed to load business metrics. Is the backend running?');
         console.error(err);
@@ -37,6 +59,48 @@ function BusinessMetrics() {
     };
     loadData();
   }, []);
+
+  const openModal = async (title: string, description: string, metricType: string, filterValue?: string) => {
+    setModalState({ isOpen: true, title, description, metricType, filterValue });
+    setModalLoading(true);
+    setModalUrls([]);
+    
+    try {
+      const response = await fetchMetricUrls(metricType, filterValue);
+      setModalUrls(response.urls);
+    } catch (err) {
+      console.error('Failed to load URLs:', err);
+    } finally {
+      setModalLoading(false);
+    }
+  };
+
+  const closeModal = () => {
+    setModalState({ isOpen: false, title: '', metricType: '' });
+    setModalUrls([]);
+  };
+
+  const handleChartClick = (data: { name: string; value: number }) => {
+    // For FAQ answer modes pie chart
+    if (data.name && metrics?.faq_quality.answer_modes[data.name] !== undefined) {
+      openModal(
+        `FAQs with ${data.name}`,
+        `${data.value} FAQs found with this answer mode`,
+        'faq_answer_mode',
+        data.name
+      );
+    }
+    // For depth distribution bar chart
+    else if (data.name && data.name.startsWith('Depth ')) {
+      const depth = data.name.replace('Depth ', '');
+      openModal(
+        `Pages at ${data.name}`,
+        `${data.value} pages found at this navigation depth`,
+        'depth_level',
+        depth
+      );
+    }
+  };
 
   if (loading) {
     return (
@@ -82,28 +146,40 @@ function BusinessMetrics() {
         </header>
 
         {/* Content Health Score - Hero Card */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white shadow-lg">
+        <div className="bg-gradient-to-r from-red-600 to-red-400 rounded-2xl p-8 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-xl font-semibold opacity-90">Content Health Score</h2>
               <p className="text-5xl font-bold mt-2">{metrics.content_health.health_score}%</p>
-              <p className="mt-2 opacity-75">
+              <button 
+                onClick={() => openModal('Successfully Crawled Pages', `${metrics.content_health.successful_crawls} pages crawled successfully`, 'successful_crawls')}
+                className="mt-2 opacity-75 hover:opacity-100 hover:underline cursor-pointer text-left"
+              >
                 {metrics.content_health.successful_crawls} of {metrics.content_health.total_pages} pages successfully crawled
-              </p>
+              </button>
             </div>
             <div className="text-right space-y-2">
-              <div className="flex items-center gap-2 justify-end">
+              <button 
+                onClick={() => openModal('Broken Pages', `${metrics.content_health.broken_pages} pages with HTTP errors`, 'broken_pages')}
+                className="flex items-center gap-2 justify-end hover:bg-white/10 px-2 py-1 rounded cursor-pointer w-full"
+              >
                 <XCircle className="w-5 h-5 text-red-300" />
                 <span>{metrics.content_health.broken_pages} broken pages</span>
-              </div>
-              <div className="flex items-center gap-2 justify-end">
+              </button>
+              <button 
+                onClick={() => openModal('Fetch Errors', `${metrics.content_health.fetch_errors} pages that failed to load`, 'fetch_errors')}
+                className="flex items-center gap-2 justify-end hover:bg-white/10 px-2 py-1 rounded cursor-pointer w-full"
+              >
                 <AlertTriangle className="w-5 h-5 text-yellow-300" />
                 <span>{metrics.content_health.fetch_errors} fetch errors</span>
-              </div>
-              <div className="flex items-center gap-2 justify-end">
+              </button>
+              <button 
+                onClick={() => openModal('Blocked by Robots', `${metrics.content_health.blocked_by_robots} pages blocked by robots.txt`, 'blocked_by_robots')}
+                className="flex items-center gap-2 justify-end hover:bg-white/10 px-2 py-1 rounded cursor-pointer w-full"
+              >
                 <FileWarning className="w-5 h-5 text-orange-300" />
                 <span>{metrics.content_health.blocked_by_robots} blocked by robots</span>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -111,7 +187,10 @@ function BusinessMetrics() {
         {/* Key Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Self-Service Rate */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <button 
+            onClick={() => openModal('FAQs with Direct Text Answers', `${metrics.faq_quality.direct_text_count} FAQs provide direct answers`, 'faq_answer_mode', 'DIRECT_TEXT')}
+            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-green-300 hover:shadow-md transition-all text-left cursor-pointer"
+          >
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2 bg-green-100 rounded-lg">
                 <CheckCircle className="w-6 h-6 text-green-600" />
@@ -124,10 +203,13 @@ function BusinessMetrics() {
             <p className="text-sm text-slate-500 mt-1">
               {metrics.faq_quality.direct_text_count} FAQs with direct answers
             </p>
-          </div>
+          </button>
 
           {/* Escalation FAQs */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <button 
+            onClick={() => openModal('Escalation FAQs', `${metrics.faq_quality.escalation_count} FAQs require phone or portal redirect`, 'escalation_faqs')}
+            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-red-300 hover:shadow-md transition-all text-left cursor-pointer"
+          >
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2 bg-red-100 rounded-lg">
                 <Phone className="w-6 h-6 text-red-600" />
@@ -138,10 +220,13 @@ function BusinessMetrics() {
             <p className="text-sm text-slate-500 mt-1">
               Require phone/portal redirect
             </p>
-          </div>
+          </button>
 
           {/* Deep Pages */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <button 
+            onClick={() => openModal('Deep Pages', `${metrics.navigation.deep_pages_count} pages at navigation depth > 3`, 'deep_pages')}
+            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-amber-300 hover:shadow-md transition-all text-left cursor-pointer"
+          >
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2 bg-amber-100 rounded-lg">
                 <Layers className="w-6 h-6 text-amber-600" />
@@ -152,27 +237,69 @@ function BusinessMetrics() {
             <p className="text-sm text-slate-500 mt-1">
               Pages at depth &gt; 3 (hard to find)
             </p>
-          </div>
+          </button>
 
-          {/* Orphan Pages */}
+          {/* PDF Analysis */}
           <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2 bg-purple-100 rounded-lg">
-                <Link2Off className="w-6 h-6 text-purple-600" />
+                <FileText className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold text-slate-700">Orphan Pages</h3>
+              <h3 className="font-semibold text-slate-700">PDF Analysis</h3>
             </div>
-            <p className="text-3xl font-bold text-purple-600">{metrics.navigation.orphan_pages}</p>
-            <p className="text-sm text-slate-500 mt-1">
-              No inbound internal links
-            </p>
+            {pdfAnalysis ? (
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-slate-600">Form-Filling</span>
+                  <button 
+                    onClick={() => {
+                      setModalState({ isOpen: true, title: 'Form-Filling PDFs', description: `${pdfAnalysis.form_filling.count} PDFs with fillable fields`, metricType: 'pdf_form' });
+                      setModalUrls(pdfAnalysis.form_filling.urls.map(u => ({ url: u.url, extra: `${u.keyword_matches} form keywords` })));
+                    }}
+                    className="text-lg font-bold text-purple-600 hover:underline cursor-pointer"
+                  >
+                    {pdfAnalysis.form_filling.percentage}%
+                  </button>
+                </div>
+                <div className="w-full bg-slate-200 rounded-full h-2">
+                  <div 
+                    className="bg-purple-600 h-2 rounded-full" 
+                    style={{ width: `${pdfAnalysis.form_filling.percentage}%` }}
+                  />
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-slate-600">Informational</span>
+                  <button 
+                    onClick={() => {
+                      setModalState({ isOpen: true, title: 'Informational PDFs', description: `${pdfAnalysis.informational.count} brochures and guides`, metricType: 'pdf_info' });
+                      setModalUrls(pdfAnalysis.informational.urls.map(u => ({ url: u.url, extra: `${u.keyword_matches} form keywords` })));
+                    }}
+                    className="text-lg font-bold text-blue-600 hover:underline cursor-pointer"
+                  >
+                    {pdfAnalysis.informational.percentage}%
+                  </button>
+                </div>
+                <div className="w-full bg-slate-200 rounded-full h-2">
+                  <div 
+                    className="bg-blue-600 h-2 rounded-full" 
+                    style={{ width: `${pdfAnalysis.informational.percentage}%` }}
+                  />
+                </div>
+                <p className="text-xs text-slate-400 mt-2">{pdfAnalysis.total_pdfs} total PDFs analyzed</p>
+              </div>
+            ) : (
+              <p className="text-sm text-slate-400">Loading PDF analysis...</p>
+            )}
           </div>
         </div>
 
         {/* Second Row Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Short Answers */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <button 
+            onClick={() => openModal('Short FAQ Answers', `${metrics.faq_quality.short_answers} FAQs with answers under 100 characters`, 'short_answers')}
+            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-orange-300 hover:shadow-md transition-all text-left cursor-pointer"
+          >
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2 bg-orange-100 rounded-lg">
                 <MessageCircle className="w-6 h-6 text-orange-600" />
@@ -183,10 +310,13 @@ function BusinessMetrics() {
             <p className="text-sm text-slate-500 mt-1">
               Answers with &lt; 100 characters
             </p>
-          </div>
+          </button>
 
           {/* Pages Without FAQs */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <button 
+            onClick={() => openModal('Pages Without FAQs', `${metrics.faq_quality.pages_without_faqs} pages missing FAQ content`, 'pages_without_faqs')}
+            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-slate-300 hover:shadow-md transition-all text-left cursor-pointer"
+          >
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2 bg-slate-100 rounded-lg">
                 <FileText className="w-6 h-6 text-slate-600" />
@@ -197,10 +327,13 @@ function BusinessMetrics() {
             <p className="text-sm text-slate-500 mt-1">
               Missed self-service opportunity
             </p>
-          </div>
+          </button>
 
           {/* PDF Dependencies */}
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <button 
+            onClick={() => openModal('PDF Files', `${metrics.dependencies.pdf_count} PDF documents found`, 'pdf_pages')}
+            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-rose-300 hover:shadow-md transition-all text-left cursor-pointer"
+          >
             <div className="flex items-center gap-3 mb-3">
               <div className="p-2 bg-rose-100 rounded-lg">
                 <FileWarning className="w-6 h-6 text-rose-600" />
@@ -211,7 +344,7 @@ function BusinessMetrics() {
             <p className="text-sm text-slate-500 mt-1">
               PDFs (not mobile-friendly)
             </p>
-          </div>
+          </button>
         </div>
 
         {/* Charts Row */}
@@ -221,6 +354,7 @@ function BusinessMetrics() {
             title="Navigation Depth Distribution"
             data={depthChartData}
             type="bar"
+            onSegmentClick={handleChartClick}
           />
 
           {/* FAQ Answer Modes */}
@@ -228,6 +362,7 @@ function BusinessMetrics() {
             title="FAQ Answer Mode Breakdown"
             data={Object.entries(metrics.faq_quality.answer_modes).map(([name, value]) => ({ name, value }))}
             type="pie"
+            onSegmentClick={handleChartClick}
           />
         </div>
 
@@ -254,8 +389,15 @@ function BusinessMetrics() {
                   <tbody className="divide-y divide-slate-100">
                     {metrics.issues.broken_links.map((link, idx) => (
                       <tr key={idx} className="hover:bg-slate-50">
-                        <td className="px-4 py-2 text-sm text-slate-700 max-w-xs truncate" title={link.url}>
-                          {link.url}
+                        <td className="px-4 py-2 text-sm max-w-xs truncate" title={link.url}>
+                          <a 
+                            href={link.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline"
+                          >
+                            {link.url}
+                          </a>
                         </td>
                         <td className="px-4 py-2">
                           <span className="px-2 py-1 text-xs font-medium bg-red-100 text-red-700 rounded">
@@ -296,8 +438,15 @@ function BusinessMetrics() {
                   <tbody className="divide-y divide-slate-100">
                     {metrics.dependencies.external_heavy_pages.map((page, idx) => (
                       <tr key={idx} className="hover:bg-slate-50">
-                        <td className="px-4 py-2 text-sm text-slate-700 max-w-xs truncate" title={page.url}>
-                          {page.url}
+                        <td className="px-4 py-2 text-sm max-w-xs truncate" title={page.url}>
+                          <a 
+                            href={page.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 hover:underline"
+                          >
+                            {page.url}
+                          </a>
                         </td>
                         <td className="px-4 py-2">
                           <span className="px-2 py-1 text-xs font-medium bg-amber-100 text-amber-700 rounded">
@@ -377,6 +526,16 @@ function BusinessMetrics() {
         </div>
 
       </div>
+
+      {/* URL List Modal */}
+      <UrlListModal
+        isOpen={modalState.isOpen}
+        onClose={closeModal}
+        title={modalState.title}
+        description={modalState.description}
+        urls={modalUrls}
+        loading={modalLoading}
+      />
     </div>
   );
 }
