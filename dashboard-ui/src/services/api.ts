@@ -151,3 +151,27 @@ export const fetchExternalDomainUrls = async (domain: string): Promise<MetricUrl
   const response = await axios.get(`${API_BASE_URL}/external-domain-urls/${encodeURIComponent(domain)}`);
   return response.data;
 };
+
+export interface ExternalFormUrl {
+  url: string;
+  source_page: string;
+  type: string;
+}
+
+export interface ExternalFormsData {
+  total_external_urls: number;
+  form_pattern_urls: {
+    count: number;
+    urls: ExternalFormUrl[];
+  };
+  external_pdfs: {
+    count: number;
+    urls: ExternalFormUrl[];
+  };
+  total_potential_forms: number;
+}
+
+export const fetchExternalForms = async (): Promise<ExternalFormsData> => {
+  const response = await axios.get(`${API_BASE_URL}/external-forms`);
+  return response.data;
+};

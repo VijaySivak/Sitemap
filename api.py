@@ -244,6 +244,75 @@ async def get_external_domain_urls(domain: str, limit: int = 100):
     finally:
         conn.close()
 
+@app.get("/api/external-forms")
+async def get_external_forms():
+    """
+    Analyze external URLs to identify potential form-filling pages based on URL patterns.
+    Looks for keywords like: form, apply, application, signup, register, enroll, login, account, pdf
+    """
+    import re
+    
+    conn = get_db_connection()
+    try:
+        # Form-related URL patterns
+        form_patterns = [
+            r'\bform\b', r'\bapply\b', r'\bapplication\b', r'\bsignup\b', r'\bsign-up\b',
+            r'\bregister\b', r'\bregistration\b', r'\benroll\b', r'\benrollment\b',
+            r'\bsubmit\b', r'\blogin\b', r'\bsign-in\b', r'\bsignin\b', r'\baccount\b',
+            r'\bcheckout\b', r'\bpayment\b', r'\bsubscribe\b', r'\bcontact-us\b',
+            r'\brequest\b', r'\bquote\b', r'\bclaim\b', r'\bappointment\b'
+        ]
+        form_pattern = re.compile('|'.join(form_patterns), re.IGNORECASE)
+        
+        # Get all distinct external URLs
+        cursor = conn.execute("SELECT DISTINCT child_url, parent_url FROM link_edges WHERE is_external=1")
+        
+        form_urls = []
+        pdf_urls = []
+        seen_urls = set()
+        
+        for row in cursor.fetchall():
+            child_url = row['child_url']
+            parent_url = row['parent_url']
+            
+            if not child_url or child_url in seen_urls:
+                continue
+            seen_urls.add(child_url)
+            
+            # Check if it's a PDF
+            if child_url.lower().endswith('.pdf'):
+                pdf_urls.append({
+                    "url": child_url,
+                    "source_page": parent_url,
+                    "type": "pdf"
+                })
+            # Check for form patterns in URL
+            elif form_pattern.search(child_url):
+                form_urls.append({
+                    "url": child_url,
+                    "source_page": parent_url,
+                    "type": "form_pattern"
+                })
+        
+        return {
+            "total_external_urls": len(seen_urls),
+            "form_pattern_urls": {
+                "count": len(form_urls),
+                "urls": form_urls[:50]  # Limit to 50
+            },
+            "external_pdfs": {
+                "count": len(pdf_urls),
+                "urls": pdf_urls[:50]  # Limit to 50
+            },
+            "total_potential_forms": len(form_urls) + len(pdf_urls)
+        }
+        
+    except Exception as e:
+        logger.error(f"Error in get_external_forms: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
 @app.get("/api/faqs/export")
 async def export_faqs_csv():
     conn = get_db_connection()
@@ -374,17 +443,37 @@ async def get_business_metrics():
         """)
         orphan_pages = cursor.fetchone()['count']
         
-        # 7. External Link Heavy Pages (pages with >10 external links)
+        # 7. External Link Heavy Pages (pages with >10 external links, excluding repeated header/footer/sidebar links)
+        # First, identify external URLs that appear on many pages (header/footer/sidebar)
+        total_pages = conn.execute("SELECT COUNT(*) FROM documents WHERE status='SUCCESS'").fetchone()[0]
+        repeated_threshold = max(10, int(total_pages * 0.05))  # URLs appearing on >5% of pages
+        
         cursor = conn.execute("""
-            SELECT parent_url, COUNT(*) as ext_count 
-            FROM link_edges 
-            WHERE is_external = 1 
-            GROUP BY parent_url 
-            HAVING ext_count > 10
-            ORDER BY ext_count DESC
-            LIMIT 10
-        """)
-        external_heavy_pages = [{"url": row['parent_url'], "external_links": row['ext_count']} for row in cursor.fetchall()]
+            SELECT child_url FROM link_edges 
+            WHERE is_external=1 
+            GROUP BY child_url 
+            HAVING COUNT(DISTINCT parent_url) >= ?
+        """, (repeated_threshold,))
+        repeated_external_urls = {row['child_url'] for row in cursor.fetchall()}
+        logger.info(f"Identified {len(repeated_external_urls)} repeated external URLs (threshold: {repeated_threshold} pages)")
+        
+        # Now count external links per page, excluding repeated ones
+        cursor = conn.execute("SELECT parent_url, child_url FROM link_edges WHERE is_external = 1")
+        page_unique_externals: dict = {}
+        for row in cursor.fetchall():
+            parent = row['parent_url']
+            child = row['child_url']
+            if child not in repeated_external_urls:
+                if parent not in page_unique_externals:
+                    page_unique_externals[parent] = set()
+                page_unique_externals[parent].add(child)
+        
+        # Get pages with >5 unique external links (excluding repeated ones)
+        external_heavy_pages = [
+            {"url": url, "external_links": len(urls)} 
+            for url, urls in sorted(page_unique_externals.items(), key=lambda x: len(x[1]), reverse=True)[:10]
+            if len(urls) > 5
+        ]
         
         # 8. Broken Links Detail
         cursor = conn.execute("""
@@ -550,6 +639,14 @@ async def get_metric_urls(metric_type: str, filter_value: str = None, limit: int
                 LIMIT ?
             """, (limit,))
             urls = [{"url": row['document_url'], "extra": f"[{row['answer_mode']}] {row['question_text'][:80]}"} for row in cursor.fetchall()]
+        
+        elif metric_type == "external_urls":
+            cursor = conn.execute("""
+                SELECT DISTINCT child_url, parent_url FROM link_edges 
+                WHERE is_external = 1
+                LIMIT ?
+            """, (limit,))
+            urls = [{"url": row['child_url'], "extra": f"From: {row['parent_url']}"} for row in cursor.fetchall()]
         
         return {"urls": urls, "count": len(urls)}
         

@@ -13,8 +13,8 @@ import {
   Phone,
   ExternalLink
 } from 'lucide-react';
-import { fetchBusinessMetrics, fetchMetricUrls, fetchPdfAnalysis } from '../services/api';
-import type { BusinessMetrics as BusinessMetricsType, MetricUrlItem, PdfAnalysis } from '../services/api';
+import { fetchBusinessMetrics, fetchMetricUrls, fetchPdfAnalysis, fetchExternalForms } from '../services/api';
+import type { BusinessMetrics as BusinessMetricsType, MetricUrlItem, PdfAnalysis, ExternalFormsData } from '../services/api';
 import { DashboardChart } from '../components/DashboardChart';
 import { UrlListModal } from '../components/UrlListModal';
 
@@ -29,6 +29,7 @@ interface ModalState {
 function BusinessMetrics() {
   const [metrics, setMetrics] = useState<BusinessMetricsType | null>(null);
   const [pdfAnalysis, setPdfAnalysis] = useState<PdfAnalysis | null>(null);
+  const [externalForms, setExternalForms] = useState<ExternalFormsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
@@ -44,12 +45,14 @@ function BusinessMetrics() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [metricsData, pdfData] = await Promise.all([
+        const [metricsData, pdfData, externalFormsData] = await Promise.all([
           fetchBusinessMetrics(),
-          fetchPdfAnalysis()
+          fetchPdfAnalysis(),
+          fetchExternalForms()
         ]);
         setMetrics(metricsData);
         setPdfAnalysis(pdfData);
+        setExternalForms(externalFormsData);
       } catch (err) {
         setError('Failed to load business metrics. Is the backend running?');
         console.error(err);
@@ -312,20 +315,20 @@ function BusinessMetrics() {
             </p>
           </button>
 
-          {/* Pages Without FAQs */}
+          {/* Unique External URLs */}
           <button 
-            onClick={() => openModal('Pages Without FAQs', `${metrics.faq_quality.pages_without_faqs} pages missing FAQ content`, 'pages_without_faqs')}
-            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-slate-300 hover:shadow-md transition-all text-left cursor-pointer"
+            onClick={() => openModal('Unique External URLs', `${externalForms?.total_external_urls || 0} unique external URLs found`, 'external_urls')}
+            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-cyan-300 hover:shadow-md transition-all text-left cursor-pointer"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="p-2 bg-slate-100 rounded-lg">
-                <FileText className="w-6 h-6 text-slate-600" />
+              <div className="p-2 bg-cyan-100 rounded-lg">
+                <ExternalLink className="w-6 h-6 text-cyan-600" />
               </div>
-              <h3 className="font-semibold text-slate-700">Pages Without FAQs</h3>
+              <h3 className="font-semibold text-slate-700">Unique External URLs</h3>
             </div>
-            <p className="text-3xl font-bold text-slate-600">{metrics.faq_quality.pages_without_faqs}</p>
+            <p className="text-3xl font-bold text-cyan-600">{externalForms?.total_external_urls || 0}</p>
             <p className="text-sm text-slate-500 mt-1">
-              Missed self-service opportunity
+              Distinct external links
             </p>
           </button>
 
