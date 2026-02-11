@@ -175,3 +175,20 @@ export const fetchExternalForms = async (): Promise<ExternalFormsData> => {
   const response = await axios.get(`${API_BASE_URL}/external-forms`);
   return response.data;
 };
+
+export interface BuriedPagePath {
+  url: string;
+  depth: number;
+  paths: string[][];
+  path_count: number;
+}
+
+export interface BuriedPagePathsData {
+  total_buried_pages: number;
+  pages: BuriedPagePath[];
+}
+
+export const fetchBuriedPagePaths = async (): Promise<BuriedPagePathsData> => {
+  const response = await axios.get(`${API_BASE_URL}/buried-page-paths`);
+  return response.data;
+};

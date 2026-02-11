@@ -656,6 +656,85 @@ async def get_metric_urls(metric_type: str, filter_value: str = None, limit: int
     finally:
         conn.close()
 
+@app.get("/api/buried-page-paths")
+async def get_buried_page_paths():
+    """
+    Get paths from sitemap/seed URLs to buried pages (depth > 3).
+    Uses BFS to trace all possible paths to each buried page.
+    """
+    conn = get_db_connection()
+    try:
+        # Get buried pages (depth > 3)
+        cursor = conn.execute("""
+            SELECT url, depth_from_seed FROM documents 
+            WHERE depth_from_seed > 3 AND status = 'CRAWLED'
+            ORDER BY depth_from_seed DESC
+        """)
+        buried_pages = cursor.fetchall()
+        
+        # Build link graph (child -> parents)
+        cursor = conn.execute("""
+            SELECT parent_url, child_url FROM link_edges 
+            WHERE is_external = 0
+        """)
+        child_to_parents: Dict[str, set] = {}
+        for row in cursor.fetchall():
+            child = row['child_url']
+            parent = row['parent_url']
+            if child not in child_to_parents:
+                child_to_parents[child] = set()
+            child_to_parents[child].add(parent)
+        
+        # Get seed URLs (depth 0)
+        cursor = conn.execute("SELECT url FROM documents WHERE depth_from_seed = 0")
+        seed_urls = {row['url'] for row in cursor.fetchall()}
+        
+        def trace_paths(target_url: str, max_paths: int = 3) -> List[List[str]]:
+            """Trace paths from seed to target using BFS backwards"""
+            paths = []
+            # Queue: (current_url, path_so_far)
+            queue = [(target_url, [target_url])]
+            visited_states = set()
+            
+            while queue and len(paths) < max_paths:
+                current, path = queue.pop(0)
+                
+                if current in seed_urls:
+                    paths.append(list(reversed(path)))
+                    continue
+                
+                if current in child_to_parents:
+                    for parent in child_to_parents[current]:
+                        state = (parent, tuple(path))
+                        if state not in visited_states and len(path) < 10:
+                            visited_states.add(state)
+                            queue.append((parent, path + [parent]))
+            
+            return paths
+        
+        results = []
+        for page in buried_pages:
+            url = page['url']
+            depth = page['depth_from_seed']
+            paths = trace_paths(url)
+            results.append({
+                "url": url,
+                "depth": depth,
+                "paths": paths,
+                "path_count": len(paths)
+            })
+        
+        return {
+            "total_buried_pages": len(buried_pages),
+            "pages": results
+        }
+        
+    except Exception as e:
+        logger.error(f"Error in get_buried_page_paths: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
 @app.get("/api/pdf-analysis")
 async def get_pdf_analysis():
     """

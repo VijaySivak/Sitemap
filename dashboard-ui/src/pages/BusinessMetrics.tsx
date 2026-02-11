@@ -11,10 +11,12 @@ import {
   FileWarning,
   TrendingUp,
   Phone,
-  ExternalLink
+  ExternalLink,
+  MapPin,
+  ArrowRight
 } from 'lucide-react';
-import { fetchBusinessMetrics, fetchMetricUrls, fetchPdfAnalysis, fetchExternalForms } from '../services/api';
-import type { BusinessMetrics as BusinessMetricsType, MetricUrlItem, PdfAnalysis, ExternalFormsData } from '../services/api';
+import { fetchBusinessMetrics, fetchMetricUrls, fetchPdfAnalysis, fetchExternalForms, fetchBuriedPagePaths } from '../services/api';
+import type { BusinessMetrics as BusinessMetricsType, MetricUrlItem, PdfAnalysis, ExternalFormsData, BuriedPagePathsData } from '../services/api';
 import { DashboardChart } from '../components/DashboardChart';
 import { UrlListModal } from '../components/UrlListModal';
 
@@ -30,7 +32,9 @@ function BusinessMetrics() {
   const [metrics, setMetrics] = useState<BusinessMetricsType | null>(null);
   const [pdfAnalysis, setPdfAnalysis] = useState<PdfAnalysis | null>(null);
   const [externalForms, setExternalForms] = useState<ExternalFormsData | null>(null);
+  const [buriedPaths, setBuriedPaths] = useState<BuriedPagePathsData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [expandedMetric, setExpandedMetric] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   
   // Modal state
@@ -45,14 +49,16 @@ function BusinessMetrics() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [metricsData, pdfData, externalFormsData] = await Promise.all([
+        const [metricsData, pdfData, externalFormsData, buriedPathsData] = await Promise.all([
           fetchBusinessMetrics(),
           fetchPdfAnalysis(),
-          fetchExternalForms()
+          fetchExternalForms(),
+          fetchBuriedPagePaths()
         ]);
         setMetrics(metricsData);
         setPdfAnalysis(pdfData);
         setExternalForms(externalFormsData);
+        setBuriedPaths(buriedPathsData);
       } catch (err) {
         setError('Failed to load business metrics. Is the backend running?');
         console.error(err);
@@ -371,51 +377,70 @@ function BusinessMetrics() {
 
         {/* Issues Tables */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Broken Links */}
+          {/* Buried Pages Paths */}
           <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
             <div className="p-6 border-b border-slate-100">
               <h3 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
-                <XCircle className="w-5 h-5 text-red-500" />
-                Broken Links ({metrics.issues.broken_links.length})
+                <MapPin className="w-5 h-5 text-purple-500" />
+                Buried Pages - Navigation Paths ({buriedPaths?.total_buried_pages || 0})
               </h3>
+              <p className="text-sm text-slate-500 mt-1">Pages at depth &gt; 3 with their navigation paths from sitemap</p>
             </div>
-            <div className="overflow-auto max-h-[300px]">
-              {metrics.issues.broken_links.length > 0 ? (
-                <table className="w-full">
-                  <thead className="bg-slate-50 sticky top-0">
-                    <tr>
-                      <th className="px-4 py-2 text-left text-xs font-medium text-slate-500 uppercase">URL</th>
-                      <th className="px-4 py-2 text-left text-xs font-medium text-slate-500 uppercase">Status</th>
-                      <th className="px-4 py-2 text-left text-xs font-medium text-slate-500 uppercase">Depth</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {metrics.issues.broken_links.map((link, idx) => (
-                      <tr key={idx} className="hover:bg-slate-50">
-                        <td className="px-4 py-2 text-sm max-w-xs truncate" title={link.url}>
-                          <a 
-                            href={link.url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-800 hover:underline"
-                          >
-                            {link.url}
-                          </a>
-                        </td>
-                        <td className="px-4 py-2">
-                          <span className="px-2 py-1 text-xs font-medium bg-red-100 text-red-700 rounded">
-                            {link.status}
-                          </span>
-                        </td>
-                        <td className="px-4 py-2 text-sm text-slate-500">{link.depth}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            <div className="overflow-auto max-h-[400px]">
+              {buriedPaths && buriedPaths.pages.length > 0 ? (
+                <div className="divide-y divide-slate-100">
+                  {buriedPaths.pages.map((page, idx) => (
+                    <div key={idx} className="p-4 hover:bg-slate-50">
+                      <div className="flex items-start justify-between mb-2">
+                        <a 
+                          href={page.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium truncate max-w-md"
+                          title={page.url}
+                        >
+                          {page.url.replace('https://www.toyotafinancial.com', '...')}
+                        </a>
+                        <span className="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded ml-2 whitespace-nowrap">
+                          Depth {page.depth}
+                        </span>
+                      </div>
+                      {page.paths.length > 0 ? (
+                        <div className="space-y-2">
+                          {page.paths.slice(0, expandedMetric === `path-${idx}` ? undefined : 1).map((path, pathIdx) => (
+                            <div key={pathIdx} className="flex items-center flex-wrap gap-1 text-xs">
+                              {path.map((url, urlIdx) => (
+                                <span key={urlIdx} className="flex items-center">
+                                  <span 
+                                    className={`px-2 py-1 rounded ${urlIdx === 0 ? 'bg-green-100 text-green-700' : urlIdx === path.length - 1 ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-600'}`}
+                                    title={url}
+                                  >
+                                    {url.replace('https://www.toyotafinancial.com', '').substring(0, 30) || '/'}
+                                  </span>
+                                  {urlIdx < path.length - 1 && <ArrowRight className="w-3 h-3 text-slate-400 mx-1" />}
+                                </span>
+                              ))}
+                            </div>
+                          ))}
+                          {page.paths.length > 1 && (
+                            <button 
+                              onClick={() => setExpandedMetric(expandedMetric === `path-${idx}` ? null : `path-${idx}`)}
+                              className="text-xs text-blue-600 hover:underline"
+                            >
+                              {expandedMetric === `path-${idx}` ? 'Show less' : `+${page.paths.length - 1} more path${page.paths.length > 2 ? 's' : ''}`}
+                            </button>
+                          )}
+                        </div>
+                      ) : (
+                        <p className="text-xs text-slate-400 italic">No path traced (orphan or complex routing)</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               ) : (
                 <div className="p-8 text-center text-slate-400">
                   <CheckCircle className="w-12 h-12 mx-auto mb-2 opacity-20" />
-                  <p>No broken links detected</p>
+                  <p>No buried pages detected</p>
                 </div>
               )}
             </div>
