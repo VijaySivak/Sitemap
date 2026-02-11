@@ -1,0 +1,50 @@
+{
+  "total_unique_domains": 95,
+  "faq_unique_domains": 2,
+  "top_domains": [
+    {
+      "domain": "afdc.energy.gov",
+      "count": 1
+    },
+    {
+      "domain": "apps.apple.com",
+      "count": 1
+    },
+    {
+      "domain": "autoclubsouth.aaa.com",
+      "count": 1
+    },
+    {
+      "domain": "autoparts.toyota.com",
+      "count": 1
+    },
+    {
+      "domain": "cars.usnews.com",
+      "count": 1
+    },
+    {
+      "domain": "chipproutah.com",
+      "count": 1
+    },
+    {
+      "domain": "cluballiance.aaa.com",
+      "count": 1
+    },
+    {
+      "domain": "consumer.ftc.gov",
+      "count": 1
+    },
+    {
+      "domain": "craigslist.com",
+      "count": 1
+    },
+    {
+      "domain": "d.comenity.net",
+      "count": 1
+    }
+  ],
+  "sensitive_domains": [
+    "disasterloan.sba.gov",
+    "www.annualcreditreport.com"
+  ]
+}

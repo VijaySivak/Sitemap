@@ -48,3 +48,6 @@ Thumbs.db
 
 # Docker
 *.env
+
+# Node Modules directory
+node_modules
