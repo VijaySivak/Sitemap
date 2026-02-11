@@ -1,0 +1,21 @@
+# Core
+pydantic
+python-dotenv
+
+# Repo / code parsing
+javalang
+GitPython
+
+# LangChain / Vertex
+langchain
+langchain-google-vertexai
+google-cloud-aiplatform
+
+# Fallbacks (at least one recommended for local laptops without gcloud):
+langchain-google-genai      # LangChain wrapper for Gemini API key
+google-generativeai         # Official SDK for Gemini and chat-bison-001
+
+# Optional DB drivers (install when needed)
+# google-cloud-firestore
+# redis
+# neo4j

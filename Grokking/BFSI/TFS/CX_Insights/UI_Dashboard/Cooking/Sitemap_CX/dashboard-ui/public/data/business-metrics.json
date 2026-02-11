@@ -1,0 +1,101 @@
+{
+  "content_health": {
+    "total_pages": 561,
+    "successful_crawls": 457,
+    "broken_pages": 0,
+    "fetch_errors": 19,
+    "blocked_by_robots": 1,
+    "health_score": 81.5
+  },
+  "navigation": {
+    "depth_distribution": [
+      {
+        "depth": 0,
+        "count": 2
+      },
+      {
+        "depth": 1,
+        "count": 80
+      },
+      {
+        "depth": 2,
+        "count": 194
+      },
+      {
+        "depth": 3,
+        "count": 272
+      },
+      {
+        "depth": 4,
+        "count": 13
+      }
+    ],
+    "deep_pages_count": 13,
+    "orphan_pages": 0
+  },
+  "faq_quality": {
+    "total_faqs": 297,
+    "self_service_rate": 67.0,
+    "direct_text_count": 199,
+    "escalation_count": 5,
+    "short_answers": 21,
+    "pages_without_faqs": 306,
+    "answer_modes": {
+      "DIRECT_TEXT": 199,
+      "LINK_OUT": 55,
+      "PDF_ATTACHMENT": 18,
+      "PHONE_ESCALATION": 19,
+      "PORTAL_REDIRECT": 5,
+      "VIDEO": 1
+    }
+  },
+  "dependencies": {
+    "pdf_count": 0,
+    "pdf_pages": 0,
+    "external_heavy_pages": [
+      {
+        "url": "https://www.toyotafinancial.com/us/en/TFS_ThoughtFuel_Blog/which-toyota-is-right-for-you.html",
+        "external_links": 60
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/TFS_ThoughtFuel_Blog/top-reasons-to-choose-toyota-family-vehicle.html",
+        "external_links": 59
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/TFS_ThoughtFuel_Blog/nine-easy-ways-to-reduce-fuel-consumption.html",
+        "external_links": 55
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/TFS_ThoughtFuel_Blog/what-to-expect-from-toyota-test-drive.html",
+        "external_links": 50
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/vehicle_protection_plan/vehicle_service_agreements.html",
+        "external_links": 49
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/planning_tools/ways_to_pay.html",
+        "external_links": 49
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/TFS_ThoughtFuel_Blog/Weighing_Your_Options_Buy_vs_Lease.html",
+        "external_links": 48
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/TFS_ThoughtFuel_Blog/Ten_Tips_for_Driving_at_Night.html",
+        "external_links": 48
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/TFS_ThoughtFuel_Blog/how_to_maximize_the_resale_value_of_your_vehicle.html",
+        "external_links": 47
+      },
+      {
+        "url": "https://www.toyotafinancial.com/us/en/TFS_ThoughtFuel_Blog/Factors_that_Affect_Auto_Insurance_Rates.html",
+        "external_links": 46
+      }
+    ]
+  },
+  "issues": {
+    "broken_links": []
+  }
+}

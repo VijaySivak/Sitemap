@@ -1,0 +1,51 @@
+{
+  "overview": {
+    "totalPages": 561,
+    "totalFaqs": 297,
+    "totalExternalLinks": 194
+  },
+  "statusDistribution": [
+    {
+      "name": "BLOCKED_BY_ROBOTS",
+      "value": 1
+    },
+    {
+      "name": "CRAWLED",
+      "value": 457
+    },
+    {
+      "name": "FETCH_ERROR",
+      "value": 19
+    },
+    {
+      "name": "SKIPPED_BY_POLICY",
+      "value": 84
+    }
+  ],
+  "answerModes": [
+    {
+      "name": "DIRECT_TEXT",
+      "value": 199
+    },
+    {
+      "name": "LINK_OUT",
+      "value": 55
+    },
+    {
+      "name": "PDF_ATTACHMENT",
+      "value": 18
+    },
+    {
+      "name": "PHONE_ESCALATION",
+      "value": 19
+    },
+    {
+      "name": "PORTAL_REDIRECT",
+      "value": 5
+    },
+    {
+      "name": "VIDEO",
+      "value": 1
+    }
+  ]
+}

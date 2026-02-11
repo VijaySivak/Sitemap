@@ -1,0 +1,33 @@
+{
+  "primary_categories": [
+    "Payment Processing",
+    "Customer Service",
+    "Account Management",
+    "Billing & Charges",
+    "Payoff Process",
+    "Loan Terms",
+    "Mobile App",
+    "Collections & Repo",
+    "Credit Reporting",
+    "Documentation",
+    "Deferrals & Hardship",
+    "Transparency"
+  ],
+  "sentiment": [
+    "Positive Experience",
+    "Negative Experience",
+    "Frustration",
+    "Satisfied"
+  ],
+  "urgency_action": [
+    "Needs Resolution",
+    "Legal Concern",
+    "Recommendation Against",
+    "Would Recommend"
+  ],
+  "technical": [
+    "App Bug",
+    "Website Issue",
+    "System Error"
+  ]
+}

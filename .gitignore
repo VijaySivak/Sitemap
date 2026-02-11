@@ -34,3 +34,24 @@ artifacts/
 *.sqlite
 *.log
 .DS_Store
+Thumbs.db
+
+# IDE / editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.hypothesis/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Node Modules directory
+node_modules

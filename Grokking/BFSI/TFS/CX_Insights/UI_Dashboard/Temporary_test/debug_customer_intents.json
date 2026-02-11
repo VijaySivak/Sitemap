@@ -1,0 +1,986 @@
+[
+  {
+    "id": "INT_LEASE_END_OPTIONS",
+    "type": "CustomerIntent",
+    "name": "Lease-End Options",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer is inquiring about the options available at the end of their lease term.",
+    "product_reasoning": "The question is specifically about lease-end options, so it directly relates to the 'PROD_LEASE' product, which covers the lease-end process.",
+    "faq_samples": [
+      {
+        "question": "What are my lease-end options?",
+        "answer_snippet": "Turn in your vehicle and purchase or lease a new Toyota.1\nPurchase the vehicle you're currently driving.\nReturn your vehicle to a Toyota or Lexus dealership.*"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_END_PREPARATION",
+    "type": "CustomerIntent",
+    "name": "Prepare for Lease-End",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand the steps and options available when preparing for the end of a vehicle lease.",
+    "product_reasoning": "The question explicitly refers to 'Lease-End', indicating it is directly related to the lease product.",
+    "faq_samples": [
+      {
+        "question": "How do I prepare for Lease-End?",
+        "answer_snippet": "Check out our [Lease-End Guide](/content/dam/nextgen-shared/lease-end/TFS-lease-end-guide.pdf) that provides details on considering your options, timing for an inspection, excessive wear and use, and finalizing your decision."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_RETURN_PROCESS",
+    "type": "CustomerIntent",
+    "name": "Return Leased Vehicle",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "HIGH",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know the process for returning their leased vehicle at the end of the lease term.",
+    "product_reasoning": "The question is specifically about returning a leased vehicle, which falls under the 'Lease financing' product (PROD_LEASE).",
+    "faq_samples": [
+      {
+        "question": "What do I need to do to return my vehicle?",
+        "answer_snippet": "Our [Lease-End Guide](/content/dam/nextgen-shared/lease-end/TFS-lease-end-guide.pdf) provides an overview of the lease-end process, and checklists to help guide you through the before, during, and after your return. The vehicle must be returned to an authorized Toyota or Lexus Dealer. We recommend contacting your originating Dealer to schedule your turn-in appointment. Your originating Dealer is required to process the vehicle return. If you return the vehicle to a third-party dealership, this is an unauthorized third-party vehicle return and you remain responsible for all obligations under the lease agreement until we receive the payoff funds and all required documentation, or the vehicle is delivered to a Toyota or Lexus Dealer. Most Toyota and Lexus Dealers will process a vehicle return even if they did not originate the lease, but we recommend contacting them to confirm and schedule a turn-in appointment. Download checklist"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_VEHICLE_RETURN_LOCATION",
+    "type": "CustomerIntent",
+    "name": "Lease Vehicle Return Location",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know where to return their leased vehicle.",
+    "product_reasoning": "The question is specifically about returning a leased vehicle, which falls under the 'Lease financing' product (PROD_LEASE).",
+    "faq_samples": [
+      {
+        "question": "Where do I turn in my leased vehicle?",
+        "answer_snippet": "The vehicle must be returned to an authorized Toyota or Lexus Dealer. If youve moved since you began your lease, use our easy dealer locator to find a participating dealer near you. We recommend contacting the dealer to schedule your lease turn-in appointment approximately 30 days prior to your lease maturity date.  Your originating Dealer is required to process the vehicle return. Most Toyota and Lexus Dealers, while not required, will process a return, even if they did not originate the lease, but we recommend contacting them to confirm and schedule a turn-in appointment."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_ORIGINATING_DEALER",
+    "type": "CustomerIntent",
+    "name": "Find Originating Dealer",
+    "category": "ORIGINATION",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "LOW",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "ORIGINATION",
+    "description": "Customer wants to know who their originating dealer is, typically in relation to a lease.",
+    "product_reasoning": "The question is specifically about the dealer where the lease originated, making PROD_LEASE the relevant product.",
+    "faq_samples": [
+      {
+        "question": "Who is my originating dealer?",
+        "answer_snippet": "Your originating dealer is the dealer where you began your lease. This dealer can help you choose your next Toyota and turn in your current leased vehicle."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_EARLY_RETURN",
+    "type": "CustomerIntent",
+    "name": "Early Lease Return",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know the process and implications of returning their leased vehicle before the scheduled maturity date.",
+    "product_reasoning": "The question is specifically about returning a leased vehicle early, which falls under the domain of lease agreements and the lease-end process. Therefore, 'PROD_LEASE' is the appropriate product.",
+    "faq_samples": [
+      {
+        "question": "What if I turn in my vehicle early?",
+        "answer_snippet": "You may return your vehicle prior to your lease maturity date; however, early termination fees may apply. For more info about turning in your lease early, refer to your lease agreement, or contact TFS at 1-800-286-0652 . You may also reach out to your dealer to get answers to any questions you have about your options."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_RETURN_DEALER",
+    "type": "CustomerIntent",
+    "name": "Lease Return Dealer Options",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Inquiring about where a leased vehicle can be returned at the end of the lease term.",
+    "product_reasoning": "The question is specifically about returning a leased vehicle, which falls under the Toyota Lease Trust (PROD_LEASE).",
+    "faq_samples": [
+      {
+        "question": "Can I return my leased vehicle to any dealer?",
+        "answer_snippet": "The vehicle must be returned to an authorized Toyota or Lexus Dealer. We recommend contacting your originating Dealer to schedule your turn-in appointment. Your originating Dealer is required to process the vehicle return. If you return the vehicle to a third-party dealership, this is an unauthorized third-party vehicle return and you remain responsible for all obligations under the lease agreement until we receive the payoff funds and all required documentation, or the vehicle is delivered to a Toyota or Lexus Dealer. Most Toyota and Lexus Dealers will process a vehicle return even if they did not originate the lease, but we recommend contacting them to confirm and schedule a turn-in appointment."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_RETURN_APPOINTMENT",
+    "type": "CustomerIntent",
+    "name": "Schedule Lease Return Appointment",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to schedule an appointment to return their leased vehicle to the Toyota dealer.",
+    "product_reasoning": "The question is specifically about returning a leased vehicle, which falls under the 'Lease financing' product (PROD_LEASE).",
+    "faq_samples": [
+      {
+        "question": "Should I schedule an appointment to return my vehicle to my Toyota dealer?",
+        "answer_snippet": "Yes, just give your dealer a call 30 days prior to your lease maturity date to schedule your lease turn-in appointment."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_RETURN_APPOINTMENT_CHECKLIST",
+    "type": "CustomerIntent",
+    "name": "Lease Return Appointment Checklist",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand what documents and items are needed for a lease turn-in appointment.",
+    "product_reasoning": "The question is specifically about a 'turn-in appointment', which is directly related to the lease-end process covered by PROD_LEASE.",
+    "faq_samples": [
+      {
+        "question": "What should I bring to my turn-in appointment?",
+        "answer_snippet": "Your TFS\u00a0[Odometer Disclosure Statement](https://www.toyotafinancial.com/content/dam/nextgen-shared/lease-end/TF_odometer_statement_6197.pdf)\nTool kit and spare tire, if applicable\nAll sets of keys (masters/remotes/valet), if applicable\nOwner's Manuals\nAny original equipment on your vehicle at lease inception (radio, headrests, 3rd\u00a0row seat, tonneau/cargo cover, etc.)"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_RETURN_NOTIFICATION",
+    "type": "CustomerIntent",
+    "name": "Notify TFS of Lease Return",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know if they need to notify Toyota Financial Services after returning their leased vehicle.",
+    "product_reasoning": "The question is specifically about returning a leased vehicle, which falls under the 'Lease financing' product.",
+    "faq_samples": [
+      {
+        "question": "Should I notify Toyota Financial Services after I have returned my leased vehicle?",
+        "answer_snippet": "Yes, to minimize any potential delays processing your lease return, you can notify us of your return by logging on to Toyotafinancial.com or your Toyota Financial Services App and follow the Lease End return prompts. You can also notify us by telephone at (800) 874-8822 using our automated system or speaking with a live agent. Log in to my account"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_END_PROCESS_AFTER_RETURN",
+    "type": "CustomerIntent",
+    "name": "Lease End Process After Vehicle Return",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE",
+      "PROD_EWU"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand the steps and charges involved after returning a leased vehicle, including final inspection, potential fees, and security deposit return.",
+    "product_reasoning": "The question directly relates to the lease-end process (PROD_LEASE). It also touches on potential charges related to wear and use, which is covered by PROD_EWU.",
+    "faq_samples": [
+      {
+        "question": "What happens after I return my vehicle?",
+        "answer_snippet": "Confirm the Dealership will accept the return. Only your originating Dealer is required to accept your lease return.\u00a0To minimize any potential delays processing your lease return, you can notify us of your return by logging onto Toyotafinancial.com or your Toyota Financial Services App and follow the Lease End return prompts. You can also notify us by telephone at (800) 874-8822 using our automated system or speaking with a live agent.\nThe dealership will complete a final inspection at your return appointment, and ask you to sign the\u00a0[Odometer Disclsoure Statement](https://www.toyotafinancial.com/content/dam/nextgen-shared/lease-end/TF_odometer_statement_6197.pdf), and provide you with a copy of it for your records. Capture the name of dealer associate that helped with the return.\nTFS will send you a Lease-End invoice if you have any unpaid payments, late fees and miscellaneous charges. The invoice will also include Excessive Wear and Use charges, Excessive Mileage charges, and Disposition Fee if applicable. These items may be taxable.\nIf you had a security deposit, it will be returned to your home address via check. It will be used to first pay any Lease-End invoice charges, if applicable.\n[Cancel any electronic payments](https://www.toyotafinancial.com/dss/login?deeplink=paymentspayments)."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_END_COMMUNICATION",
+    "type": "CustomerIntent",
+    "name": "Lease End Communication",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know how Toyota Financial Services will contact them regarding their lease end.",
+    "product_reasoning": "The question is specifically about communication related to the end of a lease, which falls under the 'Lease financing' product.",
+    "faq_samples": [
+      {
+        "question": "How will TFS contact me before my lease ends?",
+        "answer_snippet": "Leading up to lease-end, youll receive various communications from TFS about your options and things you need to do. Be on the lookout for information from us through toyotafinancial.com, email and/or phone calls."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_MATURITY_DATE",
+    "type": "CustomerIntent",
+    "name": "Lease Maturity Date Inquiry",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know the date their lease agreement ends.",
+    "product_reasoning": "The question is specifically about the lease maturity date, which is directly related to lease financing.",
+    "faq_samples": [
+      {
+        "question": "What is my lease maturity date?",
+        "answer_snippet": "This is the date when your lease agreement ends and your vehicle should be returned to a Toyota dealer (unless you choose the option to purchase your leased vehicle)."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_END_CHARGES",
+    "type": "CustomerIntent",
+    "name": "End of Lease Invoice Charges",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE",
+      "PROD_EWU"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand the charges on the end-of-lease invoice after turning in a leased vehicle.",
+    "product_reasoning": "The intent directly relates to charges incurred at the end of a lease (PROD_LEASE). It also relates to the lease-end protection plan that waives charges for excess wear and use (PROD_EWU).",
+    "faq_samples": [
+      {
+        "question": "What charges should I expect on my End of Term Invoice after I turn in my vehicle?",
+        "answer_snippet": "Excess wear and use\nExcess mileage\nDisposition fee\nAny past due and unpaid monthly payments\nAny other miscellaneous charges (e.g., unpaid late payment fees, taxes, tolls)\nAny other charges due under the terms of your lease agreement if your lease was terminated early"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_LICENSE_PLATES",
+    "type": "CustomerIntent",
+    "name": "License Plate Return on Lease",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "LOW",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Inquiring about the process of returning license plates at the end of a vehicle lease.",
+    "product_reasoning": "The question is specifically about returning license plates at the end of a vehicle lease, which falls under the umbrella of lease-end processes covered by 'PROD_LEASE'.",
+    "faq_samples": [
+      {
+        "question": "Do I return my license plates when I turn in my vehicle?",
+        "answer_snippet": "Great question - it varies by state. Please contact your Toyota dealer or the DMV if you have questions about how this applies to you."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_CANCEL_PAYMENTS",
+    "type": "CustomerIntent",
+    "name": "Cancel Electronic Lease Payments",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know if they need to cancel electronic payments at the end of their lease.",
+    "product_reasoning": "The question is specifically about payments related to a lease, so PROD_LEASE is the relevant product.",
+    "faq_samples": [
+      {
+        "question": "Do I need to cancel any electronic payments at the end of my lease?",
+        "answer_snippet": "Yes, and this is one people forget. If youve returned your vehicle, please remember to cancel any automated payments you may have set up through either toyotafinancial.com or your bank."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_VEHICLE_PURCHASE",
+    "type": "CustomerIntent",
+    "name": "Purchase Current Vehicle",
+    "category": "ACCOUNT_MGMT",
+    "product_refs": [
+      "PROD_RETAIL",
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to purchase their currently financed vehicle.",
+    "product_reasoning": "The customer is asking about purchasing their current vehicle. This could be a lease (PROD_LEASE) or a retail loan (PROD_RETAIL).",
+    "faq_samples": [
+      {
+        "question": "How do I purchase my current vehicle?",
+        "answer_snippet": "First, great decision. Next, get a payoff quote by logging into your [TFS online account](https://www.toyotafinancial.com/dss/login?deeplinkpurchase_vehicle) or contacting TFS at [1-800-286-0652](tel:1-800-286-0652) . If you need financing, you can head straight to your dealer for help."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_NEW_TOYOTA",
+    "type": "CustomerIntent",
+    "name": "Easiest way to get into a new Toyota",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know the easiest way to transition into a new Toyota vehicle, likely at the end of their current lease.",
+    "product_reasoning": "The question refers to getting into a new Toyota at the end of a lease, which directly relates to the lease-end process and potentially starting a new lease (PROD_LEASE).",
+    "faq_samples": [
+      {
+        "question": "Whats the easiest way to get into a new Toyota?",
+        "answer_snippet": "Just bring your vehicle back to your Toyota dealer at the end of your lease and they can help you with the rest."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_EXCESSIVE_WEAR_USE",
+    "type": "CustomerIntent",
+    "name": "Excessive Wear and Use Definition",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE",
+      "PROD_EWU"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand what constitutes excessive wear and use on a leased vehicle.",
+    "product_reasoning": "The question directly relates to the definition of excessive wear and use, which is a key aspect of lease agreements (PROD_LEASE). Also, the EWU product is designed to protect against these charges.",
+    "faq_samples": [
+      {
+        "question": "Whats considered excessive wear and use?",
+        "answer_snippet": "It probably seems obvious, but damage that is beyond normal wear and use is considered excessive If it helps to see some examples of whats considered excessive, check out our [Wear and Use Guidelines](https://www.toyotafinancial.com/content/dam/nextgen-shared/lease-end/Toyota_Lease-End_EWU.pdf). We also recommend reviewing your lease agreement as it includes additional excess wear and use information specific to your vehicle. Just a heads up, though, the examples provided may not include all instances of excessive damage that could subject you to additional charges based on the terms of your lease agreement."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_REPAIRS_PRE_RETURN",
+    "type": "CustomerIntent",
+    "name": "Repair Lease Vehicle Before Return",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE",
+      "PROD_EWU"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know if they can repair their leased vehicle before returning it to avoid wear and use charges.",
+    "product_reasoning": "The question is specifically about repairs to a leased vehicle to avoid wear and use charges at the end of the lease. Therefore, PROD_LEASE (lease financing) and PROD_EWU (lease-end wear and use protection) are relevant.",
+    "faq_samples": [
+      {
+        "question": "Can I make repairs to my lease vehicle so I dont incur wear and use charges?",
+        "answer_snippet": "Of course. In fact, we encourage you to schedule a complimentary inspection 3 and to review the [Wear and Use Guidelines](https://www.toyotafinancial.com/content/dam/nextgen-shared/lease-end/Toyota_Lease-End_EWU.pdf) to see whether your vehicle has wear and use that is considered excessive. If repair work is needed and youd like to make repairs prior to turning in the vehicle, your local Toyota dealer is a great option to assist you. Be sure to keep all of your receipts for repairs made and review your insurance policy to see if any items may be covered. If your damages exceeding normal wear and use arent repaired, it can result in charges at lease termination. 4 All charges may be subject to sales tax. 3 Available to Toyota Financial Services lease customers that do not reside in Alaska or Hawaii and whose leases did not originate in New Hampshire or Wisconsin. 4 If repairs are made to your vehicle, you or the dealer may request an inspection upon turn-in. Under certain circumstances, Toyota Financial Services does not charge its lease customers for excess wear and use damage. See your lease agreement for additional information."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_PRE_INSPECTION",
+    "type": "CustomerIntent",
+    "name": "Courtesy Pre-Inspection",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "LOW",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand the purpose and availability of a courtesy pre-inspection for leased vehicles to estimate potential wear and use charges at lease-end.",
+    "product_reasoning": "The question is specifically about a pre-inspection related to the lease-end process. Therefore, it directly relates to 'PROD_LEASE'.",
+    "faq_samples": [
+      {
+        "question": "What is a courtesy pre-inspection?",
+        "answer_snippet": "A courtesy pre-inspection by your Toyota dealer assesses the condition of your vehicle and provides an estimate of wear and use charges that could be due at lease-end. 3 3 Courtesy pre-inspection available to lease customers who do not reside in Hawaii or whose leases did not originate in New Hampshire or Wisconsin."
+      },
+      {
+        "question": "How do I schedule a courtesy pre-inspection appointment?",
+        "answer_snippet": "You can contact your originating dealer or any Toyota dealer to determine if they can conduct a courtesy pre-inspection and schedule an appointment. 3 3 Courtesy pre-inspection available to lease customers who do not reside in Hawaii or whose leases did not originate in New Hampshire or Wisconsin."
+      },
+      {
+        "question": "What is a courtesy pre-inspection?",
+        "answer_snippet": "A courtesy pre-inspection by your Toyota dealer assesses the condition of your vehicle and provides an estimate of wear and use charges that could be due at leas-end. 1 1 Courtesy pre-inspection available to lease customers who do not reside in Hawaii or whose leases did not originate in New Hampshire or Wisconsin."
+      },
+      {
+        "question": "How do I schedule a courtesy pre-inspection?",
+        "answer_snippet": "You can contact your originating dealer or any Toyota dealer to determine if they can conduct a courtesy pre-inspection and schedule an appointment. 1 We recommend completing this within 60 days before your vehicle return. 1 Courtesy pre-inspection available to lease customers who do not reside in Hawaii or whose leases did not originate in New Hampshire or Wisconsin."
+      },
+      {
+        "question": "Should I schedule a courtesy pre-inspection?",
+        "answer_snippet": "If you think you may have excessive wear and use, then scheduling a courtesy pre-inspection1 is a smart idea.\n1Courtesy pre-inspection available to lease customers who do not reside in Hawaii or whose leases did not originate in New Hampshire or Wisconsin.\nBenefits of a courtesy pre-inspection:\nKnowing the condition of your vehicle before the end of your lease allows you to make well-informed decisions Discussing the vehicle condition with your dealer may be beneficial in helping make your lease-end decision Detailed condition reports, itemizing any estimated excess wear and use fees, are available immediately after your inspection. You can discuss the inspection report with the dealer and access it via the Document Center on our mobile app or at toyotafinancial.com"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_RETURN_PRE_INSPECTION",
+    "type": "CustomerIntent",
+    "name": "Lease Return Pre-Inspection Requirements",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand what documents and items are needed for the courtesy pre-inspection and lease return appointments.",
+    "product_reasoning": "The question explicitly mentions 'lease return appointments,' indicating a direct relationship with lease products. The pre-inspection is part of the lease-end process.",
+    "faq_samples": [
+      {
+        "question": "What do I need for my courtesy pre-inspection and lease return appointments?",
+        "answer_snippet": "Vehicle keys\nToolkit and spare tire\nOwner's Manual\nOriginal equipment"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_PRE_INSPECTION_NEXT_STEPS",
+    "type": "CustomerIntent",
+    "name": "Lease Pre-Inspection Next Steps",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "LOW",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand what actions to take after completing a lease pre-inspection.",
+    "product_reasoning": "The question is specifically about actions following a lease pre-inspection, which is directly related to the lease-end process under Toyota Lease Trust.",
+    "faq_samples": [
+      {
+        "question": "What should I do after my courtesy pre-inspection?",
+        "answer_snippet": "After your courtesy pre-inspection, you can discuss the inspection report immediately with the dealer in person. You can also access the report via the Document Center on our mobile app or toyotafinancial.com. You can make repairs before turning in your vehicle-just be sure to keep receipts for your records"
+      },
+      {
+        "question": "What should I do after my courtesy pre-inspection?",
+        "answer_snippet": "After your courtesy pre-inspection, you can discuss the inspection report immediately with the dealer in person. You can also access the report via the Document Center on our mobile app or at toyotafinancial.com. You can make repairs before turning in your vehicle-just be sure to keep receipts for your records."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_MILEAGE_ALLOWANCE",
+    "type": "CustomerIntent",
+    "name": "Find Mileage Allowance",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer wants to know where to find their allowed mileage on a lease.",
+    "product_reasoning": "The question is specifically about mileage allowance, which is a key component of lease agreements. Therefore, it directly relates to 'PROD_LEASE'.",
+    "faq_samples": [
+      {
+        "question": "Where can I find my mileage allowance?",
+        "answer_snippet": "The easiest way to find your mileage allowance is by looking at your lease agreement. If you cant find your lease agreement - no worries - your friends at your local dealer will be happy to help you find it."
+      },
+      {
+        "question": "How can I see the mileage allowance in my lease agreement and track progress?",
+        "answer_snippet": "Log in to your account\nSelect \u201cMenu\u201d from the top navigation bar\nSelect \u201cMileage Calculator\u201d under Manage Account"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_MILEAGE_OVERAGE",
+    "type": "CustomerIntent",
+    "name": "Mileage Overage on Lease",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer is inquiring about the consequences of exceeding the mileage allowance on their lease agreement.",
+    "product_reasoning": "The question is specifically about mileage overage, which is a component of lease agreements handled by Toyota Lease Trust (PROD_LEASE).",
+    "faq_samples": [
+      {
+        "question": "What if I go over my mileage allowance?",
+        "answer_snippet": "No problem, it happens. You just need to call your dealer and they can give you more info on any potential charges."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_ADDITIONAL_MILES",
+    "type": "CustomerIntent",
+    "name": "Request Additional Lease Miles",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer wants to know if they can purchase additional miles for their lease.",
+    "product_reasoning": "The question is specifically about obtaining additional miles, which is directly related to lease agreements. Therefore, PROD_LEASE is the relevant product.",
+    "faq_samples": [
+      {
+        "question": "Can I get additional miles?",
+        "answer_snippet": "We love the question and wish there was a way to purchase additional miles. Unfortunately, were not currently offering that as an option."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_ACCOUNT_ACCESS_CREDENTIALS",
+    "type": "CustomerIntent",
+    "name": "Obtain TFS Account Credentials",
+    "category": "ACCOUNT_MGMT",
+    "product_refs": [],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer is trying to obtain a username and password to access their Toyota Financial Services (TFS) account.",
+    "product_reasoning": "The intent is related to general account access and not specific to any particular product like Lease, Retail, or VSA. Therefore, no product mapping is necessary.",
+    "faq_samples": [
+      {
+        "question": "How do I obtain a username and password to access my TFS account?",
+        "answer_snippet": "You must be a registered TFS account holder to obtain a username and password. To register your account, please [click here to register](https://m.my.toyotafinancial.com/pub/w/registration) or download the MyTFS app from the App Store or Google Play."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_PASSWORD_NOT_WORKING",
+    "type": "CustomerIntent",
+    "name": "Password Not Working",
+    "category": "ACCOUNT_MGMT",
+    "product_refs": [],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer is having trouble logging in because their password is not working.",
+    "product_reasoning": "This intent is related to general account management and website login issues, not specific to any particular product.",
+    "faq_samples": [
+      {
+        "question": "Why isnt my password working?",
+        "answer_snippet": "Passwords are case-sensitive\nMake sure the CAPS LOCK key on your computer or device is off, then re-enter your password\nPasswords may return invalid if there are blank spaces\nMake sure there are no additional spaces in your entry, then retry your password"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_ACCOUNT_PASSWORD_RESET",
+    "type": "CustomerIntent",
+    "name": "Password Reset",
+    "category": "ACCOUNT_MGMT",
+    "product_refs": [],
+    "volume_signal": "HIGH",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer is trying to reset their password to access their account.",
+    "product_reasoning": "This intent is related to general account management and not specific to any particular product.",
+    "faq_samples": [
+      {
+        "question": "I forgot my password. How can I retrieve it?",
+        "answer_snippet": "Click [here](https://m.my.toyotafinancial.com/pub/w/forgot_password) if you have forgotten your password."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_ACCOUNT_USERNAME_LOGIN_ISSUE",
+    "type": "CustomerIntent",
+    "name": "Username Login Issue",
+    "category": "ACCOUNT_MGMT",
+    "product_refs": [],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer is having trouble logging in due to username issues.",
+    "product_reasoning": "This intent relates to general account access and login issues, not specific to any particular product like leases or VSA. Therefore, the product_refs list is empty.",
+    "faq_samples": [
+      {
+        "question": "Why isnt my username working?",
+        "answer_snippet": "Usernames are case-sensitive\nFor security reasons, we no longer accept email addresses as usernames\nIf you used your email as your username, make sure the CAPS LOCK key on your computer or device is off, and then re-enter your username\nLog in [here](/us/en/external_login.html) on your desktop or laptop using your current username. This will prompt you to update your username to comply with our new requirements"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_USERNAME_RECOVERY",
+    "type": "CustomerIntent",
+    "name": "Recover Username",
+    "category": "ACCOUNT_MGMT",
+    "product_refs": [],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer is trying to recover their username for their account.",
+    "product_reasoning": "This intent is related to general account management and not specific to any particular product.",
+    "faq_samples": [
+      {
+        "question": "I forgot my username. How can I retrieve it?",
+        "answer_snippet": "Click [here](https://www.toyotafinancial.com/dss/self-service/credential-recovery) if you have forgotten your username."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_ACCOUNT_SECURITY_RESET",
+    "type": "CustomerIntent",
+    "name": "Reset Security Question Answer",
+    "category": "ACCOUNT_MGMT",
+    "product_refs": [],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer needs to reset the answer to their security question because they have forgotten it.",
+    "product_reasoning": "This intent is related to general account security and does not pertain to any specific product offered.",
+    "faq_samples": [
+      {
+        "question": "I forgot the secret answer to my security question. How do I reset it?",
+        "answer_snippet": "Click the Forgot Answer link below the Answer field, and this will you allow you to reset you answer."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_ACCOUNT_UNLOCK",
+    "type": "CustomerIntent",
+    "name": "Account Unlock",
+    "category": "ACCOUNT_MGMT",
+    "product_refs": [],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "USAGE",
+    "description": "Customer is locked out of their account and needs to unlock it.",
+    "product_reasoning": "This intent is related to general account management and not specific to any particular product. Therefore, the product_refs list is empty.",
+    "faq_samples": [
+      {
+        "question": "What do I do if Im locked out of my account?",
+        "answer_snippet": "Click [here](https://m.my.toyotafinancial.com/pub/w/forgot_password?action=unlock) to unlock your account.\nYou will be asked for the following information to unlock your account:\nAccount Number\nLast 4 digits of your SSN / TAX ID\nAccount Number\nLast 4 digits of your SSN / TAX ID"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_WHAT_IS_CREDIT",
+    "type": "CustomerIntent",
+    "name": "What is Credit?",
+    "category": "ORIGINATION",
+    "product_refs": [],
+    "volume_signal": "LOW",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "ORIGINATION",
+    "description": "Customer is asking for a definition of credit and how it applies to vehicle financing and leasing.",
+    "product_reasoning": "This is a general question about the concept of credit and doesn't relate to a specific product. It's an introductory question applicable to both leasing and retail financing, but not specific enough to warrant either.",
+    "faq_samples": [
+      {
+        "question": "What is credit?",
+        "answer_snippet": "Say you want to purchase or lease a car, but dont have enough money to pay for it all at once. Enter credit. Credit allows customers to take possession of something, in our case a vehicle, before it is fully paid. A financial institution extends credit for the item, on the expectation that payment will be completed in the future. With credit through Toyota Financial Services, you can either finance (make monthly payments on an amount borrowed to pay for the purchase) or lease (pay for the use of a vehicle for a set period of time plus any lease charges)."
+      },
+      {
+        "question": "What is credit?",
+        "answer_snippet": "Say you want to purchase or lease a car, but dont have enough money to pay for it all at once. Enter credit. Credit allows customers to take possession of something, in our case a vehicle, before it is fully paid. A financial institution extends credit for the item, on the expectation that payment will be completed in the future. With credit through Toyota Financial Services, you can either finance (make monthly payments on an amount borrowed to pay for the purchase) or lease (pay for the use of a vehicle for a set period of time plus any lease charges)."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_CREDIT_SCORE_EXPLANATION",
+    "type": "CustomerIntent",
+    "name": "Credit Score Explanation",
+    "category": "GENERAL_SUPPORT",
+    "product_refs": [],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "ORIGINATION",
+    "description": "Customer is asking for an explanation of what a credit score is and what factors influence it.",
+    "product_reasoning": "The question is about general credit score information and is not specific to any of the listed products.",
+    "faq_samples": [
+      {
+        "question": "What is your credit made of?",
+        "answer_snippet": "There are a few factors that make up someones credit:\nCredit Report\nA credit report is issued by an independent credit reporting agency and includes personal information; credit information like accounts, dates opened, account numbers, terms, amounts borrowed and payment history; how many creditors have requested your credit report; and public records of tax liens, bankruptcies and court-awarded judgments.\nCredit reports are generated by each of the three major credit-reporting bureaus: Equifax, Experian, and TransUnion. What is reflected in your credit report may be used to compute your credit score.\nCredit Score\nYour credit score, sometimes referred to as a FICO score, can range from 300-850. The higher it is, the better. Good credit scores can make it easier and cheaper to get credit for the things you want. Basically, the scores have become a way to see how an individuals credit compares to hundreds of thousands of other consumers, and are used by financial institutions to decide how likely you are to honor your financial commitments.\nActually, you have more than one credit score. Each of the three bureaus uses a different score for its own purposes, and theyre not all the same for each person. These scores will also fluctuate from time to time, and may differ based on how each bureau calculates scores based on its stated criteria. To keep your credit in good standing its important to be proactive."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_EXCESSIVE_WEAR",
+    "type": "CustomerIntent",
+    "name": "Excessive Wear and Use Definition",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE",
+      "PROD_EWU"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand what constitutes excessive wear and use on a leased vehicle.",
+    "product_reasoning": "The question directly relates to the definition of excessive wear and use, which is a key aspect of lease agreements (PROD_LEASE). It also relates to the lease-end protection plan that waives charges for excess wear and use (PROD_EWU).",
+    "faq_samples": [
+      {
+        "question": "Whats considered excessive wear and use?",
+        "answer_snippet": "It probably seems obvious, but damage that is beyond normal wear and use is considered excessive. If it helps to see some examples of whats considered excessive, check out our [Wear and Use Guidelines](https://www.toyotafinancial.com/content/dam/nextgen-shared/lease-end/Toyota_Lease-End_EWU.pdf). We also recommend reviewing your lease agreement as it includes additional excess wear and use information specific to your vehicle. Just a heads-up, though, the examples provided may not include all instances of excessive damage that could subject you to additional charges based on the terms of your lease agreement."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_REPAIRS_TO_AVOID_CHARGES",
+    "type": "CustomerIntent",
+    "name": "Repair Lease Vehicle to Avoid Charges",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE",
+      "PROD_EWU"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "MODERATE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Customer wants to know if they can make repairs to their leased vehicle to avoid wear and use charges at lease end.",
+    "product_reasoning": "The question is specifically about repairs to a leased vehicle to avoid wear and use charges, which directly relates to the lease-end process (PROD_LEASE). It also relates to the lease-end protection plan (PROD_EWU) which covers excess wear and use.",
+    "faq_samples": [
+      {
+        "question": "Can I make repairs to my lease vehicle so I dont incur wear and use charges?",
+        "answer_snippet": "Of course. In fact, we encourage you to schedule a courtesy pre-inspection 1 and to review the [Wear and Use Guidelines](https://www.toyotafinancial.com/content/dam/nextgen-shared/lease-end/TFS_Lease-End_Guide_feb2020.pdf) to see whether your vehicle has wear and use that is considered excessive. If repair work is needed and youd like to make repairs prior to turning in the vehicle, your local Toyota dealer is a great option to assist you. Be sure to keep all of your receipts for repairs made and review your insurance policy to see if any items may be covered. If your damages exceeding normal wear and use arent repaired, it can result in charges at lease termination. 2 All charges may be subject to sales tax. 1 Courtesy pre-inspection available to lease customers who do not reside in Hawaii or whose leases did not originate in New Hampshire or Wisconsin. 2 If repairs are made to your vehicle, you or the dealer may request an inspection upon turn-in. Under certain circumstances, TFS does not charge its lease customers for excess wear and use damage. See your lease agreement for additional information."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_LEASE_RETURN_REQUIREMENTS",
+    "type": "CustomerIntent",
+    "name": "Lease Return Requirements",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_LEASE"
+    ],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Understand what documents and items are needed for the courtesy pre-inspection and lease return appointments.",
+    "product_reasoning": "The question explicitly mentions 'lease return appointments,' indicating it directly relates to the lease-end process covered by PROD_LEASE.",
+    "faq_samples": [
+      {
+        "question": "What do I need for my courtesy pre-inspection and lease return appointments?",
+        "answer_snippet": "Vehicle keys\nToolkit and spare tire\nOwner's Manual\nOriginal Equipment"
+      },
+      {
+        "question": "What do I need for my courtesy pre-inspection and lease return appointments?",
+        "answer_snippet": "Vehicle keys\nToolkit and spare tire\nOwner's Manual\nOriginal Equipment"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_EWU_PURCHASED",
+    "type": "CustomerIntent",
+    "name": "Excess Wear & Use Protection Purchased",
+    "category": "LEASE_END",
+    "product_refs": [
+      "PROD_EWU"
+    ],
+    "volume_signal": "LOW",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "RENEWAL_EXIT",
+    "description": "Inquire about coverage details when Excess Wear & Use Protection was purchased.",
+    "product_reasoning": "The question specifically asks about Excess Wear & Use Protection, so only PROD_EWU is relevant.",
+    "faq_samples": [
+      {
+        "question": "What if I purchased Excess Wear & Use Protection?",
+        "answer_snippet": "If you purchased Excess Wear & Use Protection, you should be in great shape to avoid most charges, and heres what youre covered for:\nEach eligible event valued at $1,000 or less Each eligible missing part or equipment valued at $200 or less Up to $5,000 in excess wear and use charges\nIf you didnt purchase Excess Wear & Use Protection, well still be here to help. Our biggest recommendation would be to call and schedule a courtesy pre-inspection1. That way you can fix any damage and there wont be surprises at lease-end.\n1Courtesy pre-inspection available to lease customers who do not reside in Hawaii or whose leases did not originate in New Hampshire or Wisconsin."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_CREDIT_SCORE_INQUIRY",
+    "type": "CustomerIntent",
+    "name": "Credit Score Inquiry",
+    "category": "GENERAL_SUPPORT",
+    "product_refs": [],
+    "volume_signal": "MEDIUM",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "ORIGINATION",
+    "description": "Customer wants to know what a FICO score is and how to find out more about their credit rating.",
+    "product_reasoning": "This intent is about general credit scores and credit ratings, and is not specific to any of the listed products.",
+    "faq_samples": [
+      {
+        "question": "What is a FICO score and how can I find out more about my credit rating?",
+        "answer_snippet": "Equifax\nExperian\nTransUnion\nInnovis"
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_STUDENT_FINANCING_REQUIREMENTS",
+    "type": "CustomerIntent",
+    "name": "College Student Financing",
+    "category": "ORIGINATION",
+    "product_refs": [
+      "PROD_LEASE",
+      "PROD_RETAIL"
+    ],
+    "volume_signal": "LOW",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "ORIGINATION",
+    "description": "Inquiring about co-buyer requirements for college students financing or leasing a Toyota.",
+    "product_reasoning": "The question directly relates to financing and leasing a Toyota, thus including both PROD_LEASE and PROD_RETAIL.",
+    "faq_samples": [
+      {
+        "question": "Im a current college student. Do I need a co-buyer or lessee to finance or lease a Toyota?",
+        "answer_snippet": "If you meet our criteria as a current college student or recent graduate, you can qualify for TFS College Finance and Lease Programs and wont need a co-buyer."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  },
+  {
+    "id": "INT_CREDIT_CARD_INFO",
+    "type": "CustomerIntent",
+    "name": "Toyota Rewards Visa Information",
+    "category": "GENERAL_SUPPORT",
+    "product_refs": [],
+    "volume_signal": "LOW",
+    "complexity_tier": "SIMPLE",
+    "journey_stage": "ORIGINATION",
+    "description": "Customer is seeking information about the Toyota Rewards Visa credit card.",
+    "product_reasoning": "The question is about a credit card, which is not directly related to any of the listed products (Lease, Retail financing, VSA, GAP, EWU, TWP). Therefore, the product_refs list is empty.",
+    "faq_samples": [
+      {
+        "question": "Where can I learn about the Toyota Rewards Visa?",
+        "answer_snippet": "The Toyota Rewards Visa is offered through Comenity Capital Bank. To learn more and apply, visit the Toyota Rewards Visa website ."
+      }
+    ],
+    "data_quality_flags": {
+      "is_fallback": false
+    }
+  }
+]

@@ -1,0 +1,7 @@
+pandas
+numpy
+neo4j
+pyvis
+python-dotenv
+google-cloud-aiplatform>=1.38.0
+pydantic

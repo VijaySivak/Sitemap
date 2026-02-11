@@ -1,0 +1,608 @@
+[
+  {
+    "url": "https://www.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/css/e4db30450135850f.css",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/galaxy-css/7.6.3/galaxy.min.css",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/web-observability-utils/2.6.8/newRelicWrapper.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/galaxy-css/6.0.0-alpha.340b178/fonts/National2Web-Medium.woff2",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/Intuit.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/TurboTax.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/css/c1bff76d1482ac25.css",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/galaxy-css/6.0.0-alpha.340b178/fonts/National2Web-Bold.woff2",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/galaxy-css/6.0.0-alpha.340b178/fonts/National2Web-Regular.woff2",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "font"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/CreditKarma.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/Quickbooks.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://www.creditkarma.com/GMgi21/J/w/CeKdnZ0rVZhh/4w/cTVRYT95BQ/eyg/YDSJvAGdY",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/Mailchimp.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/grayscale/CreditKarma.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/grayscale/Intuit.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/grayscale/TurboTax.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/main-app-19008b29240840c7.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/navi/CK-trademark.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/navi/IC-logo.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/139-25d9fa10c664efac.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/app/loading-0550d9a2832e179b.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/grayscale/Mailchimp.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/817-accf5e2f709e6e2f.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/intuit-cornerstone-logos/reversed/Intuit.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.151.100/intuit-cornerstone-logos/grayscale/QuickBooks.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/intuit-cornerstone-logos/reversed/TurboTax.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://www.creditkarma.com/GMgi21/J/w/CeKdnZ0rVZhh/5X/cTVRYT95BQ/BTs/YSkIUHTUq",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/intuit-cornerstone-logos/reversed/CreditKarma.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/intuit-cornerstone-logos/reversed/Quickbooks.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/footer/ck-footer-desktop-code.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/intuit-cornerstone-logos/reversed/Mailchimp.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/footer/Facebook.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/footer/Instagram.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/footer/YouTube.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/footer/Twitter.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/footer/Pinterest.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/assets/1.152.1/footer/TikTok.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/aaea2bcf-0201ed0676b1118f.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/app/layout-3d0dc077495e1bd0.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/app/error-974c0c53da2dc913.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/445-cca40a0fa87bf194.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/785-7d5fd8206b722d6b.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/cfwk_raw-tracker-web/2.16.2/index.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/665-f2ec171766957d4d.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/webpack-0b322dcd132b022f.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/tealium-iframe/0.40.0/loader.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/app/reviews/auto-loan/single/id/%5BcontentId%5D/page-6f99cb255865ea5a.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/bf6a786c-fa7e3731ce8efe66.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/app/global-error-83944c60232660ac.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/831-37db4008bab63b85.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/cfwk_raw-tracker-web/2.16.2/697.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/cfwk_raw-tracker-web/2.16.2/327.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/css/56bc1645255c1e64.css",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/css/9a1e848dec6105e7.css",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/css/960495c688ad274c.css",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/600-bcd6bb5a20423080.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/819.ec13cbe80cbee073.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/351.e64f16d9e09b5c0c.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/212.d62e7665a1065190.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/595.5d39be0c81d227e2.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/779.c061aae8913daf86.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/css/44b62c71ff3625e1.css",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "stylesheet"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/306-4368465536177ffe.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/54-3f61ac64762ab40f.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/390-e62b9ee0ccad7abd.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/89.bee5c007f72e2712.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/999.b8b44c025ad853f1.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://tags.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "document"
+  },
+  {
+    "url": "https://bam.nr-data.net/1/248e088a40?a=482684505&sa=1&v=1.248.0&t=Unnamed%20Transaction&rst=771&ck=0&s=bb9ae30e6bb3d77a&ref=https://www.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5&af=err,xhr,stn,ins,spa&be=292&fe=472&dc=261&fsh=1&perf=%7B%22timing%22:%7B%22of%22:1768241229414,%22n%22:0,%22f%22:0,%22dn%22:1,%22dne%22:27,%22c%22:27,%22s%22:112,%22ce%22:145,%22rq%22:145,%22rp%22:292,%22rpe%22:337,%22di%22:553,%22ds%22:553,%22de%22:553,%22dc%22:763,%22l%22:763,%22le%22:764%7D,%22navigation%22:%7B%7D%7D&fp=568&fcp=568",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://tags.creditkarma.com/bundle.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://bam.nr-data.net/ins/1/248e088a40?a=482684505&sa=1&v=1.248.0&t=Unnamed%20Transaction&rst=1073&ck=0&s=bb9ae30e6bb3d77a&ref=https://www.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5",
+    "status": 204,
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://bam.nr-data.net/events/1/248e088a40?a=482684505&sa=1&v=1.248.0&t=Unnamed%20Transaction&rst=1077&ck=0&s=bb9ae30e6bb3d77a&ref=https://www.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://api.creditkarma.com/graphql",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://trc.taboola.com/1022710/trc/3/json?tim=1768241230863&data=%7B%22id%22%3A848%2C%22ii%22%3A%22%2Freviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5%22%2C%22it%22%3A%22video%22%2C%22sd%22%3Anull%2C%22ui%22%3Anull%2C%22vi%22%3A1768241230858%2C%22cv%22%3A%2220260104-11-RELEASE%22%2C%22uiv%22%3A%22default%22%2C%22u%22%3A%22https%3A%2F%2Ftags.creditkarma.com%2Freviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5%3F%22%2C%22e%22%3Anull%2C%22cb%22%3A%22TFASC.trkCallback%22%2C%22qs%22%3A%22%22%2C%22r%22%3A%5B%7B%22li%22%3A%22rbox-tracking%22%2C%22s%22%3A0%2C%22uim%22%3A%22rbox-tracking%3Apub%3Dcreditkarma-creditcards-sc%3Aabp%3D0%22%2C%22uip%22%3A%22rbox-tracking%22%2C%22orig_uip%22%3A%22rbox-tracking%22%7D%5D%2C%22mpvd%22%3A%7B%22en%22%3A%22page_view%22%2C%22tim%22%3A1768241230863%2C%22ref%22%3Anull%2C%22item-url%22%3A%22https%3A%2F%2Ftags.creditkarma.com%2Freviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5%22%2C%22tos%22%3A1%2C%22ssd%22%3A1%2C%22scd%22%3A0%2C%22ler%22%3A%22other%22%2C%22it%22%3A%22JS_PIXEL%22%2C%22supv%22%3Atrue%7D%2C%22pa%22%3A%7B%22su%22%3Atrue%7D%2C%22psb%22%3Atrue%7D&pubit=i",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://bat.bing.com/action/0?ti=175028813&tm=gtm002&Ver=2&mid=4b5d8644-9d82-40f1-85ef-19c8c7620f43&bo=1&sid=84208140efe111f08b72637b721b7253&vid=84209cf0efe111f0ae67c356aa0c61cc&vids=1&msclkid=N&uach=pv%3D19.0.0&pi=918639831&lg=en-US&sw=1280&sh=720&sc=24&nwd=1&p=https%3A%2F%2Fwww.creditkarma.com%2F&r=&lt=745&evt=pageLoad&ifm=1&sv=2&cdb=AQAQ&rn=180283",
+    "status": 204,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://connect.facebook.net/signals/config/1512805815657072?v=2.9.248&r=stable&domain=www.creditkarma.com&hme=17590b9a2e1b26755cdc9ecb401f9f46bca979d3ccce95d786db0936167af731&ex_m=94%2C156%2C134%2C20%2C67%2C68%2C127%2C63%2C43%2C128%2C72%2C62%2C10%2C141%2C80%2C15%2C93%2C28%2C122%2C115%2C70%2C73%2C121%2C138%2C102%2C143%2C7%2C3%2C4%2C6%2C5%2C2%2C81%2C91%2C144%2C224%2C167%2C57%2C226%2C227%2C50%2C183%2C27%2C69%2C232%2C231%2C170%2C30%2C56%2C9%2C59%2C87%2C88%2C89%2C95%2C118%2C29%2C26%2C120%2C117%2C116%2C135%2C71%2C137%2C136%2C45%2C55%2C111%2C14%2C140%2C40%2C213%2C215%2C177%2C23%2C24%2C25%2C17%2C18%2C39%2C35%2C37%2C36%2C76%2C82%2C86%2C100%2C126%2C129%2C41%2C101%2C21%2C19%2C107%2C64%2C33%2C131%2C130%2C132%2C123%2C22%2C32%2C54%2C99%2C139%2C65%2C16%2C133%2C104%2C31%2C193%2C163%2C284%2C211%2C154%2C196%2C189%2C164%2C97%2C119%2C75%2C109%2C49%2C44%2C103%2C42%2C108%2C114%2C53%2C60%2C113%2C48%2C51%2C47%2C90%2C142%2C0%2C112%2C13%2C110%2C11%2C1%2C52%2C83%2C58%2C61%2C106%2C79%2C78%2C145%2C146%2C84%2C85%2C8%2C92%2C46%2C124%2C77%2C74%2C66%2C105%2C96%2C38%2C125%2C34%2C98%2C12%2C147",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://analytics.google.com/g/collect?v=2&tid=G-0VHWHRFT7Z&gtm=45je6180v869299119z89187007122za20gzb9187007122zd9187007122&_p=1768241230443&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&cid=1544974558.1768241231&ul=en-us&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&are=1&frm=2&pscdl=noapi&_s=1&tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115938466~115938468~116514483&dr=&sid=1768241231&sct=1&seg=0&dl=https%3A%2F%2Ftags.creditkarma.com%2Freviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5&dt=&en=page_view&_fv=1&_nsi=1&_ss=1&ep.auth_status=unauth&ep.is_cms=false&ep.state=oh&up.=&tfd=873",
+    "status": 204,
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://analytics.google.com/g/collect?v=2&tid=G-ZRYLFXS6ZM&gtm=45je6180v869299119za20gzb9187007122zd9187007122&_p=1768241230443&_gaz=1&gcd=13l3l3l3l3l1&npa=1&dma=0&cid=1544974558.1768241231&ecid=2015576379&ul=en-us&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&are=1&frm=2&pscdl=noapi&_eu=AEA&_s=1&tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115938466~115938468~116514483&dl=https%3A%2F%2Fwww.creditkarma.com%2Freviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5&dr=&dp=reviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5&sid=1768241231&sct=1&seg=0&dt=&en=scroll&_fv=1&_ss=1&ep.auth_status=unauth&ep.is_cms=false&ep.state=oh&epn.percent_scrolled=90&up.=&tfd=882",
+    "status": 204,
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-MT40BYQ15N&gtm=45je6180v869299119za20gzb9187007122zd9187007122&_p=1768241230443&gcd=13l3l3l3l3l1&npa=1&dma=0&cid=1544974558.1768241231&ecid=1468992929&ul=en-us&sr=1280x720&uaa=x86&uab=64&uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&are=1&frm=2&pscdl=noapi&_eu=AEA&_s=1&tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115938466~115938468~116514483&dl=https%3A%2F%2Fwww.creditkarma.com%2Freviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5&dr=&dp=reviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5&sid=1768241231&sct=1&seg=0&dt=&en=scroll&_fv=1&_ss=1&ep.auth_status=unauth&ep.is_cms=false&ep.state=oh&epn.percent_scrolled=90&up.=&tfd=885",
+    "status": 204,
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://www.facebook.com/tr/?id=1512805815657072&ev=PageView&dl=https%3A%2F%2Ftags.creditkarma.com&rl=https%3A%2F%2Fwww.creditkarma.com&if=true&ts=1768241231229&sw=1280&sh=720&v=2.9.248&r=stable&ec=0&o=12316&fbp=fb.1.1768241231227.607812469405679447&pm=1&hrl=dba5e1&ler=other&cdl=API_unavailable&plt=287&it=1768241231181&coo=false&cs_cc=1&ccs=348433567523373&cas=24665372103164454%2C8536828006330312%2C8051882378180876%2C25494468870166472%2C7633976393292090%2C7695083470534449%2C7513680942046819%2C3848177241972919%2C2786962314690542%2C2928010780598216%2C2520941601366550%2C4128735397233716%2C3410444265636991%2C3087485817969705%2C3287656744582174%2C2753566931390149%2C2166630723433594&dlc=1&rlc=1&expv2[0]=pl1&expv2[1]=el3&expv2[2]=bc1&expv2[3]=mr0&expv2[4]=ct2&rqm=GET",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/reviews/toyota-financial-services5/title.png",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/kpl-assets/0.3.14/assets/kpl_spot_illustration/svg/ckYellow50/64px/common-auto_car_standard.svg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://bam-cell.nr-data.net/1/248e088a40?a=1386172146&sa=1&v=1210.e2a3f80&t=Unnamed%20Transaction&rst=889&ck=1&ref=https://tags.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5&be=205&fe=745&dc=287&af=err,xhr,stn,ins,spa&perf=%7B%22timing%22:%7B%22of%22:1768241230239,%22n%22:0,%22f%22:1,%22dn%22:1,%22dne%22:36,%22c%22:36,%22s%22:74,%22ce%22:113,%22rq%22:113,%22rp%22:199,%22rpe%22:200,%22dl%22:202,%22di%22:287,%22ds%22:287,%22de%22:287,%22dc%22:745,%22l%22:745,%22le%22:745%7D,%22navigation%22:%7B%7D%7D&jsonp=NREUM.setToken",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://www.facebook.com/privacy_sandbox/pixel/register/trigger/?id=1512805815657072&ev=PageView&dl=https%3A%2F%2Ftags.creditkarma.com&rl=https%3A%2F%2Fwww.creditkarma.com&if=true&ts=1768241231229&sw=1280&sh=720&v=2.9.248&r=stable&ec=0&o=12316&fbp=fb.1.1768241231227.607812469405679447&pm=1&hrl=dba5e1&ler=other&cdl=API_unavailable&plt=287&it=1768241231181&coo=false&cs_cc=1&ccs=348433567523373&cas=24665372103164454%2C8536828006330312%2C8051882378180876%2C25494468870166472%2C7633976393292090%2C7695083470534449%2C7513680942046819%2C3848177241972919%2C2786962314690542%2C2928010780598216%2C2520941601366550%2C4128735397233716%2C3410444265636991%2C3087485817969705%2C3287656744582174%2C2753566931390149%2C2166630723433594&dlc=1&rlc=1&expv2[0]=pl1&expv2[1]=el3&expv2[2]=bc1&expv2[3]=mr0&expv2[4]=ct2&rqm=FGET",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://bam-cell.nr-data.net/events/1/248e088a40?a=1386172146&sa=1&v=1210.e2a3f80&t=Unnamed%20Transaction&rst=1189&ck=1&ref=https://tags.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://www.creditkarma.com/wp-json/wp/v2/posts/40232",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/kpl-assets/0.4.0/assets/kpl_icon/png/ckBlack60/32px/thumbs_down.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/kpl-assets/0.4.0/assets/kpl_icon/png/ckBlack60/32px/comment.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/kpl-assets/0.4.0/assets/kpl_icon/png/ckBlack60/32px/thumbs_up.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/kpl-assets/0.4.0/assets/kpl_icon/png/ckBlack60/32px/flag.png?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://creditkarmacdn-a.akamaihd.net/res/content/bundles/reviews/7.1.8/_next/static/chunks/598.c8f9575739dc5280.js",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "script"
+  },
+  {
+    "url": "https://creditkarma-cms.imgix.net/wp-content/uploads/2019/06/toyota-financial-review_.jpg?auto=compress%2Cformat&dpr=1",
+    "status": 200,
+    "method": "GET",
+    "resource_type": "image"
+  },
+  {
+    "url": "https://sponge.creditkarma.com/events",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://sponge.creditkarma.com/events/ck/web",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "fetch"
+  },
+  {
+    "url": "https://trc-events.taboola.com/1022710/log/3/unip?en=pre_d_eng_tb&tos=4553&scd=0&ssd=1&est=1768241230861&ver=36&isls=true&src=i&invt=4500&msa=8&rv=1&tim=1768241235415&vi=1768241230858&ri=16928e20c5ef7ca15ee289a5910934e0&sd=v2_720987028db92781e286a5530f8511e7_967bf5df-b670-4646-b9ba-2b4a64127f4c-tuct105ebdce_1768241230_1768241230_CNawjgYQ9rU-GIroj5u7MyABKAEw4QE4kaQOQOSyD0jn3NsDUIMEWABgAGiq0OnV6OyWqLUBcAGAAQCIAQA&ui=967bf5df-b670-4646-b9ba-2b4a64127f4c-tuct105ebdce&ref=null&cv=20260104-11-RELEASE&item-url=https%3A%2F%2Ftags.creditkarma.com%2Freviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5&ler=other&it=JS_PIXEL",
+    "status": 204,
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://bam.nr-data.net/events/1/248e088a40?a=482684505&sa=1&v=1.248.0&t=Unnamed%20Transaction&rst=11071&ck=0&s=bb9ae30e6bb3d77a&ref=https://www.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://bam.nr-data.net/jserrors/1/248e088a40?a=482684505&sa=1&v=1.248.0&t=Unnamed%20Transaction&rst=11072&ck=0&s=bb9ae30e6bb3d77a&ref=https://www.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5&ri=%7B%22reviews%22:%227.1.8%22%7D",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://bam.nr-data.net/events/1/248e088a40?a=482684505&sa=1&v=1.248.0&t=Unnamed%20Transaction&rst=11073&ck=0&s=bb9ae30e6bb3d77a&ref=https://www.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://trc-events.taboola.com/1022710/log/3/unip?en=pre_d_eng_tb&tos=10066&scd=0&ssd=1&est=1768241230861&ver=36&isls=true&src=i&invt=5500&msa=8&rv=1&tim=1768241240927&vi=1768241230858&ri=16928e20c5ef7ca15ee289a5910934e0&sd=v2_720987028db92781e286a5530f8511e7_967bf5df-b670-4646-b9ba-2b4a64127f4c-tuct105ebdce_1768241230_1768241230_CNawjgYQ9rU-GIroj5u7MyABKAEw4QE4kaQOQOSyD0jn3NsDUIMEWABgAGiq0OnV6OyWqLUBcAGAAQCIAQA&ui=967bf5df-b670-4646-b9ba-2b4a64127f4c-tuct105ebdce&ref=null&cv=20260104-11-RELEASE&item-url=https%3A%2F%2Ftags.creditkarma.com%2Freviews%2Fauto-loan%2Fsingle%2Fid%2Ftoyota-financial-services5&ler=other&it=JS_PIXEL",
+    "status": 204,
+    "method": "GET",
+    "resource_type": "xhr"
+  },
+  {
+    "url": "https://bam-cell.nr-data.net/events/1/248e088a40?a=1386172146&sa=1&v=1210.e2a3f80&t=Unnamed%20Transaction&rst=10904&ck=1&ref=https://tags.creditkarma.com/reviews/auto-loan/single/id/toyota-financial-services5",
+    "status": 200,
+    "method": "POST",
+    "resource_type": "xhr"
+  }
+]

@@ -1,0 +1,2381 @@
+{
+  "schema_version": "2.0",
+  "source": "TP",
+  "source_name": "Trustpilot",
+  "title": "Toyota Financial Services Reviews - Trustpilot",
+  "total_review_count": 151,
+  "overall_brand_rating": 1.2,
+  "extraction_meta": {
+    "extracted_at": "2026-01-27T21:14:41.393867+00:00",
+    "extractor_version": "trustpilot_scraper_v1.0",
+    "raw_source_preserved": true
+  },
+  "reviews": [
+    {
+      "review_id": "tp_0000_JO_20260114",
+      "author": "John Tucker",
+      "review_date": "2026-01-14",
+      "rating": 1,
+      "review_text": "Bought 3 cars from Toyota spanning over 6 years using their pcp. However i decided to buy the 3rd car as i got fed of monthly payments and changing vehicles so often. Requested them to extend my term...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0001_PR_20260114",
+      "author": "Priscilla M",
+      "review_date": "2026-01-14",
+      "rating": 1,
+      "review_text": "I got connected to a Customer Service on January 13, 2026 between 10am & 1030a. The CS said he doesn't handle my inquiry & will transfer my call to the right department & yes he did transfer my call t...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0002_CY_20260120",
+      "author": "CYJ",
+      "review_date": "2026-01-20",
+      "rating": 1,
+      "review_text": "I’ve had this Loan three years, never been late, never asked for a fee to be waived. Made the payment one day late this month, because I was sick, and they added a $110.50 fee. Waited on hold with cus...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0003_CO_20260105",
+      "author": "Consumer",
+      "review_date": "2026-01-05",
+      "rating": 1,
+      "review_text": "Absolute worst service ever. I get told that my Truck that I sold to a dealership is not paid off. Come to find out they received a check from the dealership. I call them to try to figure this out, be...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0004_JA_20251110",
+      "author": "James",
+      "review_date": "2025-11-10",
+      "rating": 1,
+      "review_text": "What an absolute nightmare trying to actually get through to anyone!!  Dealerships are happy to sell you anything and their granny even when it’s not needed but borderline impossible to get a huma...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0005_ST_20250719",
+      "author": "steve",
+      "review_date": "2025-07-19",
+      "rating": 1,
+      "review_text": "Emails not answered \nRequested settlement figure- no email received. Standard response, don’t send chaser emails or call us. \nSo I Called, couldn’t explain balance correctly \nRequested remittance...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0006_AD_20250525",
+      "author": "Adarsh Gupta",
+      "review_date": "2025-05-25",
+      "rating": 1,
+      "review_text": "I bought a Toyota vehicle from Bryan-College Station, TX. A week after that, I kept getting tons of junk mail and spam calls about extended warranty with my full name, address, phone number, make, mod...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0007_OL_20251119",
+      "author": "Olufunto O.",
+      "review_date": "2025-11-19",
+      "rating": 1,
+      "review_text": "Avoid Toyota financial at all costs! A word is enough for the wise, worst customer service ever! \nTried last year for almost a year to get my direct debit changed to a single date. I mean how hard...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0008_MR_20251222",
+      "author": "MrStuartRennison",
+      "review_date": "2025-12-22",
+      "rating": 1,
+      "review_text": "What a joke this company is , I'm due a refund they said it takes 10 working days and the 10 working days have been and gone. Still no refund as I've phoned the company up three times about it. The cr...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0009_NA_20250625",
+      "author": "Name Caroline",
+      "review_date": "2025-06-25",
+      "rating": 1,
+      "review_text": "Terrible service. Takes forever to get through on the phone and they don’t respond to email messages. I had expected better from Lexus although maybe this experience is because all finance is handle...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0010_DO_20250313",
+      "author": "Dominika Bolon",
+      "review_date": "2025-03-13",
+      "rating": 1,
+      "review_text": "Poor customer service!!\nWaiting is over an hour every time you call!\n& just spoke to the most arrogant agent in the world. Disrespectful and nosy- keep your unsolicited questions to yourself. \nNeed...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0011_KI_20251201",
+      "author": "Kim Lewis",
+      "review_date": "2025-12-01",
+      "rating": 1,
+      "review_text": "Avoid Toyota Finance they are an absolute shower!! Can't see how they get to use the name of Toyota, big big mistake by Toyota!! I have been trying in vain to get a refund of an overpayment by them on...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0012_GI_20250603",
+      "author": "Gilltaylor",
+      "review_date": "2025-06-03",
+      "rating": 1,
+      "review_text": "Tried numerous times both on 2nd and 3 rd June to make final payment on agreement.On hold each phone call(4) for at least Thirty minutes on 2nd June 3rdJune gave up after third call left on  hold for...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0013_JO_20251121",
+      "author": "John King",
+      "review_date": "2025-11-21",
+      "rating": 1,
+      "review_text": "The recent DCA commission complaint system is not working at Toyota Financials as I’ve been told by their Customer Relations call centre their records do not go far enough back. So even though I sent...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0014_RE_20250409",
+      "author": "Renee Cottle",
+      "review_date": "2025-04-09",
+      "rating": 1,
+      "review_text": "I am in utter disbelief at just how terrible this service is. It is impossible to speak to anyone and I do mean impossible! My agreement is coming to an end I keep receiving letters but when I try to...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0015_RO_20250217",
+      "author": "Roger Collings",
+      "review_date": "2025-02-17",
+      "rating": 1,
+      "review_text": "This has got to be the worst evr customer experience. Been trying to discuss options on renewing a finance agreement. Emailed address in letter with no response. Made 5 phone calls this morning and fi...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0016_CR_20250522",
+      "author": "Cross Customer",
+      "review_date": "2025-05-22",
+      "rating": 1,
+      "review_text": "Appalling Customer Service. Hounded by letter when my finance agreement was about to end despite having communicated with Toyota via their email system. Phoning the Customer Service number on receivin...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0017_TO_20250515",
+      "author": "Toni Summerlin",
+      "review_date": "2025-05-15",
+      "rating": 1,
+      "review_text": "Toyota Financial sends text messages about our account to someone else. I spent 30 minutes trying to explain, but no one has any common sense. Be sure the dealer sends all the right info because you w...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0018_WA_20250317",
+      "author": "Walid B.Y.",
+      "review_date": "2025-03-17",
+      "rating": 1,
+      "review_text": "Payment in full request done on Toyota platform on March 5th.\nPayment authorized and taken from my account on March 6th ($47k).\nToday is March 17th and Toyota still doesn't know where's the mon...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0019_AN_20250520",
+      "author": "Andrew Muir",
+      "review_date": "2025-05-20",
+      "rating": 1,
+      "review_text": "I spent a day and a half trying to pay the balance of my PCP. The Toyota Finance system was unable to take my payment (despite my bank being 100% up for it) and when I tried to contact them to find ou...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0020_JO_20250917",
+      "author": "Johnny",
+      "review_date": "2025-09-17",
+      "rating": 1,
+      "review_text": "Knightmare to get hold of. Day 4 trying to get hold of someone to discuss settlement.\n\nTells you 5 mins wait time but still holding after 20. Sometimes they cut you off probably to make it look like...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0021_AH_20250813",
+      "author": "Ahmed Abdella",
+      "review_date": "2025-08-13",
+      "rating": 1,
+      "review_text": "I recently upgraded my Toyota Yaris to a C-HR at FRF Toyota Swansea.\nAs I didn’t have my V5C logbook at the time, I was told I had to pay a £250 deposit until I provided one. Fair enough.\n\nAfte...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0022_IR_20250815",
+      "author": "Irene Spence",
+      "review_date": "2025-08-15",
+      "rating": 1,
+      "review_text": "Zero stars if i could. Toyota Financial Services are shockingly bad, a simple thing like updating bank details is an enormous task for them and takes weeks and weeks of emails back and forth. I will n...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0023_KA_20250515",
+      "author": "Karolina Polak",
+      "review_date": "2025-05-15",
+      "rating": 1,
+      "review_text": "When you call, you are put through to a person who turns out to not be able to help you. You have just spent time giving them all the information they need, answering their questions. They pass you on...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0024_CA_20250910",
+      "author": "Caitlin Moore",
+      "review_date": "2025-09-10",
+      "rating": 3,
+      "review_text": "Mixed feelings on their customer service. Sometimes I'd call and be on hold for 30 minutes, just to get hung up on, sometimes I'd be through in 5 minutes. It's really hit or miss. \n\nOnce I was thr...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0025_MI_20251027",
+      "author": "Michael E.",
+      "review_date": "2025-10-27",
+      "rating": 1,
+      "review_text": "I am never signing a contract with them ever again. They are dishonest. Their dealers are good and knowledgable, but this is the worst company to ever finance your vehicle with. They are unprofe...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0026_LY_20250130",
+      "author": "Lyndy Lou",
+      "review_date": "2025-01-30",
+      "rating": 1,
+      "review_text": "AVOID!\n\nApplied for finance on a car, and was approved straight away, then told in the morning by the dealership, something was flagged up, and I had to supply three monthly bank statements to...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0027_LI_20250702",
+      "author": "Lisa",
+      "review_date": "2025-07-02",
+      "rating": 1,
+      "review_text": "Terrible experience. On hold for a very long time, then passed THREE TIMES to different departments. On one transfer I got cut off so had to go through the whole process again. Was told someone would...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0028_DE_20250130",
+      "author": "Dean Kandi",
+      "review_date": "2025-01-30",
+      "rating": 1,
+      "review_text": "Avoid like the plague. I paid the my car off in full and was charged an early termination fee, even though the lady said i wouldn't. It's been 2 weeks and all teh credit companies have that I still ha...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0029_DA_20250515",
+      "author": "DANIEL MARTINEZ",
+      "review_date": "2025-05-15",
+      "rating": 1,
+      "review_text": "Im warning you not go buy from this company they screwed on me, I was paying my monthly payments as agreed and all the sudden they said I was late and made me do 3 to 4 payments per 4 months in a row,...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0030_NI_20251107",
+      "author": "Nick Riley",
+      "review_date": "2025-11-07",
+      "rating": 1,
+      "review_text": "The worst, company. Paid the full balance in the car ,and 10 days later after two phone call with them to clear the mark on HPI for the finance, there is still said its outstanding finance on the car...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0031_AM_20251014",
+      "author": "Amber",
+      "review_date": "2025-10-14",
+      "rating": 1,
+      "review_text": "The company sent a check to pay a reinstatement fee overnight but is advising they had not received the payment and timeframe. They are now advising of longer timeframe to process",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0032_ST_20250404",
+      "author": "Steve.",
+      "review_date": "2025-04-04",
+      "rating": 1,
+      "review_text": "Wow, what can I say about Toyota redline finance. Had the misfortune of financing my son’s car through them. All is fine until you need to contact them. \n\nI need a settlement figure as I want to...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0033_AN_20250901",
+      "author": "Anna Bird",
+      "review_date": "2025-09-01",
+      "rating": 1,
+      "review_text": "If only I could leave minus stars. They do not deserve even the one star rating they get. Been trying to speak to someone for a month now. Phone calls get hung up. Emails not answered and the live cha...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0034_LI_20250320",
+      "author": "Lisa E",
+      "review_date": "2025-03-20",
+      "rating": 1,
+      "review_text": "DONT FINANCE YOUR VEHICLE LOAN THRU TOYOTA FINANCIAL!!! I had loan thru them for my 2020 Toyota 4Runner. Paid off loan this month. Called them to ask when Id get title and confirm loan acct will be cl...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0035_KH_20250709",
+      "author": "Khabaib Janjua",
+      "review_date": "2025-07-09",
+      "rating": 1,
+      "review_text": "One of the worst customer service from this company. Finance is total rip off. People dealing with you are totally unprofessional.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0036_LU_20250307",
+      "author": "Lucy",
+      "review_date": "2025-03-07",
+      "rating": 1,
+      "review_text": "Now seeking legal advice and in talks with BBC You and Yours. \n\nThis abysmal company has accidentally put a financial agreement on our car - when we HAVE NEVER BEEN CUSTOMERS. We are now u...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0037_RI_20250627",
+      "author": "RITA",
+      "review_date": "2025-06-27",
+      "rating": 1,
+      "review_text": "Hassan at customer acquisitions team is a very rude man who hanged up the phone huffing and puffing at me for no reason. Terrible communication skills and lack of empathy.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0038_MR_20250429",
+      "author": "Mr Smith",
+      "review_date": "2025-04-29",
+      "rating": 1,
+      "review_text": "They don’t answer phone calls at all waste of time how are you ment to sell your car when they don’t let you pay off finance",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0039_GR_20250125",
+      "author": "Grizzly Bear",
+      "review_date": "2025-01-25",
+      "rating": 1,
+      "review_text": "I gave my car back and agreed with Toyota/Redline Finance. I recently received a letter from Toyota/Redline Finance regarding arrears on my account. While I acknowledge the existence of a...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0040_JA_20250304",
+      "author": "James Dawkins",
+      "review_date": "2025-03-04",
+      "rating": 1,
+      "review_text": "Abysmal customer service. I sat on hold for over an hour on consecutive days this week, and had to give up both times. Shocking service.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0041_TR_20250328",
+      "author": "TRACY S.",
+      "review_date": "2025-03-28",
+      "rating": 1,
+      "review_text": "I have 12 payments left on my loan, all my payments have been on time and on most occasions even early! So when my husband was diagnosed with cancer I immediately called TFS to ask for help,...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0042_LI_20250513",
+      "author": "Liam Lawler",
+      "review_date": "2025-05-13",
+      "rating": 1,
+      "review_text": "DO NOT USE THIS COMPANY!\n\ndirect debts have been rejected/cancelled on their end and for over a year i have had to log on to the website and pay manually. each time i try and set it up,...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0043_CA_20250408",
+      "author": "Camille Brooks",
+      "review_date": "2025-04-08",
+      "rating": 1,
+      "review_text": "I am extremely disappointed with the service I received from Toyota Financial Services. I called to request payoff information with the intention of trading in my current Toyota for a new one, a...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0044_BR_20250729",
+      "author": "Bren MarMar",
+      "review_date": "2025-07-29",
+      "rating": 1,
+      "review_text": "I have purchased 4 vehicles through Toyota, I am sad to say I had to do a voluntary repo because I can no longer work and am on Social Security, long story short I was advised a week prior if I couldn...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0045_MO_20250322",
+      "author": "Molly",
+      "review_date": "2025-03-22",
+      "rating": 1,
+      "review_text": "If I could give this company zero Stars I would. Payments taking at least a week to come out of my account and that's if I still have the money by the time that week is up because I live paycheck to p...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0046_M_20260116",
+      "author": "M,HIXX",
+      "review_date": "2026-01-16",
+      "rating": 2,
+      "review_text": "Missed two payment by direct debit in 15 years only by one or two days. Sent me a reminder for payment.got money in bank phoned them up saying money is in bank but not taken out. They said need see ba...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0047_RI_20250605",
+      "author": "Richard Hollis",
+      "review_date": "2025-06-05",
+      "rating": 1,
+      "review_text": "on 17th May 2025, I made an online claim for some minor dents to be repaired under my insurance policy.  I did not hear from Toyota Insurethat so on 30th May I telephoned them, explained the situation...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0048_TY_20250814",
+      "author": "Tyler Harris",
+      "review_date": "2025-08-14",
+      "rating": 1,
+      "review_text": "I attempted to pay off my auto loan early but made a mistake and didn't include payment for twelve dollars of interest that hadn't been posted to the account yet. Thinking the loan was paid I moved on...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0049_PA_20250724",
+      "author": "Patricia Gray",
+      "review_date": "2025-07-24",
+      "rating": 1,
+      "review_text": "Great cars but unfortunately their financial services suck! Getting to a human takes days and then they are no help. They will cash your check and then say you did not make the payment even though you...See more",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0050_OL_20251119",
+      "author": "Olufunto O.",
+      "review_date": "2025-11-19",
+      "rating": 1,
+      "review_title": "Avoid Toyota financial at all costs",
+      "review_text": "Avoid Toyota financial at all costs! A word is enough for the wise, worst customer service ever!Tried last year for almost a year to get my direct debit changed to a single date. I mean how hard can that be, never happened. So was paying monthly, Got reminded I forgot to pay and paid immediately, still showed on my credit report even though I was told it won’t.Worst company ever!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0051_CH_20251004",
+      "author": "Christopher Came",
+      "review_date": "2025-10-04",
+      "rating": 1,
+      "review_title": "Received my Toyota Carolla GR sport…",
+      "review_text": "Received my Toyota Carolla GR sport hybrid and was told by dealer previous toyota agreement  was settled and received new agreement through Toyota finance and paid first installment was then told it wasn't settled by Email and letter it took ages to get through by phone and operator was ruid and uncooperative will try other finance company if possible next time love the car.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0052_JO_20250917",
+      "author": "Johnny",
+      "review_date": "2025-09-17",
+      "rating": 1,
+      "review_title": "Do not use these",
+      "review_text": "Knightmare to get hold of. Day 4 trying to get hold of someone to discuss settlement.Tells you 5 mins wait time but still holding after 20. Sometimes they cut you off probably to make it look like they are answering more calls. Dreadful company. Steer clear!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0053_JO_20250913",
+      "author": "Joshua Heavyside",
+      "review_date": "2025-09-13",
+      "rating": 1,
+      "review_title": "Dreadful customer service",
+      "review_text": "Dreadful customer service, they simply do not respond or care about their customers",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0054_MA_20250905",
+      "author": "Maz",
+      "review_date": "2025-09-05",
+      "rating": 1,
+      "review_title": "Poor communication",
+      "review_text": "Toyota dealership excellent service it’s Shame Toyota financial services isn’t the same no letters when payment didn’t go through 4 months later a letter arrives you’ve missed 4 payments please bring your account up to date very very poor customer service and communication",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0055_GL_20250826",
+      "author": "Glen Jones",
+      "review_date": "2025-08-26",
+      "rating": 1,
+      "review_title": "Awful company....long wait times on the…",
+      "review_text": "Awful company....long wait times on the phone (If answered at all), promised emails don't arrive,Avoid like the plague",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=1",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0056_AH_20250813",
+      "author": "Ahmed Abdella",
+      "review_date": "2025-08-13",
+      "rating": 1,
+      "review_title": "Unresponsive and Unresolved — Still Waiting for My Refund",
+      "review_text": "I recently upgraded my Toyota Yaris to a C-HR at FRF Toyota Swansea.As I didn’t have my V5C logbook at the time, I was told I had to pay a £250 deposit until I provided one. Fair enough.After contacting the DVLA, I was told I was no longer the owner and that FRF Swansea, as the current owner, must apply for the V5C themselves. I passed this information to the dealership immediately, even attaching a DVLA letter confirming it.Since then, I have sent multiple emails over several weeks, called the dealership, and even spoke to other staff members. My emails to Stephen (and later Rob) have gone unanswered, and my request for a refund has been completely ignored.This lack of communication and failure to resolve a simple matter is very disappointing. I expected far better customer service from a Toyota dealership.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=2",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0057_OL_20250724",
+      "author": "Olu",
+      "review_date": "2025-07-24",
+      "rating": 1,
+      "review_title": "Credit damage despite loyalty and clean history",
+      "review_text": "I have been a loyal Toyota Finance customer for over 6 years with a perfect payment history — not a single missed or late payment. Unfortunately, my recent experience has been deeply disappointing and financially damaging.Due to a claim placed by Toyota Insurance (not by me), I was forced to return my vehicle. I did not initiate this claim, yet it impacted my insurance policy, and as a result, I returned the vehicle under a voluntary agreement. Despite this, Toyota Finance reported my account as delinquent to credit agencies — even after offering me a payment arrangement for the remaining balance.This is unfair and potentially unlawful under several consumer protection standards, including:🔹 The Consumer Credit Act 1974 (UK) / Fair Credit Reporting Act (FCRA – USA): These laws require accurate and fair reporting of consumer credit behavior. Reporting a delinquency while simultaneously offering a payment plan and knowing the customer has not defaulted in good faith may constitute unfair or inaccurate reporting.🔹 The Principles of Treating Customers Fairly (FCA – UK): Lenders must act in the best interest of the customer and treat them with fairness, particularly those in vulnerable or unexpected situations.As a result of this negative mark on my credit file, I have been declined finance by another vehicle dealer, even though the situation was not due to financial irresponsibility but rather an insurance-related technicality entirely out of my control. This damage is not only unjust — it is long-lasting.I am extremely disappointed that Toyota Finance, despite my long-standing, spotless history, chose to report my account in a way that severely impacts my ability to access credit. I am now pursuing options to escalate this through:A formal complaint to Toyota FinanceRaising a dispute with the credit reference agenciesSubmitting a complaint to the Financial Ombudsman Service (UK) or the Consumer Financial Protection Bureau (USA)Seeking legal advice for defamation of creditLoyal customers deserve better — especially those who have upheld every part of their agreement. I urge Toyota Finance to reconsider their reporting decision and correct this unjust entry on my credit file.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=2",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0058_ST_20250719",
+      "author": "steve",
+      "review_date": "2025-07-19",
+      "rating": 1,
+      "review_title": "Emails not answered- nothing received not confident with call centre.",
+      "review_text": "Emails not answeredRequested settlement figure- no email received. Standard response, don’t send chaser emails or call us.So I Called, couldn’t explain balance correctlyRequested remittance- nothing received.Worried about paying off PCP early now.No confidence",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=2",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0059_BE_20250604",
+      "author": "Ben cave",
+      "review_date": "2025-06-04",
+      "rating": 1,
+      "review_title": "terrible customer service",
+      "review_text": "terrible customer service, ignores emails, impossible to phone, and their chatbot provides nothing more than the website.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=2",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0060_LI_20250513",
+      "author": "Liam Lawler",
+      "review_date": "2025-05-13",
+      "rating": 1,
+      "review_title": "DO NOT USE THIS COMPANY!",
+      "review_text": "DO NOT USE THIS COMPANY!direct debts have been rejected/cancelled on their end and for over a year i have had to log on to the website and pay manually. each time i try and set it up, they cancel it without any reason or acknowledgment.in January, i paid my installment manually but they said a week later i owed them a further £53. i stupidly paid this but still to this day believe they were wrong,  just didnt have the energy to go back and forth.2 weeks later before my next payment was due, i receive a message saying i am over £300 in arrears. this is more than 2 months worth of payments. somehow, miraculously  in the space of 2 weeks of being up to date i am now over 2 payments behind.i have spoken to a collections advisor and asked for them to provide me proof of what i owe and from where. he said its a tricky one to do and i just need to 'trust him'.sorry, but what idiot is going to just hand over a load of money without any valid reason or proof. they are con artists.i have raised an official complaint last month, chased up the complaint with another email and i am still yet to hear anything. no direct debit set up and now they have shut down my online portal to not allow me to see my balance or make any payments. all of this is affecting my mental health as well as my credit score!!!!!worst decision i ever made.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0061_ME_20250502",
+      "author": "Mechel Karczag",
+      "review_date": "2025-05-02",
+      "rating": 1,
+      "review_title": "Paid for car but won't give me the Title",
+      "review_text": "I bought off a car after the lease from Toyota approximately 3 years ago a year later I realized that I never that I never got the title from them since then I am calling them every few weeks and get different answers one is they send it already so when I told them that I never received it they told me that can't do anything about it here I am 3 years after buying off the car and still don't have the title when I ask them I would like to speak to a supervisor they tell there is no supervisor available they don't have a uper management to whom to complain shame on them never had something like that I don't know how a company with such a bad customer service still has business.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0062_CE_20250405",
+      "author": "CE Bower",
+      "review_date": "2025-04-05",
+      "rating": 1,
+      "review_title": "Lease Buyout Nightmare",
+      "review_text": "I have leased vehicles through Toyota/Lexus Financial Services for many decades, with no issues. They even gave me lease extensions during the COVID years, when I was reluctant to go car shopping--or anywhere!But I am writing about my current experience.My lease is up at the end of this month. I decided to buy the car, since leasing a new vehicle (same model, different year) would have cost nearly twice what I am currently paying--BEFORE the tariffs that are making America great and certain corporations and individuals wealthier--go into effect.  So I phoned Toyota Financial to get the buyout information and documents.First of all, the company is technologically in the dark ages. Maybe even prehistoric.Although they were able (at my insistence) to send me he paperwork I needed via email, I had to print, complete, and return the documents to them (by mail) along with a paper check for the buyout amount plus sales tax. They even sent me a form for California residents, though I live 3,000 miles from California.They are incapable or doing electronic bank transfers, accepting credit cards, etc. Just paper checks. (Fortunately, I still have a checkbook, but the last time I used it was 2007.)So, I did what I was supposed to do, and sent the documents and check to Toyota via Priority Mail.  Tracking indicated that it was delivered on 3/26.Eight days later, my bank records showed that the check still had not been cashed. I phoned the company, went through their annoying telephone menu, and after about 10 minutes, I got a \"human\" (and I use that word loosely) on the line. He was an arrogant and extremely unhelpful young man, whose only response to my inquiry about why my check had not been deposited was, \"It takes 10 days for processing,\" and it was only day 8.  I imagine that for them, processing means opening the mail, then sending an employee to the bank to make deposits, since they are incapable of conducting business electronically.The rep could not or would not tell me how long it would take, once my documents were \"processed, \"for the bill of sale and title to be sent to me.And how would it be sent? By US mail, of course, which lately, in my experience, has been taking up to a full month for cards and letters to be delivered. They would not send my documents by Priority Mail. My only alternative was to pay an exorbitant fee for FedEx overnight service.It is now 4/5 or 11 days since Toyota received my check, and it still has not been deposited.To compound the absurd wait, Toyota will not transfer the existing vehicle registration to me, which means that I have to go to DMV and wait for hours to register the car in my name.  But wait....They have no way to inform me when the documents I need to register the car have been \"processed\" and mailed. The current registration, in the name of Toyota, is due in 3 weeks. In all likelihood, I will have to pay to renew the existing Toyota registration, then go to DMV and pay AGAIN to obtain new registration in my name.This is possibly the WORST customer service I have ever received in my life.I asked the arrogant customer disservice representative if he enjoyed working for a company that made things as difficult as possible for their clients, and he merely repeated that \"processing takes 10 days.\"One more thing. I had been told a while ago that I could do the buyout through the dealership from which I had leased it. I thought that would simplify things and had intended to do that. However, when I met with someone at the dealership, I was informed that I would have to pay $900 in fees and various service charges for them to do the transaction--plus title and registration fees to the State. And they also would accept only cash or a paper check. Thanks, but no thanks.All I can say is, that if I ever want to lease a Toyota/Lexus vehicle again, it will be through a bank, NOT Toyota Financial Disservices.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0063_JO_20250326",
+      "author": "Josh H",
+      "review_date": "2025-03-26",
+      "rating": 1,
+      "review_title": "They lost my payoff check.",
+      "review_text": "I sent the check to payoff the lease. Three weeks later they don't have it. The whole time they told me not to pay the lease because the check was coming in. So now, I'm paying interest on the loan and late fees on the lease. Absolute garbage company.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0064_WA_20250317",
+      "author": "Walid B.Y.",
+      "review_date": "2025-03-17",
+      "rating": 1,
+      "review_title": "$47000 payment gone!",
+      "review_text": "Payment in full request done on Toyota platform on March 5th.Payment authorized and taken from my account on March 6th ($47k).Today is March 17th and Toyota still doesn't know where's the money.I sent them my bank account statement as a proof of the stransaction and they still repeat their lack of knowledge and that I should just wait. No time limit.They dont escalate the file, they don't transfer the call to a manager, nothing. All they recommend is waiting.I'm in the process of a new mortgage I'm definitely impacted with debt ratios because Toyota doesn't want to confirm that my loan is paid in full.I'm looking to protect myself with a lawyer.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0065_DO_20250313",
+      "author": "Dominika Bolon",
+      "review_date": "2025-03-13",
+      "rating": 1,
+      "review_title": "Poor customer service!!",
+      "review_text": "Poor customer service!!Waiting is over an hour every time you call!& just spoke to the most arrogant agent in the world. Disrespectful and nosy- keep your unsolicited questions to yourself.Need to heavily invest in better equipment and staff and work on efficiency",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0066_LU_20250307",
+      "author": "Lucy",
+      "review_date": "2025-03-07",
+      "rating": 1,
+      "review_title": "Now seeking legal advice and in talks…",
+      "review_text": "Now seeking legal advice and in talks with BBC You and Yours.This abysmal company has accidentally put a financial agreement on our car - when we HAVE NEVER BEEN CUSTOMERS. We are now unable to sell our own, privately owned car on because of a mistake made by the people who work at this terrible company.I am 36 weeks pregnant and have our new car to pay for and now have a 3rd car to insure, tax and are unable to sell.We have wasted hours trying to speak to this customer service and complaints department. They didn't call us back when they said they would. We have waited 30 days for the incorrect finance to be removed and it still hasn't. All they have done is recognised my formal complaint has been received.We are now seeking legal advice, in talks with BBC You and Yours, the FCA have logged the case. I advise others being treated poorly by this company to do the same.Let me remind you - we are NOT even your customers. The people who work here should be ashamed of how they treat people. Just one glance at these reviews show you the level of decency at this company.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0067_MA_20250225",
+      "author": "marius bogdan",
+      "review_date": "2025-02-25",
+      "rating": 1,
+      "review_title": "the worst customer service😡😡😡",
+      "review_text": "the worst customer service😡😡😡February 25, 2025Unprompted review",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0068_LY_20250130",
+      "author": "Lyndy Lou",
+      "review_date": "2025-01-30",
+      "rating": 1,
+      "review_title": "AVOID!",
+      "review_text": "AVOID!Applied for finance on a car, and was approved straight away, then told in the morning by the dealership, something was flagged up, and I had to supply three monthly bank statements to prove my earnings, and were they guaranteed for life??I sent them to them, and then was told, could I prove my earnings are what they say they are?, they just had my bank statements?They don’t make any sense at all, and think they actually get pleasure out of being awkward!, and treat you like something on the bottom of your shoe!Needless to say, I decided not to go with them, and will find a ‘reputable’ finance company that knows what they are doing!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=3",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0069_CA_20250117",
+      "author": "Carol Macpherson",
+      "review_date": "2025-01-17",
+      "rating": 1,
+      "review_title": "Absolutely shocking service … told 5/10…",
+      "review_text": "Absolutely shocking service … told 5/10 minute delay , had to hang up after 60 minutes , tried today told 30 minute delay, gave up after 90 minutes !l",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0070_TI_20250111",
+      "author": "Tiffanie",
+      "review_date": "2025-01-11",
+      "rating": 1,
+      "review_title": "Horrible",
+      "review_text": "Horrible, horrible horrible. Although I have not been exactly on time for my car note, I always make sure and pay before the 30 day mark before it is reported late to the credit bureau. I have no problem playing the late fees, but Toyota financial has decided to report it late, even though I pay for long before the 30 day mark, they now are telling me that there’s nothing they can do about it that I have to write them a written letter, stating that I think they wrongfully reporting my account they told me to reach out to the credit bureaus. I am a credit repair specialist. The credit bureaus cannot do anything. It is on the lender to fix it and correct it being that Toyota million dollar business and this is the way that they have treat their customers mind you I have called them about this several times and each time they give me a different response and tell me a supervisor is gonna call me back and they never do.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0071_CO_20250110",
+      "author": "Coleen White",
+      "review_date": "2025-01-10",
+      "rating": 1,
+      "review_title": "Really terrible customer service",
+      "review_text": "Really terrible customer service. Can’t even get through after waiting 3 hours - I have the screen shot.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0072_JA_20250104",
+      "author": "Jahsynette Richards",
+      "review_date": "2025-01-04",
+      "rating": 1,
+      "review_title": "My car was stolen the insurance paid…",
+      "review_text": "My car was stolen the insurance paid off the settlement figure and not even a courtesy all are a letter informing me that they have recieved the payment, to make matters worst they still went into my account and take out the monthly payment and they are close on the weekend and opening hours wait time is over an hour.Very bad service please be careful",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0073_GE_20241214",
+      "author": "Georgina Davies",
+      "review_date": "2024-12-14",
+      "rating": 1,
+      "review_title": "This is a less than zero stars…",
+      "review_text": "This is a less than zero stars situation.Toyota Financial Services (UK) are unresponsive, muddled and in complete disarray. It’s more or less impossible to get through on the telephone and their opening hours are not useful if you have a job - ringing in your lunch break isn’t enough time to get through.Email is even worse. Response times very long or not at all.TFS have managed to put the new finance agreement for a car I used to own annd part exchanged  onto my app.They have also altered the direct debit and taken payments for a car I don’t own anymore. I’ve cancelled the direct debit and I am paying the correct agreement via debit card while they ‘investigate’Meanwhile, the current owner of my previous car is defaulting (through no fault of their own)They send half replies, replies that don’t answer the questions asked and despite multiple queries about why I have someone else’s finance agreement on my app- they won’t reply to this- or remove the agreement.I finally gave up with ‘customer support’ after two weeks and emailed complaints. 4 days later I received a cut and paste response informing me that they would investigate and I would hear back ‘within 8 weeks’They then took a direct debit payment for an agreement that isn’t mine.I emailed customer experience detailing the horrible experience I had had so far. Guess what. It’s 4 days later and I’ve not even had an acknowledgement.Toyota cars are excellent. Toyota Financial Services is not. I’ve been a loyal Toyota owner and I change my car very frequently. I think my next step will be to get my supplying dealer involved but I shouldn’t need to be using up all this time and energy trying to sort out their admin error 🤷‍♀️",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0074_DE_20241213",
+      "author": "Dean Cane",
+      "review_date": "2024-12-13",
+      "rating": 1,
+      "review_title": "Toyota Financial Services Mafia",
+      "review_text": "I attempted to pay off my car loan with Toyota Financial Services (TFS) on August 13, 2024, by sending in a check. However, at the beginning of September, I received a notification that I was behind on a loan payment. Concerned, I contacted Toyota Financial to inquire about the situation. During my call, a representative from TFS informed me that they had not received my check and that I needed to make a payment to avoid late fees.Initially, Toyota had informed me that they received the check, had processed my loan to a zero balance, and had released the lien on the title. However, about 30-40 days later (around September 23), after the check had been sent, they reestablished the loan and indicated that the payoff was not processed as originally agreed. Following this, I cancelled the check.M&T Bank has documented evidence showing that the payment was made. It appears that there was internal miscommunication at Toyota Financial, as one department reported receiving the payment while another did not. I have made multiple attempts to reach out to Toyota's customer service through my loan account, but their response was dismissive, only stating that I was behind on my payments. They provided no further assistance or clarification.After this incident, I received the free and clear title to the car about two weeks later, but despite this, I continued to face issues when trying to resolve the situation. I called Toyota multiple times, trying to pay off the loan for the original amount I had sent in August, minus the most recent payments. However, Toyota informed me that the payoff amount had increased and they would need to seek approval to potentially forgive the additional interest. This response was unacceptable to me, as there was no guarantee they would do so, and I felt Toyota was mishandling the situation. Their actions were damaging my credit, and I lost confidence in Toyota Financial Services' ability to resolve the issue fairly and competently.On December 13, I attempted to reach out again, but once again, I was met with unreasonable responses. TFS insisted that I allow the check to go through their process, which could take several months. I believe this is an unfair and unreasonable delay—especially given that any legitimate car loan service should be able to process a payoff within 30 days. It feels like I am being extorted for the additional interest by Toyota Financial Services, which is unacceptable.I have continued to make payments in September, October, November, and December, but I am still accruing interest, which is frustrating and unjust considering the error was on Toyota's part. Therefore, I am requesting that Toyota allow me to pay off the loan for the amount I initially attempted to pay in August and waive any interest that has accrued since then due to their mistake.If Toyota Financial Services continues to make things difficult, I will consider taking further action to regain ownership of the car without additional payments. I am questioning their legal claim to the loan or the vehicle, especially since they released the title to me. At this point, their behavior is more reminiscent of a coercive organization, not a legitimate financial service. They are preventing me from paying off my loan, damaging my credit, and jeopardizing my job due to my security clearance.I am seeking assistance from the Consumer Financial Protection Bureau (CFPB) to help resolve this matter and to investigate how many other individuals Toyota Financial Services may be mistreating with either their incompetence or what feels like extortion.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0075_TW_20241209",
+      "author": "TW",
+      "review_date": "2024-12-09",
+      "rating": 1,
+      "review_title": "Get through to a person - in the queue for an hour",
+      "review_text": "Apart from having to go through 2 unhelpful computer menus I was then on hold for over an hour without getting through",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0076_PA_20241205",
+      "author": "pavithra Jayawardana",
+      "review_date": "2024-12-05",
+      "rating": 1,
+      "review_title": "stay away from using these guys",
+      "review_text": "stay away from using these guys - if you are buying a car from the dealer make sure to get it financed through a reputed finance broker or a lender. I have returned my car about 12 days ago complain was logged and car was within 14 days cool of period. I have been charged on direct debit and no one seems to know why my agreement is not closed yet. I called the dealer lexus they are saying it is with toyota finance and finance is saying it is with the dealer.  Very poor customer service and deffo worth reporting to FOC",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0077_MI_20241203",
+      "author": "Michael Samson",
+      "review_date": "2024-12-03",
+      "rating": 2,
+      "review_title": "I'm not trying to be rude or racist",
+      "review_text": "I'm not trying to be rude or racist. I don't think they speak good English. Everything can barely make sense. Wow what a company.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0078_ER_20241129",
+      "author": "Eric Scott P",
+      "review_date": "2024-11-29",
+      "rating": 1,
+      "review_title": "Credit rating trashed by their error and they won't help",
+      "review_text": "TFS neglected to use the new bank account information I submitted on their website on August 9, 2024, for recurring payments, which I’ve made without a “miss” since I acquired the car from Toyota in 2018.   Nor did the website indicate that a new recurring instruction was necessary when I changed the bank account.  Toyota failed to make the debits from the new bank account, and then declared me delinquent!I only learned of the problem when I saw that my FICO score dropped by 117 points on October 11th, 2024, via Experian.The amount in arrears was paid the day I was made aware via the credit report downgrade (i.e. October 11, 2024) and the recurring order is in place.  I have screenshots supporting all of the foregoing.I requested that TFS amend my status with the credit reporting agencies – Experian, Equifax and Transunion – to not delinquent - and do what TFS can towards restoring my prior credit standing.  I did this directly with TFS, and then through the auto dealer when I saw they wouldn't budge.  They were helpful and escalated with their contact at TFS.  However, TFS still refuses to acknowledge their error, as reflected in the form letter I received dated November 18 2024.  It matches exactly the one they sent me after I contacted them directly, dated they (that's how I see it), and I'm still stuck with a large hit to my credit rating.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0079_TS_20241119",
+      "author": "Tsvetan Ivanov",
+      "review_date": "2024-11-19",
+      "rating": 1,
+      "review_title": "I would give -10 if this was…",
+      "review_text": "I would give -10 if this was possible... Run away from them . The biggest mistake you could do is to get in any kind of contact with them . So we bought a car in April 2024 on finance with them . Car comes up faulty in less than 30 days , we returned to dealer multiple times before contacting Toyota and file a formal complaint with them . No response  from Toyota  that complaint was received.  So we called them . Apparently emails send to yahoo mail bounced back . Ok could happen.  So I change the email to Gmail. Or atleast I taught so . 3 days later I found out that email hasn't been changed ( so another 1 hour on phone ) ,after 4 long phone calls , million times been transferred  from one person to another . FINALLY I get conformation that my complaint was actually received.  So far so good , but unfortunately  this is just the beginning. So i suppose to get response from Toyota financial 4-8 weeks after I placed the complaint. Fine , 4 weeks pass so I called them to see if there is any update on the case . So after 45 min on phone transfered between 4 different operators I ve been promised that person who is dealing with my case will contact either me or my wife on next day . Happy days ... but a week no word from them , so i called them again , same empty promise again .Now 2 weeks later I decided  to again waist some of my time and call them again . Apparently I will someday get a call from them . Meanwhile I'm paying for scrap car parked in my driveway that I neither can use or return . And also I have been assured today from the person on the phone that their investigation is that car faulty  or not  will be done without even car to be seen by independent service . So I'm assuming person dealing with my claim have crystal ball that will tell him/her is car faulty or not . I can't hide my disappointment from this company.  It's just a joke .",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0080_JO_20241114",
+      "author": "Johan",
+      "review_date": "2024-11-14",
+      "rating": 1,
+      "review_title": "Why does it take an hour to get…",
+      "review_text": "Why does it take an hour to get through??? We made a payment online as TFS had the incorrect banking details and then after speaking to someone they said that everything is in order but they still tried to debit from the wrong account. It’s ridiculous to hold on for an hour and not getting through but they want your money. Worst service I’ve ever experienced.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0081_HA_20241112",
+      "author": "Hatel bedia",
+      "review_date": "2024-11-12",
+      "rating": 1,
+      "review_title": "Zero customer service",
+      "review_text": "You can never get through to customer services. Generally unhelpful when you have a issue with returning a car at the end of a lease",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0082_NI_20241031",
+      "author": "Nina Nia",
+      "review_date": "2024-10-31",
+      "rating": 1,
+      "review_title": "Don’t fall in to Toyota financial scam…",
+      "review_text": "Don’t fall in to Toyota financial scam calling it “WEB ISSUES” taking Triple payments in one day…Toyota took 2 different payments same day a regular, and twice as much IN ONE DAY, had to borrow money so wouldn’t charge for Non-sufficient.Then 3days later see another double payment scheduled to be process!I called Toyota agent said sorry “it’s was Toyota’s technical issue” and then transfer me to Resolution center! Agent at resolution said “sorry can’t do anything contact you bank”Ask for contact info of superior he said can’t give you any!!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0083_SI_20241031",
+      "author": "Siobhan Beasley",
+      "review_date": "2024-10-31",
+      "rating": 1,
+      "review_title": "Negligent Service",
+      "review_text": "Once the car is paid off they are meant to send a lien release to the DMV. This never happened. The car has been paid off for 5 years and after 4 phone calls, I still can't get them to send the lien release. As a result, we can not register our car in the new state we moved to.  Awful service. I will be reporting this to the Attorney General's office of MA.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0084_JA_20241025",
+      "author": "James Trevino",
+      "review_date": "2024-10-25",
+      "rating": 1,
+      "review_title": "Plain and simple...a complete joke",
+      "review_text": "Plain and simple...a complete joke! Seek financing somewhere else.  They never deposited my payoff checks in a timely manner so we stopped payment and then they decided to try to cash them over a month later. Back to square one. Just avoid.  They've already had the second set of checks three and a half weeks and still waiting for them to post.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0085_RO_20241015",
+      "author": "Rob Turner",
+      "review_date": "2024-10-15",
+      "rating": 1,
+      "review_title": "What a useless service 🤬",
+      "review_text": "What a useless services. Cheap call centre the other side of the world with delays so can’t hear people talk in real time! Useless staff who can’t help me. All I want to do is change a sodding account sort code and account number to continue paying for the dam car!! Do not call them. Complete joke to deal with on various attempts to sort!!! If you want paying you have my details 🍆",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0086_TO_20241015",
+      "author": "todd",
+      "review_date": "2024-10-15",
+      "rating": 1,
+      "review_title": "Horrible company",
+      "review_text": "Horrible company.  I have sent a huge principle payment a month ago to them and they acknowledge they received the check but said they are real busy and it could tak another month to just deposit the check. I have called numerous times for a supervisor and never does one get on the phone with me.  I have reported them to the consumer financial protection bureau. This company sucks.  Never will help. They hang up on me after I ask to speak with a supervisor.  I would highly recommend run from this company. They have told me 11 times they will call me back same day after a manager is available and never do they.  This is so illegal to hold checksAnd not deposit.Worst company ever dealt with!!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0087_EN_20241011",
+      "author": "Enkhnaran Purevjav",
+      "review_date": "2024-10-11",
+      "rating": 1,
+      "review_title": "I am extremely disappointed with the…",
+      "review_text": "I am extremely disappointed with the service I received from Toyota Financial Services. I sold my car to Carfax on July 30th, and they promptly sent the check for the remaining balance to Toyota. However, Toyota Financial did not process the payment until three months later. This unreasonable delay resulted in Toyota falsely reporting missed payments and sending my account to collections.Despite the fact that the payment was sent on time, my credit score took a significant hit due to Toyota’s incompetence. Trying to resolve the situation has been a nightmare, with unhelpful customer service and no accountability for their mistakes.I expected better from Toyota, but this experience has completely shattered my trust in their financial services. Be cautious if you're considering financing through them—this could happen to you too.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0088_N_20241004",
+      "author": "N Burns",
+      "review_date": "2024-10-04",
+      "rating": 1,
+      "review_title": "Phoned",
+      "review_text": "Phoned. Got through to someone who used one word sentence...no...yes... what....then said they don't do cooling off period although it's the law....put me through to someone who could hopefully string a sentence together but end up on hold for 20 minutes so gave up. As bad as reviews say.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=4",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0089_J_20240930",
+      "author": "J D",
+      "review_date": "2024-09-30",
+      "rating": 1,
+      "review_title": "Dont Payoff Online. Send a check.",
+      "review_text": "Went to go payoff my vehicle today. Toyota Finacial's website caused an error and said try again. Which I did. Now I have 2 payments of 12K getting ready to be deducted from my account. Called and spoke to Jessica, Edgar and Justin. They did not have a resolution other than for me to call my bank and pay the fee to cancel payment or wait until the payments are processed and then get a check mailed to me. Evidently Toyota can't cancel a payment once its submitted. No offer to compensate me for my time, frustration or paying interest on the money they are not \"borrowing\" from me.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0090_BI_20240927",
+      "author": "Bill Carr",
+      "review_date": "2024-09-27",
+      "rating": 1,
+      "review_title": "Unhelpful and inefficient",
+      "review_text": "Unhelpful and inefficient. Very disappointing experience",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0091_AD_20240918",
+      "author": "ADRIAN V",
+      "review_date": "2024-09-18",
+      "rating": 1,
+      "review_title": "Be aware, very bad company, avoid them",
+      "review_text": "Be aware, for any issues you need to wait 8 weeks to receive help, very bad and unprofessional people here, very bad rewies this company need to be banned to ofer this type off serviceRobert Atkinson take 8 week for any enquiries.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0092_AD_20240917",
+      "author": "Adrian Visan",
+      "review_date": "2024-09-17",
+      "rating": 1,
+      "review_title": "Very poor financial services support",
+      "review_text": "Very poor financial services support, I have a problem with Steven Eaglee Bishop's Stortford and they wait 8 weeks to give me a answer and finally after 8 weeks at 16:00 pm they send me a final decision, be aware people  to this very bad and not professional financial services, avoid them. I will advise everyone about this bad communication and long time to answer.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0093_MA_20240923",
+      "author": "Maame “Maamele” Efuah",
+      "review_date": "2024-09-23",
+      "rating": 1,
+      "review_title": "Treating Customer Unfairly",
+      "review_text": "My monthly payment is scheduled for 28th of every month and I made payment on 8/27/2024 yet they withdrew the same amount from my account on the 28th of August 2024. My account was overdrawn and I contacted TFS to process a refund which they said takes 7-10 business days. It was taking longer than expected and I contacted them again.  I was told that a check was processed and has been mailed. As of today, Monday, September 17, 2024, nothing is in the mail. Since August 29, 2024 till now,  absolutely nothing has been received.  They can't be trusted. I had made it clear to their CSR that they screwed me up and it was affecting me paying other bills on time and so they should deposit it into my account,  exactly where they made the withdrawal from.  They seem to careless. What is the problem with TFS? Do they really care about their customers? This is not fair at all.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0094_MA_20240916",
+      "author": "Matthew Stanford",
+      "review_date": "2024-09-16",
+      "rating": 1,
+      "review_title": "Absolute garbage company",
+      "review_text": "Absolute garbage company. THEY messed up my autopay ONE time.. and repossessed my car on a Friday night knowing their offices are closed until Monday. There goes my car and all of the expensive work related items inside. Once Monday rolls around and I call, I am met with over an hour of hold time. Then, once someone finally answers, they transfer you in circles hoping you have less patience than they do incompetency. Now, they have given me 2 different companies with 3 different and false phone numbers to call to find out where my car is. I can buy the entire annual salary of this \"customer service representative\" in cash, but they won't even let me get my car back. Still on hold btw. Truly a disgrace of a company.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0095_PI_20240912",
+      "author": "Pilar Barnhart",
+      "review_date": "2024-09-12",
+      "rating": 1,
+      "review_title": "Horrendous customer service",
+      "review_text": "Horrendous customer service, they claimed I cashed out my GAP insurance balance which I never even received, I asked for a copy of the check in that way I can file a police report but they couldn’t even send that. Their customer service is nasty and useless",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0096_RO_20240904",
+      "author": "Robert",
+      "review_date": "2024-09-04",
+      "rating": 1,
+      "review_title": "STAY AWAY FROM THIS COMPANY",
+      "review_text": "Becoming familiar with Toyota Financial Services has been the worst experience of my life, even eclipsing having a fractured skull and brain haemorrage since I had the misfortune of signing a finance agreement with this shower. Got a 4 year old car that developed a fault after 2 weeks and sent it back and the problem was bodged and the exact same fault reappeared more than 6 months later (emissions fault - countdown to impossible to start from 700 miles). Made a complaint to TFS and they completely ignored all of my correspondence and then sent their final response after exactly 8 weeks to extend the hardship for as long as possible. Their final response then said that the car hadn't been seen since it was purchased even though I provided them with the evidence of the first trip to the garage, the details of the fault and the invoice. I am currently waiting on the investigation of the Financial Ombudsman to conclude but I have had a completely useless car outside for 5 months now that I'm still paying for. I wish I had seen this page before I entered the agreement. This company should be prosecuted. They are an absolute disgrace. STAY AWAY!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0097_SC_20240829",
+      "author": "SC San",
+      "review_date": "2024-08-29",
+      "rating": 1,
+      "review_title": "Like pulliing teeth",
+      "review_text": "Like pulliing teeth. We have excellent credit, but this took forever and was a huge pain in the ass. Next time we'll buy a Honda.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0098_KE_20240809",
+      "author": "KENNETH NIMMO",
+      "review_date": "2024-08-09",
+      "rating": 1,
+      "review_title": "Don’t buy from Schottenkirk Toyota in ANY state!",
+      "review_text": "Purchased a 2024 Toyota Highlander from Schottenkirk Toyota of Weatherford, TX. Purchased on June 26. Vehicle was not in stock but was allocated to this dealer. Was on a boat coming to Houston, TX. Told we could pick it up in 3/4 days. Finally was able to pick the vehicle up July, 14.  My payment was set for August 11. Had to completely do the application and all paperwork over again. Got a call from the dealer that Toyota Financial was not honoring the 4.75% rate because the new dates on the contact was in July. Had to come back a third time and do a paper application and contract package after we had been driving the vehicle a week. Here it is August 8 and I still have not heard from Toyota Financial and my payment is due 8/11.  Dealer says don’t worry, it’s only accumulated interest since June 26 with no ability to pay principle only to get the per payment interest rate down lower and pay off early. Bob Schottenkirk’s “customer first” vision has been replaced with the vision of the customer over a barrel being greased up for the screwing. Stay away from any Schottenkirk Toyota dealer and by all means never finance with Toyota Financial. If this ever gets straightened out I’m refinancing through a Navy Credit Union.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0099_IV_20240727",
+      "author": "Ivan Alberto  Niko",
+      "review_date": "2024-07-27",
+      "rating": 1,
+      "review_title": "Gave the wrong information to obtain…",
+      "review_text": "Gave the wrong information to obtain documents for filing a claim.They told me to get the document from the bank when instead they had the document for the Maintenance Auto Plan (MAP) in their dealer office.They were trying to avoid paying the claim.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0100_CH_20240710",
+      "author": "Chloe Moir",
+      "review_date": "2024-07-10",
+      "rating": 5,
+      "review_title": "Knowledgeable Customer Solutions Team",
+      "review_text": "When part exchanging my vehicle, I rang Toyota Financial Customer Solutions team. Tyesha was incredible! She was enthusiastic and really wanted to make a stressful situation a seamless one for me.After speaking with Tyesha, her knowledge allowed me to understand I could actually stay with Toyota finance on a better deal than the finance company I was about to take the vehicle out with. I cannot thank you enough, Tyesha. You have been so helpful from start to finish.I will be recommending Toyota Finances due to this experience.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0101_CO_20240709",
+      "author": "Cole Slaw",
+      "review_date": "2024-07-09",
+      "rating": 1,
+      "review_title": "Cannot access my online account because…",
+      "review_text": "Cannot access my online account because Toyota's website screwed up my email address (created a nonsense sequence), so I cannot make a payment. Customer \"Service in the Continental U.S. (800) 874-8822\" is an endless automated answering machine with only a handful of canned options. The canned response for account access resets the password and emails it to the nonsense email address they have on file.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0102_CA_20240614",
+      "author": "Carl Ferguson",
+      "review_date": "2024-06-14",
+      "rating": 1,
+      "review_title": "I can't sign into my account",
+      "review_text": "I can't sign into my account, everytime I try calling I get a answering machine. I'm just trying to find out my payoff balance",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0103_DI_20240610",
+      "author": "Diana",
+      "review_date": "2024-06-10",
+      "rating": 1,
+      "review_title": "Disgusting",
+      "review_text": "Disgusting! I have been with Toyota for four years now. Every year, I got accepted on finance, apart from this year. Disgusting and pathetic behaviour and service. Once my term ends on my current vehicle, will hand it back and never return. Disgraceful and should be ashamed of yourselves.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0104_MI_20240603",
+      "author": "Miss Fellows",
+      "review_date": "2024-06-03",
+      "rating": 1,
+      "review_title": "AVOID, AWFUL COMPANY. SCREW YOU OVER.",
+      "review_text": "Awful company. I have tried to trade my car back in for a different car. I was happy when I heard the new car would use the same financial company and thought it would be fairly straight forward. OH HOW WRONG I WAS! Before the car company could even do a credit check I had to do an affordability check with Toyota.... I got declined!! I have an excellent credit score and all they did was check my bank accounts, one which is a joint account and also has my current car payment going out. They clearly did not take into consideration any of this. I have never missed one payment with this company on my current car. I am now stuck with my vehicle for another year and I will never ever be using this company again.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0105_NI_20240528",
+      "author": "niamhyhotmail.co.uk",
+      "review_date": "2024-05-28",
+      "rating": 1,
+      "review_title": "Had an awful awful experience with this…",
+      "review_text": "Had an awful awful experience with this “company”. Made a formal complaint to them dating back to mid February 2024 and they made no effort to resolve anything. I have now opened a case with the Financial Ombudsman service to deal with them. Judging by the other 1 star reviews I am not the only one that’s had bother with these guys. Would 100% avoid. What an embarrassment",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0106_MA_20240513",
+      "author": "Martin Robinson",
+      "review_date": "2024-05-13",
+      "rating": 1,
+      "review_title": "Should get Zero stars.",
+      "review_text": "Should get Zero stars.Customer service is dreadful the worst I have come across and they were up against some stiff opposition like TIDE Bank. It seems they go out of their way to avoid dealing with the matter in hand. Given their poor performance I can only assume their management is happy with their performance. Luckily their cars are pretty reliable so it is strange their finance team are so useless.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0107_TR_20240414",
+      "author": "Trevor",
+      "review_date": "2024-04-14",
+      "rating": 1,
+      "review_title": "By far the worst company I have ever…",
+      "review_text": "By far the worst company I have ever dealt with on any level.I made a request for a settlement offer in January due to an engine fault that wrote off the vehicle.It is now April and I am still no further ahead.Calling them is a waste of time. I raised a complaint mid Feb. And have only just received an email acknowledging my complaint despite several follow up emails.I am now raising a formal complaint with the FCA. I would advise all those below and new reviewers to do the same. If enough complaints are raised through the FCA and they do not improve the FCA have the power to shut this awful company down who have no level of consideration for their customers they just want our Money.I am not surprised the reviews here are so poor.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0108_MI_20240404",
+      "author": "Mike Motley",
+      "review_date": "2024-04-04",
+      "rating": 1,
+      "review_title": "Redline finance Toyota has got to be…",
+      "review_text": "Redline finance Toyota has got to be the worst call company I’ve ever dealt with.Never answer the phone get to number 2 in the queue and get cut off or get to 1 in the queue and get an automated message to say they won’t answer.Don’t think I’ve ever dealt with any company so bad, spend hours on hold no answer, ask for call back never happens, emails no reply despite saying two days.They need investigating and dealing with if I wanted to settle finance or return the vehicle you have no chance at all.Completely pointless service.I can’t give it zero stars and even that would be too generous.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=5",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0109_GE_20240307",
+      "author": "George Duncan",
+      "review_date": "2024-03-07",
+      "rating": 1,
+      "review_title": "Where do a start with this…AY19AFN",
+      "review_text": "Where do a start with this company!!!!!! Absolutely a shambles,,,,, bought a van from Arnold Clark Hillington in Scotland with Toyota as the finance company van cost over 20K ,,,,, put £9200 deposit on the van ,,,,bought the van in June last year now on to my 5th major problem with the van ,,,,, Arnold Clark gave me a 10 month warranty when a bought the van only to tell me it doesn’t cover any of the faults in the van that had only done 27K miles when purchased of them in June 3 DPF problems at the cost of nearly 2K which had to be paid by me AD blue problems then the turbo went no cover again another 800 quid got the van back Tuesday this week now going back to Arnold Clark tomorrow saying engine fault but that was meant to be sorted 3 times already at the cost of 2K now got the financial ombudsman on to this mob BE WARNED THIS MOB are scum don’t care one bit about there customers am fighting this all the way AVOID THIS MOB AT ALL COSTS liars",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0110_SM_20240306",
+      "author": "SMD",
+      "review_date": "2024-03-06",
+      "rating": 1,
+      "review_title": "NEED TO BE CLOSED DOWN FOR FRAUD GOING…",
+      "review_text": "NEED TO BE CLOSED DOWN FOR FRAUD GOING TO PUT A BAD REVIEW EVERYDAY UNTIL MY MONEY IS PAID BACK",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0111_HA_20240304",
+      "author": "HARRY SCATTON",
+      "review_date": "2024-03-04",
+      "rating": 1,
+      "review_title": "They have the worst customer service!",
+      "review_text": "They have the worst customer service.  My bank sent a check to buy out my lease.  Three weeks passed.  No indication that the truck was paid off.  I called four times and was on hold one hour each time.  I finally spoke to a rep who admitted that they had my check but were a little backed up processing it.  Four weeks have passed and no action.  I probably will not buy a Toyota agian.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0112_CU_20240302",
+      "author": "Curtis Haptonstal",
+      "review_date": "2024-03-02",
+      "rating": 1,
+      "review_title": "The most incompetent company I have…",
+      "review_text": "The most incompetent company I have ever been involved with. I will never buy another Toyota as long as I live. Customer Service you would expect from a bunch of three year olds.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0113_MR_20240222",
+      "author": "Mr Alex Tanase",
+      "review_date": "2024-02-22",
+      "rating": 1,
+      "review_title": "The worst costumer service in the…",
+      "review_text": "The worst costumer service in the world,  trying to get through when you have a problem will take weeks, nobody answer the phone,  they just keep you on hold and when you're next in the queue the call cuts off. I was trying to sort my finance out and after 1 months still struggling to get in contact with them, shame of a company.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0114_CA_20240217",
+      "author": "Carlos Covarrubias",
+      "review_date": "2024-02-17",
+      "rating": 1,
+      "review_title": "This company only steals money from you…",
+      "review_text": "This company only steals money from you The system is programmed to not allow you to make payments at their convenience.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0115_CO_20240214",
+      "author": "Consumer",
+      "review_date": "2024-02-14",
+      "rating": 1,
+      "review_title": "WARNING DO NOT GET INVOLVED WITH THIS…",
+      "review_text": "WARNING DO NOT GET INVOLVED WITH THIS COMPANY. part of redline finance No customer care no response out of 10 emails 12 calls in 4 months no car been taken away months ago.payments being taken still, wrong missed payments put on account a shambles of a company NEEDS TO BE SHUT DOWN. reported to the onbudsman still awaiting refund from rejection will be sharing to a fb town site everyday its ongoing and not resolved.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0116_LA_20240130",
+      "author": "Layna Lemay",
+      "review_date": "2024-01-30",
+      "rating": 1,
+      "review_title": "I had an accident on the 23rd of…",
+      "review_text": "I had an accident on the 23rd of December. I only owed $1,700 left on the car that I was financing and my car got totaled. My insurance company is settling for $9,725, but Toyota financial is holding it up because they have to do a review. Why is it any of Toyota Financials business how much money I'm getting and how dare they slow my check down. I will never do business with Toyota financial again!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0117_BR_20240121",
+      "author": "Breanne",
+      "review_date": "2024-01-21",
+      "rating": 1,
+      "review_title": "Would give 0 if I could",
+      "review_text": "Would give 0 if I could.November 23 they agreed voluntary termination of lease agreement for my dad. No money to pay due to being a vulnerable customer. He signed the form and sent it back. Car wasn’t collected despite chasing several times. 4 weeks later my dad died. Still no collection of car. They have gone back in voluntary termination even though it was their fault they never collected when dad was alive. Now saying we have to pay difference between settlement figure and valuation. Valuation is much less and there is no money to pay them. 2.5 months later they have still not collected car. 15 emails and ten phone calls waiting an hour each time to get through and they still haven’t resolved collecting the car and agreeing to honour the termination. No one calls back when they say they will.  Even specific complaints team don’t respond.They shouldn’t treat anyone like this, let alone grieving families trying to arrange funerals.Will never buy a Toyota.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0118_KE_20240120",
+      "author": "Keith Warburton",
+      "review_date": "2024-01-20",
+      "rating": 2,
+      "review_title": "Toyota finance UK.",
+      "review_text": "Toyota finance UK.Impossible to get through7th in queue 1 hour later 2nd in queue 15 later 2nd in queueLeft my number, no call back.It has put me off buying Toyota again.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0119_EM_20240118",
+      "author": "Emma Ward",
+      "review_date": "2024-01-18",
+      "rating": 1,
+      "review_title": "Poor service",
+      "review_text": "Toyota Burton told us to have the finance interest free for 6 months and keep our money in the bank.  We did after the 6 months they put another £800 onto our bill.  Tried to call the finance team to settle the agreement, but couldnt get through.  Tried every day for over 2 weeks for over an hour.  Gets to 6pm and get cut off.  Do not touch this finance agreement.  Very poor service",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0120_ZT_20240118",
+      "author": "zt w",
+      "review_date": "2024-01-18",
+      "rating": 1,
+      "review_title": "Don't use any service of this company. It is the tumor of the world",
+      "review_text": "I can't even get my title transferred within a month. Called many times but only to get different answers each time.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0121_CO_20240117",
+      "author": "Colin",
+      "review_date": "2024-01-17",
+      "rating": 1,
+      "review_title": "If I had any enemies I would force them…",
+      "review_text": "If I had any enemies I would force them to call the Toyota finance services number as this kind of torture would probably breach the Geneva convention.No idea why it takes over month of constant calls to get a settlement figure.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0122_MR_20231212",
+      "author": "Mr Rana muhammad Shaheer",
+      "review_date": "2023-12-12",
+      "rating": 1,
+      "review_title": "Toyota finance services are cheater…",
+      "review_text": "Toyota finance services are cheater sign the agreement and want to cancel in next two days which I have already 14 days cancellation time but still they charge extra money big cheater. Not going to buy any service from toyota very disappointed.am going to contact financial ombudsman services now.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0123_JA_20231208",
+      "author": "James",
+      "review_date": "2023-12-08",
+      "rating": 1,
+      "review_title": "It's a 20min+ wait to get through to a…",
+      "review_text": "It's a 20min+ wait to get through to a person no matter when you ring. Much worse than other manufacturers like BMW.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0124_AN_20231207",
+      "author": "Anastasios",
+      "review_date": "2023-12-07",
+      "rating": 1,
+      "review_title": "Toyota financial services lease fraud.",
+      "review_text": "Toyota financial services lease fraud.Simply you sign of a lease payment that you think will be the same for the lease term .Toyota financial services is going to charge you property tax . Property tax that you don’t know how much it is because it’s their property tax.A fraud that is done when presenting the lease payment. Shame on you TFS that make fraud with a fine print of your contract.Never do a lease with Toyota financial because you don’t know what you will finally pay per month .",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0125_MA_20231121",
+      "author": "Mark",
+      "review_date": "2023-11-21",
+      "rating": 1,
+      "review_title": "Think carefully",
+      "review_text": "Hi all,I took out an agreement with Toyota Finance in 2021. I love the car! I am certain I was told that I could pay off any sums I wanted after a set period and this would affect the final amount I owed. I recently tried to do this to discover this is not the case. The end sum stays the same even if you pay money in the interim. All paying early does is shorten the agreement or decrease the monthly payments.For older people, this kind of agreement does not work. So I would recommend anyone over 55 thinks carefully about taking out an agreement with these people.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0126_HA_20231117",
+      "author": "Havenor Greene",
+      "review_date": "2023-11-17",
+      "rating": 1,
+      "review_title": "I don't trust them at all..",
+      "review_text": "I have to believe the fact that they sent me no paper bill and no e-bill twice in the last couple months, and then hit me with late charges was no mistake. They wiped one of the late charges like they were doing me a big favor but wouldn't wipe the other late charge. This is totally unscrupulous and dishonest on their part.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0127_EL_20231110",
+      "author": "Els",
+      "review_date": "2023-11-10",
+      "rating": 1,
+      "review_title": "This company doesn't react at all at…",
+      "review_text": "This company doesn't react at all at any messages :(. I paid my car, but they still take the monthly cost from my account!!!! I send them an email and they DON't REACT AT ALL!!!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0128_TE_20231003",
+      "author": "Teresa Malagi",
+      "review_date": "2023-10-03",
+      "rating": 1,
+      "review_title": "Paid off Loan and still no Lien Release Document",
+      "review_text": "I paid off my vehicle in July 2023.....almost 12 weeks later I still do NOT have the lien release document needed to physically take into the DMV to obtain the title for my vehicle.  I called multiple times to inquire and I was told they are working on it and I should receive it in the mail soon. I called twice and it was only documented I called once about my title. The woman I spoke to the 3rd time today argued with me and then hung up on me.Also beware of the GAP insurance because they lied to me at the dealership at Elk Grove Toyota in California and told me once I paid down my loan and the value of my car was more than what I owed I could remove the GAP insurance.  This is a true statement except it DOESN'T lower your payment because they bundle the GAP insurance with the car loan and it is a fixed payment.  When I called Toyota the man I spoke to in the GAP insurance department told me it happens ALL THE TIME! They used tricky wording to deceive me into believing I could lower my monthly payment by removing the GAP insurance. I was so angry with Toyota when I found out they tricked me. Rotten Scammers!!!!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=6",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0129_CH_20230925",
+      "author": "Charlene",
+      "review_date": "2023-09-25",
+      "rating": 1,
+      "review_title": "Absolute shambles of a company",
+      "review_text": "Absolute shambles of a company! They have errors with their direct debits and haven’t a clue what they recieved. Have got in touch with the financial ombudsman because although it was nearly handled, Denise contacted me and was completely incompetent and has left me no choice but to bring their errors further. Absolutely so not need this unnecessary stress and to think I was thinking of buying another new Toyota. Unbelievable! Avoid avoid avoid!!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0130_MR_20230920",
+      "author": "Mr Anthony Dunn",
+      "review_date": "2023-09-20",
+      "rating": 5,
+      "review_title": "Great service from start to end",
+      "review_text": "Got a settlement fee instantly which was settled then financed another vehicle which I had a couple of issues caused by myself but ELENA sorted them out and kept in touch all the way through the process great service from start to finish thankyou",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0131_ST_20230911",
+      "author": "Stephen Bellhouse",
+      "review_date": "2023-09-11",
+      "rating": 1,
+      "review_title": "Having just phoned for a settlment it…",
+      "review_text": "Having just phoned for a settlment it is completely different from a week ago also was told completely wrong information about getting a payment refunded .Anybody thinking about toyota finance please choose another Brand they are totally useles after spending almost 70000 on 2 cars this will definitely the last Toyota we will buy!!!!!!!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0132_CU_20230907",
+      "author": "customer",
+      "review_date": "2023-09-07",
+      "rating": 1,
+      "review_title": "I bought my 2023 Corolla this March",
+      "review_text": "I bought my 2023 Corolla this March. TFS had repeatedly not allowed for a setup of recurring payments for (4)months. Phone reps never solved the issue but took late payments. Negative credit report hits. No refund of late fees. Setup recurring and still charged late fee. Poorest service!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0133_DA_20230829",
+      "author": "Daren Huntley",
+      "review_date": "2023-08-29",
+      "rating": 1,
+      "review_title": "Be careful giving of this company with…",
+      "review_text": "Be careful giving of this company with your details!I was going to get finance for a new car and gave this company my details for the loan.Did not have the loan in the end and the company will not clear my data from their records, they say that they have the right to keep my personal details for 6 years.Since giving them my information I been receiving lots of junk mail.There customer service is so unfriendly and unprofessional.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0134_NO_20230721",
+      "author": "not_pablum",
+      "review_date": "2023-07-21",
+      "rating": 1,
+      "review_title": "Title Documents Sent NO TRACKING USPS???????",
+      "review_text": "We bought a new Toyota in February 2023 with a partial Toyota Financial loan ( 9+% interest rate, even though our scores are 800++) with the intent of paying it off in 4-5 month. We paid it off in July 2023.  They sent our title and payoff documents USPS STANDARD MAIL WITH NO TRACKING. WHAT???? This is, obviously, important documentation. WHY WOULD ANY RESPONSIBLE COMPANY DO THAT? One answer: MONEY. You've got to be kidding me.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0135_GE_20230713",
+      "author": "Gerardo Rabulan",
+      "review_date": "2023-07-13",
+      "rating": 1,
+      "review_title": "Inconsiderate customer service by…",
+      "review_text": "Inconsiderate customer service by Steven over the phone. Jujy 13 at 10:00 am",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0136_RE_20230706",
+      "author": "Red Green",
+      "review_date": "2023-07-06",
+      "rating": 1,
+      "review_title": "Toyota Financial Service Terrible",
+      "review_text": "Toyota Financial Service charges higher than usual fees and interest rate. I suggest using a local bank or credit union. I have financed 3 vehicles with them and have owned 4 Toyota trucks. I have good credit and a perfect payment record on my current vehicle to date. Toyota sells to American but never the less, they offshore their services and fail to employ American inside the U.S. to serve the needs of United States residents for all their services. In the past, I have had to deal with them when I was unemployed and had a good relationship with them. Despite having a perfect payment record currently, I find the online and telephone customer services to be differcult to use and fustrating for a older person. Their customer service persons can be hard to understand and down right rude, sometimes. Toyota, generally makes a good vehile at a fair price. Their dealers are sometimes unethical, I have found in the past. I again, suggest dealing with a local bank or credit union that you do business with regularly to  to finance your major purchase. If you need to speak to a person, you can go right to the branch and see them face to face. You will be treated better as a person and get a better rate!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0137_LA_20230706",
+      "author": "Lachance",
+      "review_date": "2023-07-06",
+      "rating": 1,
+      "review_title": "After being a loyal Toyota patron for…",
+      "review_text": "After being a loyal Toyota patron for 18 year and leased and purchased 6 vehicles. They judge me the covid time of late payment.   And refused to finance a leases payout that was way less than the value.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0138_GR_20230627",
+      "author": "Graham Dobson",
+      "review_date": "2023-06-27",
+      "rating": 1,
+      "review_title": "Very bad  service",
+      "review_text": "This is very bad service. As my car was coming to  the end. I asked  for extra  payments  i was told yes no problem. Give all my  details. No problem  we will  send you a new contract. To sign. No contract come. AndTo day  they emptied are bank account. For the money for the last payment,,,I phoned to be told, my details WAS NOT UPDATED,,AT THE TIME. of my first phone call. Be  very careful about your details. Make sure that they have them.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0139_馮博_20230615",
+      "author": "馮博",
+      "review_date": "2023-06-15",
+      "rating": 1,
+      "review_title": "0 star if I could give",
+      "review_text": "0 star if I could give! They owe me an overpaid check and never send me a refund. the people who answered my call, all of them are liars. I have already called more than 10 times, but still nothing. what a shame as a big company!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0140_JA_20230531",
+      "author": "james kidd",
+      "review_date": "2023-05-31",
+      "rating": 1,
+      "review_title": "this service is so bad",
+      "review_text": "this service is so bad, cannot make payments or connect to someoneto talk to",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0141_TE_20230512",
+      "author": "Terry Hotchkiss",
+      "review_date": "2023-05-12",
+      "rating": 3,
+      "review_title": "Customers Services poor communications",
+      "review_text": "Customers Services appear lapse when you send an email direct to them, even when you use the online message service there is no actual reply. Traded my Toyota for another one, they still took a payment on the old agreement when it had already been settled. I eventually got my money back.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0142_SU_20230426",
+      "author": "Sue Wainwright",
+      "review_date": "2023-04-26",
+      "rating": 1,
+      "review_title": "My Toyota App is not fit for purpose",
+      "review_text": "My Toyota App is not fit for purpose - cannot access every single time I try even after having successfully changed password.  Without fail, unable to access website.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0143_AN_20230414",
+      "author": "andrew grant reed",
+      "review_date": "2023-04-14",
+      "rating": 1,
+      "review_title": "Threatening my credit profile due to their own incompetence",
+      "review_text": "I traded my CHR back to Toyota and picked up a new Aygo - some six weeks ago. TFS tried to take a further payment 3 weeks later and when I stopped it sent me a threatening letter seeking payment of the instalment and saying my credit profile could be damaged. I wrote back explaining and also wrote to the dealer in MK (who says they have passed on the paperwork). TFS have now said they will amend my credit profile once the dealer has passed the trade in payment on to them! This is between two Toyota offices and nothing to do with me, Dreadful!!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0144_AL_20230222",
+      "author": "Alan Hodgins",
+      "review_date": "2023-02-22",
+      "rating": 1,
+      "review_title": "Have won with the ombudsman after non…",
+      "review_text": "Have won with the ombudsman after non functional vehicle has sat on my drive for 18months and still tfs have not bothered to respond to myself or the ombudsman.Next thing is to pursue court action with an N322A form which enforces the ombudsman decision in court allowing bailiff intervention.Case ID 000031917195",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0145_IA_20230209",
+      "author": "Ian",
+      "review_date": "2023-02-09",
+      "rating": 1,
+      "review_title": "I have had two financial agreements…",
+      "review_text": "I have had two financial agreements with this company over the past four years. Two running at the same time. Both have been settled early.I recently raised a complaint when they then refused to finance another car. I had nio response to the email, I then over the course of a few days, sent my complaint to two further different email addresses for Toyota Financial Services. I still have not even had an acknowledgment from them for any of the three emails.You would of thought, that having lined their pockets with business for the last four years, on two not one contracts, that they would have the decency to respond to a complaint, and at least offer some sort of excuse why they do not want to finance a new car now for me.very, very disappointed at the total lack of response/communication.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0146_PA_20230202",
+      "author": "Paul Coady",
+      "review_date": "2023-02-02",
+      "rating": 1,
+      "review_title": "I had to make 4 different calls to them…",
+      "review_text": "I had to make 4 different calls to them this afternoon to get connected with a representative. Almost impossible to get away from the bot to get a person. I wanted to get a payoff letter from TFS so my bank can send them the pay off balance of my loan. Why I could not do this online through my TFS account is a mystery to me. The rep told me it would take 3 days to e mail the payoff info to my banker and that they had to mail me an authorization letter to sign and give to my bank. They could not e mail me the form only mail it and it would take 7 to 10 days. After signing it I could e mail it to my banker as it had to go along with the bank's payoff. It all appears to me to be Toyota's plan to get as much interest as they can before I can payoff the balance. Unbelievable that TFS does not have a better IT set up as all of this should be able to be done on line.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0147_BE_20221017",
+      "author": "Ben Rosenberg",
+      "review_date": "2022-10-17",
+      "rating": 1,
+      "review_title": "Lies or incompetence!",
+      "review_text": "This company has lied a number of times about resolving an issue. Full amount of  finance paid, yet they have not removed my HPI marker which means I cannot proceed to start my new contract with my new car. Was told that they couldn’t the first time due to Experian being down, second time they said they would look into it and finally the third time, they said it would be resolved within 24-48 hours ago. 2 weeks later finance is being shown on my vehicle. Been on hold for near 30 minutes, absolutely disgraceful way to run a company!",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0148_TA_20220505",
+      "author": "Tammy Alicia Lewis",
+      "review_date": "2022-05-05",
+      "rating": 1,
+      "review_title": "I’m suing these people for what their…",
+      "review_text": "I’m suing these people for what their putting my son through with their stupid so-called  GAP insurance. I spoke with an attorney today about it. He informed me that in the height of Covid when all these financial institutions were so “so called” gracious in letting people defer payments to so-call help them in their time of need they neglect to tell the customer the fine print on what might happen on the back end of things! My son had a 2021 Toyota Supra his dream car that he got in a wreck and they totaled it out. He had GAP insurance. Now 5 months later Toyota financial sends him a letter saying he owes them $990 for a deferred payment he didn’t even ask for. They offered to do it for him. NOT telling him if something happened to his car that GAP wouldn’t cover any deferred payments!! He’s trying to buy another car now but can’t because he has this hanging over him! Toyota can either wipe this clean off his account with them or buy him another car free and clear by the time my lawyer is done with them!! Shame on you Toyota financial GAP for doing these kids this way especially during a time when we’re the most vulnerable!! 🤬🤬☹️🤨🤨",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=7",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0149_MA_20220328",
+      "author": "Mark Baird",
+      "review_date": "2022-03-28",
+      "rating": 1,
+      "review_title": "Toyota Financial doesn't release titles",
+      "review_text": "If you ask the rep at Toyota financial, they will tell you that it is their policy to release titles after a lien is paid off. Our family has owned a lot of Toyotas and I can say that has never happened once. You have to contact Toyota Financial and that is process is always awful. You can have them call you back rather than wait on hold but what I got out of that was a call from the company robot with no one on the other end, just silence. You can call back and stay on hold and listen to an awful twangy bit of country pop that repeats several times a minute and will burn itself into your brain. Finally talk to a human and he will tell you whatever he feels is right, you follow the steps and wait for the doc to arrive and after several weeks you call back and after ten minutes of more of that awful song designed to make you hang up, you get informed that you were misinformed and you need to fax different docs, which no one felt any obligation to inform you of until you personally go through the aggravation of calling back. Even worse, they insist of having the docs arrive by fax. Anyone still have a working fax machine? It will cost me about $40 to fax the docs that they didn't know they wanted until they rejected what they first asked for. My case was closed until I called back. What do we make of a company that markets itself for its advanced tech and hasn't figured out email by 2022? We've had to deal with this four times in the last 3 years. It's enough to make me think twice about ever signing up for this treatment by buying Toyota ever again.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=8",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    },
+    {
+      "review_id": "tp_0150_GL_20211230",
+      "author": "Glenn",
+      "review_date": "2021-12-30",
+      "rating": 2,
+      "review_title": "Due to covid 19 pandemic my work hours…",
+      "review_text": "Due to covid 19 pandemic my work hours were cut as well as my fiancé loosing her job and the arrival of our newborn son has gotten really tight. Toyota deferred a few payments and things slowly went back to normal and I have never been late or missed a payment since. I asked again for the same courtesy after the truck had grave mechanical issues just hitting the 100k mark. Now with the covid resurgence and no longer being paid for the days we miss, money has got tight. I was denied, I have spoken with multiple friends in the same predicament and have been given courtesy by other lenders. I feel Toyota does not stand by it’s products and does not care about its customers, only the paycheck. My families Christmas was shot this year and just trying to pay my bills is getting tough. My company a large commercial mechanical contractor in NJ will discontinue use of Toyota Tundra vehicles and be going with Ford now. I am a combat veteran and hard working American and this will be my last Toyota vehicle. I just want others to know about Toyota financials incompassion and warn you before you spend 60k on their product like I did.",
+      "review_url": "https://www.trustpilot.com/review/toyotafinancial.com?page=8",
+      "metadata": {
+        "source_data": {
+          "trustpilot": {
+            "resource": "Trustpilot"
+          }
+        }
+      }
+    }
+  ]
+}

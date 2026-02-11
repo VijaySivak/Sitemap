@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consumer Affairs Reviews</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #060d17;
+      --muted: #53565b;
+      --accent: #1758a6;
+      --border: #e4e8ec;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 20px;
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 32px;
+      letter-spacing: 0.4px;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .card h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      color: var(--accent);
+    }
+    .kv {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px dashed var(--border);
+      padding: 6px 0;
+      font-size: 14px;
+    }
+    .kv:last-child {
+      border-bottom: none;
+    }
+    .reviews {
+      display: grid;
+      gap: 12px;
+    }
+    .review {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .review h4 {
+      margin: 0 0 6px 0;
+      font-size: 16px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0;
+    }
+    .tag {
+      background: #eaf1fa;
+      color: #143b68;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Consumer Affairs Reviews</h1>
+      <div class="sub">Structured review summary</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <div class="card">
+        <h3>Overall Brand Rating</h3>
+        <div id="overallRating" class="muted">(load reviews.json)</div>
+      </div>
+      <div class="card">
+        <h3>Total Review Count</h3>
+        <div id="reviewCount" class="muted">(load reviews.json)</div>
+      </div>
+      <div class="card">
+        <h3>Company Info</h3>
+        <div id="companyInfo" class="muted">(load reviews.json)</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reviews</h2>
+      <div id="reviews" class="reviews"></div>
+    </section>
+  </main>
+
+  <script>
+    function getJsonPath() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("file") || "reviews.json";
+    }
+
+    async function loadReviews() {
+      const resp = await fetch(getJsonPath());
+      const data = await resp.json();
+
+      document.getElementById("overallRating").textContent = String(data.overall_brand_rating ?? "N/A");
+      document.getElementById("reviewCount").textContent = String(data.total_review_count ?? "N/A");
+
+      const infoEl = document.getElementById("companyInfo");
+      infoEl.innerHTML = "";
+      const info = data.company_info || {};
+      for (const [key, val] of Object.entries(info)) {
+        const row = document.createElement("div");
+        row.className = "kv";
+        row.innerHTML = `<span>${key}</span><span class="muted">${val}</span>`;
+        infoEl.appendChild(row);
+      }
+
+      const reviewsEl = document.getElementById("reviews");
+      reviewsEl.innerHTML = "";
+      for (const review of data.reviews || []) {
+        const card = document.createElement("div");
+        card.className = "review";
+        const title = review.review_id ? `Review ${review.review_id}` : "Review";
+        const author = review.author ?? "Unknown";
+        const loc = review.location ?? "";
+        const date = review.review_date ?? "";
+        const rating = review.rating ? `${review.rating}/5` : "N/A";
+
+        card.innerHTML = `
+          <h4>${title}</h4>
+          <div class="meta">${author} ${loc ? "• " + loc : ""} ${date ? "• " + date : ""} • Rating: ${rating}</div>
+          <div class="tags"></div>
+          <div>${review.review_text ?? ""}</div>
+          <div class="meta">Helpful count: ${review.helpful_count ?? "N/A"}</div>
+        `;
+
+        const tagsEl = card.querySelector(".tags");
+        for (const tag of review.tags || []) {
+          const span = document.createElement("span");
+          span.className = "tag";
+          span.textContent = tag;
+          tagsEl.appendChild(span);
+        }
+
+        reviewsEl.appendChild(card);
+      }
+    }
+
+    loadReviews().catch(err => {
+      console.error(err);
+      document.getElementById("reviews").innerHTML = "<div class=\"muted\">Could not load reviews.json</div>";
+    });
+  </script>
+</body>
+</html>
