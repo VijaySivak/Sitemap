@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitemap Crawler - Architecture Diagram</title>
+<style>
+  body {
+    margin: 0;
+    padding: 40px;
+    background: #f8fafc;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  .diagram {
+    width: 1200px;
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 40px;
+  }
+
+  /* SVG Diagram */
+  svg { width: 100%; height: auto; }
+
+  /* Phase labels */
+  .phase-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    fill: #94a3b8;
+  }
+
+  /* Box styles */
+  .box {
+    rx: 10;
+    ry: 10;
+    stroke-width: 2;
+  }
+  .box-seed { fill: #fef3c7; stroke: #f59e0b; }
+  .box-crawler { fill: #dbeafe; stroke: #3b82f6; }
+  .box-extract { fill: #e0e7ff; stroke: #6366f1; }
+  .box-storage { fill: #d1fae5; stroke: #10b981; }
+  .box-api { fill: #fce7f3; stroke: #ec4899; }
+  .box-frontend { fill: #f0fdf4; stroke: #22c55e; }
+  .box-tech { fill: #f1f5f9; stroke: #cbd5e1; rx: 6; ry: 6; }
+
+  /* Text styles */
+  .box-title {
+    font-size: 14px;
+    font-weight: 700;
+    fill: #1e293b;
+  }
+  .box-detail {
+    font-size: 11px;
+    fill: #64748b;
+  }
+  .tech-label {
+    font-size: 10px;
+    font-weight: 600;
+    fill: #475569;
+  }
+  .tech-item {
+    font-size: 9.5px;
+    fill: #64748b;
+  }
+
+  /* Arrow styles */
+  .arrow {
+    stroke: #94a3b8;
+    stroke-width: 2;
+    fill: none;
+    marker-end: url(#arrowhead);
+  }
+  .arrow-bold {
+    stroke: #3b82f6;
+    stroke-width: 2.5;
+    fill: none;
+    marker-end: url(#arrowhead-blue);
+  }
+  .arrow-label {
+    font-size: 10px;
+    fill: #64748b;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="diagram">
+  <div class="title">Sitemap Crawler & Analytics Dashboard</div>
+  <div class="subtitle">Architecture & Data Flow Diagram</div>
+
+  <svg viewBox="0 0 1120 920" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+      </marker>
+      <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+      </marker>
+    </defs>
+
+    <!-- ==================== PHASE 1: SEED & CRAWL ==================== -->
+    <text x="560" y="30" text-anchor="middle" class="phase-label">Phase 1 — Crawling</text>
+
+    <!-- Seed URL -->
+    <rect x="40" y="50" width="220" height="70" class="box box-seed"/>
+    <text x="150" y="78" text-anchor="middle" class="box-title">Seed URL</text>
+    <text x="150" y="96" text-anchor="middle" class="box-detail">toyotafinancial.com/sitemap.html</text>
+
+    <!-- Config -->
+    <rect x="40" y="140" width="220" height="80" class="box box-seed"/>
+    <text x="150" y="165" text-anchor="middle" class="box-title">config.yaml</text>
+    <text x="150" y="182" text-anchor="middle" class="box-detail">allowed_domains, depth limits</text>
+    <text x="150" y="196" text-anchor="middle" class="box-detail">rate_limit, excluded_sections</text>
+
+    <!-- Arrow: Seed → Crawler -->
+    <line x1="260" y1="85" x2="340" y2="85" class="arrow-bold"/>
+    <text x="300" y="78" text-anchor="middle" class="arrow-label">feeds</text>
+
+    <!-- Arrow: Config → Crawler -->
+    <line x1="260" y1="175" x2="340" y2="130" class="arrow"/>
+    <text x="290" y="145" text-anchor="middle" class="arrow-label">configures</text>
+
+    <!-- Crawler Engine -->
+    <rect x="340" y="50" width="280" height="180" class="box box-crawler"/>
+    <text x="480" y="78" text-anchor="middle" class="box-title">Crawler Engine</text>
+    <text x="480" y="98" text-anchor="middle" class="box-detail">engine.py — BFS Loop</text>
+    <line x1="360" y1="110" x2="600" y2="110" stroke="#93c5fd" stroke-width="1"/>
+
+    <text x="370" y="130" class="box-detail">1. Check robots.txt</text>
+    <text x="370" y="148" class="box-detail">2. Validate domain & policy</text>
+    <text x="370" y="166" class="box-detail">3. HTTP GET (requests library)</text>
+    <text x="370" y="184" class="box-detail">4. Route by content type</text>
+    <text x="370" y="202" class="box-detail">5. Queue discovered URLs</text>
+    <text x="370" y="220" class="box-detail">6. Rate limit: 1 req/sec</text>
+
+    <!-- Tech Stack: Crawler -->
+    <rect x="340" y="245" width="280" height="50" class="box box-tech"/>
+    <text x="480" y="265" text-anchor="middle" class="tech-label">Tech: Python, requests, PyYAML</text>
+    <text x="480" y="280" text-anchor="middle" class="tech-item">robots.py, fetcher.py, canonicalization.py</text>
+
+    <!-- Arrow: Crawler → Website -->
+    <line x1="620" y1="85" x2="700" y2="85" class="arrow-bold"/>
+    <text x="660" y="78" text-anchor="middle" class="arrow-label">HTTP GET</text>
+
+    <!-- Website -->
+    <rect x="700" y="50" width="200" height="70" class="box" style="fill:#fef2f2; stroke:#ef4444;"/>
+    <text x="800" y="78" text-anchor="middle" class="box-title">TFS Website</text>
+    <text x="800" y="96" text-anchor="middle" class="box-detail">HTML, PDFs, Videos</text>
+
+    <!-- Arrow: Website → Crawler (response) -->
+    <path d="M 800 120 L 800 140 L 630 140 L 630 130" class="arrow" style="stroke-dasharray: 5,3;"/>
+    <text x="720" y="155" text-anchor="middle" class="arrow-label">HTTP Response</text>
+
+    <!-- ==================== PHASE 2: EXTRACTION ==================== -->
+    <text x="560" y="330" text-anchor="middle" class="phase-label">Phase 2 — Extraction & Processing</text>
+
+    <!-- HTML Processing -->
+    <rect x="40" y="350" width="240" height="130" class="box box-extract"/>
+    <text x="160" y="378" text-anchor="middle" class="box-title">HTML Processing</text>
+    <line x1="55" y1="388" x2="265" y2="388" stroke="#a5b4fc" stroke-width="1"/>
+    <text x="60" y="408" class="box-detail">BeautifulSoup parses HTML</text>
+    <text x="60" y="426" class="box-detail">Extract main content text</text>
+    <text x="60" y="444" class="box-detail">Extract all &lt;a href&gt; links</text>
+    <text x="60" y="462" class="box-detail">Convert HTML → Markdown</text>
+
+    <!-- FAQ Extraction -->
+    <rect x="310" y="350" width="240" height="110" class="box box-extract"/>
+    <text x="430" y="378" text-anchor="middle" class="box-title">FAQ Extraction</text>
+    <line x1="325" y1="388" x2="535" y2="388" stroke="#a5b4fc" stroke-width="1"/>
+    <text x="325" y="408" class="box-detail">Detect Q&A patterns in HTML</text>
+    <text x="325" y="426" class="box-detail">Extract question + answer text</text>
+    <text x="325" y="444" class="box-detail">Classify answer_mode</text>
+
+    <!-- PDF Processing -->
+    <rect x="580" y="350" width="240" height="110" class="box box-extract"/>
+    <text x="700" y="378" text-anchor="middle" class="box-title">PDF Processing</text>
+    <line x1="595" y1="388" x2="805" y2="388" stroke="#a5b4fc" stroke-width="1"/>
+    <text x="595" y="408" class="box-detail">Save PDF binary to disk</text>
+    <text x="595" y="426" class="box-detail">pypdf extracts text</text>
+    <text x="595" y="444" class="box-detail">Save extracted text to .txt</text>
+
+    <!-- Video Processing -->
+    <rect x="850" y="350" width="220" height="90" class="box box-extract"/>
+    <text x="960" y="378" text-anchor="middle" class="box-title">Video/Audio</text>
+    <line x1="865" y1="388" x2="1055" y2="388" stroke="#a5b4fc" stroke-width="1"/>
+    <text x="865" y="408" class="box-detail">Save binary to disk</text>
+    <text x="865" y="426" class="box-detail">Register as asset</text>
+
+    <!-- Tech Stack: Extraction -->
+    <rect x="40" y="490" width="780" height="35" class="box box-tech"/>
+    <text x="430" y="513" text-anchor="middle" class="tech-label">Tech: BeautifulSoup4 + lxml (parsing), markdownify (HTML→MD), pypdf (PDF text), faq_extractor.py, document_extractor.py</text>
+
+    <!-- Arrows: Crawler → Extractors -->
+    <line x1="400" y1="230" x2="160" y2="350" class="arrow"/>
+    <line x1="480" y1="230" x2="430" y2="350" class="arrow"/>
+    <line x1="540" y1="230" x2="700" y2="350" class="arrow"/>
+    <line x1="580" y1="230" x2="960" y2="350" class="arrow"/>
+
+    <!-- ==================== PHASE 3: STORAGE ==================== -->
+    <text x="560" y="560" text-anchor="middle" class="phase-label">Phase 3 — Storage</text>
+
+    <!-- SQLite -->
+    <rect x="40" y="580" width="520" height="160" class="box box-storage"/>
+    <text x="300" y="608" text-anchor="middle" class="box-title">SQLite Database (tfs_crawl.sqlite)</text>
+    <line x1="55" y1="618" x2="545" y2="618" stroke="#6ee7b7" stroke-width="1"/>
+
+    <!-- Table columns -->
+    <text x="60" y="640" class="box-detail" style="font-weight:600;">documents</text>
+    <text x="60" y="655" class="box-detail">url, status, depth, content_type</text>
+
+    <text x="60" y="678" class="box-detail" style="font-weight:600;">faq_items</text>
+    <text x="60" y="693" class="box-detail">question, answer, answer_mode</text>
+
+    <text x="60" y="716" class="box-detail" style="font-weight:600;">link_edges</text>
+    <text x="60" y="731" class="box-detail">parent_url → child_url, is_external</text>
+
+    <text x="310" y="640" class="box-detail" style="font-weight:600;">documents_fts (FTS5)</text>
+    <text x="310" y="655" class="box-detail">full-text search of page content</text>
+
+    <text x="310" y="678" class="box-detail" style="font-weight:600;">assets</text>
+    <text x="310" y="693" class="box-detail">PDFs, videos with local paths</text>
+
+    <text x="310" y="716" class="box-detail" style="font-weight:600;">crawl_queue</text>
+    <text x="310" y="731" class="box-detail">BFS queue (resumability)</text>
+
+    <!-- Artifacts -->
+    <rect x="600" y="580" width="220" height="160" class="box box-storage"/>
+    <text x="710" y="608" text-anchor="middle" class="box-title">Artifacts (Disk)</text>
+    <line x1="615" y1="618" x2="805" y2="618" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="620" y="640" class="box-detail">artifacts/html/    (raw HTML)</text>
+    <text x="620" y="660" class="box-detail">artifacts/md/      (Markdown)</text>
+    <text x="620" y="680" class="box-detail">artifacts/pdf/     (PDF files)</text>
+    <text x="620" y="700" class="box-detail">artifacts/pdf_text/ (PDF text)</text>
+    <text x="620" y="720" class="box-detail">artifacts/video/   (media)</text>
+
+    <!-- Tech Stack: Storage -->
+    <rect x="850" y="580" width="220" height="60" class="box box-tech"/>
+    <text x="960" y="605" text-anchor="middle" class="tech-label">Tech: sqlite3 (built-in)</text>
+    <text x="960" y="622" text-anchor="middle" class="tech-item">sqlite_store.py</text>
+    <text x="960" y="636" text-anchor="middle" class="tech-item">Single file, zero config</text>
+
+    <!-- Arrows: Extractors → Storage -->
+    <line x1="160" y1="480" x2="200" y2="580" class="arrow"/>
+    <line x1="430" y1="460" x2="350" y2="580" class="arrow"/>
+    <line x1="700" y1="460" x2="680" y2="580" class="arrow"/>
+
+    <!-- ==================== PHASE 4: API ==================== -->
+    <text x="300" y="775" text-anchor="middle" class="phase-label">Phase 4 — API Server</text>
+
+    <!-- FastAPI -->
+    <rect x="40" y="790" width="520" height="110" class="box box-api"/>
+    <text x="300" y="818" text-anchor="middle" class="box-title">FastAPI Backend (api.py)</text>
+    <line x1="55" y1="828" x2="545" y2="828" stroke="#f9a8d4" stroke-width="1"/>
+
+    <text x="60" y="848" class="box-detail">/api/stats  /api/faqs  /api/external-stats  /api/business-metrics</text>
+    <text x="60" y="866" class="box-detail">/api/metric-urls/{type}  /api/buried-page-paths  /api/pdf-analysis</text>
+    <text x="60" y="884" class="box-detail">/api/redundant-content  /api/external-forms  /api/faqs/export</text>
+
+    <!-- Tech Stack: API -->
+    <rect x="600" y="790" width="220" height="60" class="box box-tech"/>
+    <text x="710" y="815" text-anchor="middle" class="tech-label">Tech: FastAPI + uvicorn</text>
+    <text x="710" y="832" text-anchor="middle" class="tech-item">Serves JSON over HTTP</text>
+    <text x="710" y="846" text-anchor="middle" class="tech-item">localhost:8000</text>
+
+    <!-- Arrow: SQLite → API -->
+    <line x1="300" y1="740" x2="300" y2="790" class="arrow-bold"/>
+    <text x="310" y="768" class="arrow-label">SQL queries</text>
+
+    <!-- Arrow: Artifacts → API (pdf-analysis only) -->
+    <path d="M 710 740 L 710 760 L 500 760 L 500 790" class="arrow" style="stroke-dasharray: 5,3;"/>
+    <text x="620" y="755" class="arrow-label">pdf_text/ files (pdf-analysis only)</text>
+
+    <!-- ==================== PHASE 5: FRONTEND ==================== -->
+    <text x="960" y="775" text-anchor="middle" class="phase-label">Phase 5 — Frontend</text>
+
+    <!-- React Dashboard -->
+    <rect x="850" y="790" width="250" height="110" class="box box-frontend"/>
+    <text x="975" y="818" text-anchor="middle" class="box-title">React Dashboard</text>
+    <line x1="865" y1="828" x2="1085" y2="828" stroke="#86efac" stroke-width="1"/>
+    <text x="865" y="848" class="box-detail">/ — Main Dashboard</text>
+    <text x="865" y="866" class="box-detail">/business-metrics — Health & Analysis</text>
+    <text x="865" y="884" class="box-detail">/unified — Combined View</text>
+
+    <!-- Tech Stack: Frontend -->
+    <rect x="850" y="660" width="220" height="80" class="box box-tech"/>
+    <text x="960" y="680" text-anchor="middle" class="tech-label">Tech: React 18 + TypeScript</text>
+    <text x="960" y="695" text-anchor="middle" class="tech-item">Vite (build), TailwindCSS (styling)</text>
+    <text x="960" y="710" text-anchor="middle" class="tech-item">Recharts (charts), Lucide (icons)</text>
+    <text x="960" y="725" text-anchor="middle" class="tech-item">axios (HTTP), React Router (nav)</text>
+
+    <!-- Arrow: API → Frontend -->
+    <line x1="560" y1="845" x2="850" y2="845" class="arrow-bold"/>
+    <text x="705" y="838" text-anchor="middle" class="arrow-label">JSON over HTTP (axios)</text>
+
+  </svg>
+</div>
+</body>
+</html>
